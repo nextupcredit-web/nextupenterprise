@@ -242,19 +242,47 @@
 .npkg-cn{grid-template-columns:1fr;}
 }
 @media(max-width:768px){
-.nstats-g{grid-template-columns:1fr;}
+.nstats-g{grid-template-columns:repeat(3,1fr);}
+.nstat{padding:.5rem .5rem;}
+.nstat-n{font-size:1.8rem;}
+.nstat-l{font-size:.55rem;}
 .nstat:not(:last-child)::after{display:none;}
 .nhow-g{grid-template-columns:1fr;}
 .nnav-links{display:none;}
 .nftr-tp{grid-template-columns:1fr;}
 .npkg-ft{flex-direction:column;align-items:flex-start;}
+.nhero{padding:90px 5% 50px;min-height:auto;}
+.nhero h1{font-size:2.4rem;}
+.nhero-sub{font-size:.95rem;}
+.nhero-acts{flex-direction:column;align-items:stretch;}
+.nhero-acts .btn-br,.nhero-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+.nnav{padding:0 4%;}
+.nnav-logo img{height:40px;}
+.ndiy-g{grid-template-columns:1fr;gap:3rem;}
+.nfnd-g{grid-template-columns:1fr;gap:3rem;}
+.nbiz-in{grid-template-columns:1fr;gap:2rem;}
+.npr-g{grid-template-columns:1fr;max-width:100%;}
+.npr-c.nft{transform:none;}
+.ndiy-bn-g{grid-template-columns:1fr;gap:1.5rem;}
+.npkg-cn{grid-template-columns:1fr;}
+.ncta-acts{flex-direction:column;align-items:stretch;}
+.ncta-acts .btn-br,.ncta-acts .btn-out,.ncta-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+.nftr-bt{flex-direction:column;align-items:center;text-align:center;}
 }
+@media(max-width:480px){
+.nhero h1{font-size:2rem;}
+.nst{font-size:1.6rem;}
+.nsec{padding:4rem 5%;}
+.nstats{padding:1.5rem 5%;}
+}
+@media(max-width:768px){#nnavMobileCta{display:block !important;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1rem;color:#fff;}}
 </style>
 
 <div class="nw">
 
 <nav class="nnav" id="nnav">
   <div class="nnav-logo"><img src="https://d1yei2z3i6k35z.cloudfront.net/16088733/69ecfba7287409.81812565_ChatGPTImageApr25202601_36_12PM.png" alt="NextUP Enterprise"></div>
+  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta" style="display:none;" id="nnavMobileCta">Get Started</a>
   <ul class="nnav-links">
     <li><a href="#nabout">About</a></li>
     <li><a href="#nhow">How It Works</a></li>
