@@ -270,6 +270,7 @@
 .ncta-acts .btn-br,.ncta-acts .btn-out,.ncta-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
 .nftr-bt{flex-direction:column;align-items:center;text-align:center;}
 }
+@media(max-width:768px){.nscrl{display:none;}}
 @media(max-width:480px){
 .nhero h1{font-size:2rem;}
 .nst{font-size:1.6rem;}
@@ -277,13 +278,42 @@
 .nstats{padding:1.5rem 5%;}
 }
 @media(max-width:768px){#nnavMobileCta{display:block !important;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1rem;color:#fff;}}
+
+/* HAMBURGER BUTTON */
+.nmob-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:1001;}
+.nmob-btn span{display:block;width:22px;height:2px;background:var(--nb);border-radius:1px;transition:all .3s;}
+.nmob-btn.nopen span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nmob-btn.nopen span:nth-child(2){opacity:0;}
+.nmob-btn.nopen span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* MOBILE DROPDOWN */
+.nmob-menu{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(5,5,5,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,.2);z-index:999;flex-direction:column;padding:1rem 0;}
+.nmob-menu.nopen{display:flex;}
+.nmob-menu a{color:var(--gl);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 5%;border-bottom:1px solid rgba(179,128,46,.07);transition:all .2s;}
+.nmob-menu a:hover{color:var(--nl);background:rgba(179,128,46,.05);}
+.nmob-menu .nmob-cta{background:var(--nb);color:#fff!important;margin:1rem 5% .5rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);text-align:center;font-weight:700;border:none;}
+.nmob-menu .nmob-cta-biz{background:var(--ch);color:#fff!important;margin:.5rem 5% 1rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);text-align:center;font-weight:700;border:none;}
+/* HERO BIZ BUTTON */
+.nhero-biz-btn{display:inline-block;background:rgba(179,128,46,.12);border:1px solid rgba(179,128,46,.35);color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.4rem;margin-top:.5rem;transition:all .25s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+.nhero-biz-btn:hover{background:rgba(179,128,46,.2);border-color:var(--nb);}
+/* SHOW HAMBURGER ON MOBILE */
+@media(max-width:768px){
+  .nmob-btn{display:flex;}
+  .nnav-links{display:none!important;}
+}
+/* LOGO - invert for dark background since logo has white bg */
+.nnav-logo img{height:44px;background:transparent;}
+
+
+.btn-biz-hero{display:inline-flex;align-items:center;gap:.5rem;background:rgba(179,128,46,.12);border:1px solid rgba(179,128,46,.4);color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.6rem;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;}
+.btn-biz-hero:hover{background:rgba(179,128,46,.22);border-color:var(--nb);transform:translateY(-2px);}
+@media(max-width:768px){.btn-biz-hero{font-size:.72rem;padding:.8rem 1rem;width:100%;justify-content:center;clip-path:none;border-radius:2px;}}
+
 </style>
 
 <div class="nw">
 
 <nav class="nnav" id="nnav">
-  <div class="nnav-logo"><img src="https://d1yei2z3i6k35z.cloudfront.net/16088733/69ecfba7287409.81812565_ChatGPTImageApr25202601_36_12PM.png" alt="NextUP Enterprise"></div>
-  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta" style="display:none;" id="nnavMobileCta">Get Started</a>
+  <div class="nnav-logo"><img src="logo.png" alt="NextUP Enterprise"></div>
   <ul class="nnav-links">
     <li><a href="#nabout">About</a></li>
     <li><a href="#nhow">How It Works</a></li>
@@ -293,7 +323,20 @@
     <li><a href="#nfaq">FAQ</a></li>
     <li><a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta">Get Started</a></li>
   </ul>
+  <button class="nmob-btn" id="nhamburger" onclick="ntoggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nmob-menu" id="nmobMenu">
+  <a href="#nabout" onclick="ntoggleMenu()">About</a>
+  <a href="#nhow" onclick="ntoggleMenu()">How It Works</a>
+  <a href="#npricing" onclick="ntoggleMenu()">Pricing</a>
+  <a href="#ndiy" onclick="ntoggleMenu()">DIY Kit — $47</a>
+  <a href="#nbiz" onclick="ntoggleMenu()">&#9733; Business Services</a>
+  <a href="#nfaq" onclick="ntoggleMenu()">FAQ</a>
+  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nmob-cta" onclick="ntoggleMenu()">Get Started — Credit Repair</a>
+  <a href="https://www.nextupcapitalgroup.com/" class="nmob-cta-biz" onclick="ntoggleMenu()" target="_blank">Explore Business Services</a>
+</div>
 
 <section class="nhero" id="ntop">
   <div class="nhero-bg"></div><div class="nhero-grid"></div>
@@ -305,6 +348,10 @@
     <div class="nhero-acts nfu nd4">
       <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="btn-br">Start Your Comeback &#8594;</a>
       <a href="https://calendly.com/nextupcredit/15min" class="btn-gh">Free 15-Min Consultation &#8594;</a>
+    </div>
+    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(179,128,46,.2);" class="nfu nd4">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gr);margin-bottom:.75rem;">Also from NextUP</p>
+      <a href="#nbiz" class="btn-biz-hero">&#9733;&nbsp; Starting a Business? Get 6 Months Credit Repair FREE &#8594;</a>
     </div>
   </div>
   <div class="nscrl"><div class="nscrl-line"></div><span class="nscrl-txt">Scroll</span></div>
@@ -608,7 +655,7 @@
   <div class="nftr-in">
     <div class="nftr-tp">
       <div class="nftr-br">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/16088733/69ecfba7287409.81812565_ChatGPTImageApr25202601_36_12PM.png" alt="NextUP Enterprise">
+        <img src="logo.png" alt="NextUP Enterprise">
         <p>Professional credit repair and rebuilding services. Dispute inaccurate items, build your score, and get approved for the things that matter.</p>
       </div>
       <div class="nftr-cl"><h4>Navigate</h4><ul><li><a href="#nabout">About Yordyn</a></li><li><a href="#nhow">How It Works</a></li><li><a href="#npricing">Pricing</a></li><li><a href="#ndiy">DIY Kit &mdash; $47</a></li><li><a href="#nbiz">For Entrepreneurs</a></li><li><a href="#nfaq">FAQ</a></li></ul></div>
@@ -623,6 +670,23 @@
 
 <script>
 (function(){
+  function ntoggleMenu(){
+    var menu = document.getElementById('nmobMenu');
+    var btn = document.getElementById('nhamburger');
+    if(!menu||!btn)return;
+    menu.classList.toggle('nopen');
+    btn.classList.toggle('nopen');
+  }
+  window.ntoggleMenu = ntoggleMenu;
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e){
+    var menu = document.getElementById('nmobMenu');
+    var btn = document.getElementById('nhamburger');
+    if(menu && btn && !menu.contains(e.target) && !btn.contains(e.target)){
+      menu.classList.remove('nopen');
+      btn.classList.remove('nopen');
+    }
+  });
   function nfaq(el){var it=el.parentElement;var op=it.classList.contains('nop');document.querySelectorAll('.nfaq-it').forEach(function(i){i.classList.remove('nop');});if(!op)it.classList.add('nop');}
   window.nfaq=nfaq;
   function npkg(n){var p=document.getElementById('npk'+n);if(!p)return;var op=p.classList.contains('nop');document.querySelectorAll('.npkg').forEach(function(x){x.classList.remove('nop');});if(!op)p.classList.add('nop');}
