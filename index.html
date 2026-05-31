@@ -432,7 +432,6 @@
 
 <nav class="nnav" id="nnav">
   <div class="nnav-logo"><img src="logo.png" alt="NextUP Enterprise"></div>
-  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta" style="display:none;" id="nnavMobileCta">Get Started</a>
   <ul class="nnav-links">
     <li><a href="#nabout">About</a></li>
     <li><a href="#nhow">How It Works</a></li>
@@ -442,7 +441,20 @@
     <li><a href="#nfaq">FAQ</a></li>
     <li><a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta">Get Started</a></li>
   </ul>
+  <button class="nmob-btn" id="nhamburger" onclick="ntoggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nmob-menu" id="nmobMenu">
+  <a href="#nabout" onclick="ntoggleMenu()">About</a>
+  <a href="#nhow" onclick="ntoggleMenu()">How It Works</a>
+  <a href="#npricing" onclick="ntoggleMenu()">Pricing</a>
+  <a href="#ndiy" onclick="ntoggleMenu()">DIY Kit — $47</a>
+  <a href="#nbiz" onclick="ntoggleMenu()">&#9733; Business Services</a>
+  <a href="#nfaq" onclick="ntoggleMenu()">FAQ</a>
+  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nmob-cta" onclick="ntoggleMenu()">Get Started — Credit Repair</a>
+  <a href="https://www.nextupcapitalgroup.com/" class="nmob-cta-biz" onclick="ntoggleMenu()" target="_blank">Explore Business Services</a>
+</div>
 
 <section class="nhero" id="ntop">
   <div class="nhero-bg"></div><div class="nhero-grid"></div>
