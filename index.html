@@ -1,4 +1,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="NextUP Enterprise | Credit Repair & Build Credit">
+<meta property="og:description" content="150+ clients helped. Real strategies. Real results. Start your credit comeback today.">
+<meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
+<meta property="og:url" content="https://nextupenterprise.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -351,9 +360,75 @@
   box-shadow: 0 14px 36px rgba(0,0,0,0.15), 0 4px 16px rgba(179,128,46,0.15) !important;
 }
 
+
+/* ── LOADING SCREEN ── */
+#nue-loader {
+  position: fixed;
+  inset: 0;
+  background: #0D0D0D;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#nue-loader.nue-loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+.nue-loader-logo {
+  width: 160px;
+  animation: nueLoaderPulse 1.5s ease-in-out infinite;
+  filter: brightness(0) invert(1);
+}
+@keyframes nueLoaderPulse {
+  0%,100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.05); }
+}
+.nue-loader-bar-wrap {
+  width: 200px;
+  height: 2px;
+  background: rgba(179,128,46,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.nue-loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--nb), var(--nl), var(--nb));
+  background-size: 200% 100%;
+  border-radius: 2px;
+  animation: nueBarFill 1.8s ease forwards, nueBarShimmer 1s linear infinite;
+}
+@keyframes nueBarFill {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes nueBarShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.nue-loader-txt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(179,128,46,0.6);
+}
+
 </style>
 
 <div class="nw">
+<div id="nue-loader">
+  <img src="logo.png" alt="NextUP Enterprise" class="nue-loader-logo">
+  <div class="nue-loader-bar-wrap">
+    <div class="nue-loader-bar"></div>
+  </div>
+  <span class="nue-loader-txt">Loading NextUP Enterprise</span>
+</div>
 
 <nav class="nnav" id="nnav">
   <div class="nnav-logo"><img src="logo.png" alt="NextUP Enterprise"></div>
@@ -701,6 +776,14 @@
 
 <script>
 (function(){
+  // LOADING SCREEN
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      var loader = document.getElementById('nue-loader');
+      if(loader) loader.classList.add('nue-loaded');
+    }, 1800);
+  });
+
   function ntoggleMenu(){
     var menu=document.getElementById('nmobMenu');
     var btn=document.getElementById('nhamburger');
