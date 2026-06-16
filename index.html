@@ -1,3 +1,20 @@
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2200432150733133');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2200432150733133&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="NextUP Enterprise | Credit Repair & Build Credit">
 <meta property="og:description" content="150+ clients helped. Real strategies. Real results. Start your credit comeback today.">
@@ -433,6 +450,82 @@
 .nue-form-submit:disabled { opacity:.6; cursor:not-allowed; }
 @media(max-width:600px) { .nue-form-row { grid-template-columns:1fr; } }
 
+
+/* ── GOOGLE TRANSLATE ── */
+#google_translate_element { display:none; }
+.goog-te-banner-frame { display:none !important; }
+.goog-te-menu-value:hover { text-decoration:none; }
+body { top:0 !important; }
+.skiptranslate { display:none !important; }
+/* Translate button */
+.nue-translate-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:transparent;
+  border:1px solid rgba(179,128,46,0.4);
+  color:var(--nl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.4rem .9rem;
+  cursor:pointer;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.nue-translate-btn:hover {
+  background:rgba(179,128,46,0.1);
+  border-color:var(--nb);
+  color:var(--nbr);
+}
+.nue-translate-btn .nue-globe {
+  font-size:.9rem;
+}
+/* Mobile translate button in dropdown */
+.nmob-translate {
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:var(--nl) !important;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;
+  font-size:.9rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.9rem 5%;
+  border-bottom:1px solid rgba(179,128,46,.07);
+  cursor:pointer;
+  background:none;
+  width:100%;
+  text-align:left;
+}
+.nmob-translate:hover { background:rgba(179,128,46,.05) !important; }
+/* Hero translate button */
+.nue-hero-translate {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:rgba(179,128,46,0.08);
+  border:1px solid rgba(179,128,46,0.25);
+  color:var(--gl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.5rem 1rem;
+  cursor:pointer;
+  transition:all .2s;
+  margin-top:.75rem;
+}
+.nue-hero-translate:hover {
+  background:rgba(179,128,46,0.15);
+  border-color:var(--nb);
+  color:var(--nl);
+}
+
 </style>
 
 <div class="nw">
@@ -464,6 +557,10 @@
     <li><a href="#nfaq">FAQ</a></li>
     <li><a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta">Get Started</a></li>
   </ul>
+  <button class="nue-translate-btn" id="nueTranslateBtn" onclick="nueTranslatePage()">
+    <span class="nue-globe">🌐</span>
+    <span class="nue-translate-label">Español</span>
+  </button>
   <button class="nmob-btn" id="nhamburger" onclick="ntoggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -474,6 +571,9 @@
   <a href="#npricing" onclick="ntoggleMenu()">Pricing</a>
   <a href="#ndiy" onclick="ntoggleMenu()">DIY Kit — $47</a>
   <a href="#nbiz" onclick="ntoggleMenu()">&#9733; Business Services</a>
+  <button class="nmob-translate" id="nueMobileTranslateBtn" onclick="nueTranslatePage();ntoggleMenu()">
+    🌐 <span class="nue-translate-label">Ver en Español</span>
+  </button>
   <a href="#ncontact" onclick="ntoggleMenu()">Contact</a>
   <a href="#nfaq" onclick="ntoggleMenu()">FAQ</a>
   <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nmob-cta" onclick="ntoggleMenu()">Get Started — Credit Repair</a>
@@ -495,6 +595,9 @@
       <p style="font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gr);margin-bottom:.75rem;">Also from NextUP</p>
       <a href="#nbiz" class="btn-biz-hero">&#9733;&nbsp; Starting a Business? Get 6 Months Credit Repair FREE &#8594;</a>
     </div>
+  <button class="nue-hero-translate" id="nueHeroTranslateBtn" onclick="nueTranslatePage()">
+      🌐 <span class="nue-translate-label">Ver esta página en Español</span>
+    </button>
   </div>
   <div class="nscrl"><div class="nscrl-line"></div><span class="nscrl-txt">Scroll</span></div>
 </section>
@@ -994,6 +1097,58 @@
 </footer>
 
 </div>
+
+
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'es',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+function nueTranslatePage() {
+  var btn = document.getElementById('nueTranslateBtn');
+  var mobileBtn = document.getElementById('nueMobileTranslateBtn');
+  var heroBtn = document.getElementById('nueHeroTranslateBtn');
+  var isSpanish = document.documentElement.lang === 'es' ||
+    (document.cookie.indexOf('googtrans=/en/es') !== -1);
+  if (isSpanish) {
+    // Switch back to English
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
+    location.reload();
+  } else {
+    // Translate to Spanish via Google Translate widget
+    var select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = 'es';
+      select.dispatchEvent(new Event('change'));
+      updateTranslateBtns(true);
+    } else {
+      // Fallback: load and trigger
+      setTimeout(function() {
+        var sel = document.querySelector('.goog-te-combo');
+        if (sel) {
+          sel.value = 'es';
+          sel.dispatchEvent(new Event('change'));
+          updateTranslateBtns(true);
+        }
+      }, 800);
+    }
+  }
+}
+function updateTranslateBtns(isSpanish) {
+  var btns = document.querySelectorAll('.nue-translate-label');
+  btns.forEach(function(b) {
+    b.textContent = isSpanish ? 'English' : 'Español';
+  });
+}
+window.nueTranslatePage = nueTranslatePage;
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
 (function(){
