@@ -526,6 +526,50 @@ body { top:0 !important; }
   color:var(--nl);
 }
 
+
+/* CLIENT LOGIN BUTTON */
+.nue-login-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  background:rgba(179,128,46,0.12);
+  border:1px solid rgba(179,128,46,0.45);
+  color:var(--nl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.42rem .95rem;
+  transition:all .2s;
+  white-space:nowrap;
+  text-decoration:none;
+}
+.nue-login-btn:hover {
+  background:rgba(179,128,46,0.22);
+  border-color:var(--nb);
+  color:var(--nbr);
+}
+/* Mobile login link */
+.nmob-login {
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:#fff !important;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.9rem 5%;
+  border-bottom:1px solid rgba(179,128,46,.15);
+  background:rgba(179,128,46,0.08);
+  text-decoration:none;
+}
+.nmob-login:hover { background:rgba(179,128,46,.15) !important; }
+/* Hide login btn on mobile - only show in dropdown */
+@media(max-width:768px) { .nue-login-btn { display:none; } }
+
 </style>
 
 <div class="nw">
@@ -557,6 +601,9 @@ body { top:0 !important; }
     <li><a href="#nfaq">FAQ</a></li>
     <li><a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="nnav-cta">Get Started</a></li>
   </ul>
+  <a href="https://www.secureclientaccess.com/" target="_blank" class="nue-login-btn">
+    <span>&#128274;</span> Client Login
+  </a>
   <button class="nue-translate-btn" id="nueTranslateBtn" onclick="nueTranslatePage()">
     <span class="nue-globe">🌐</span>
     <span class="nue-translate-label">Español</span>
@@ -571,6 +618,7 @@ body { top:0 !important; }
   <a href="#npricing" onclick="ntoggleMenu()">Pricing</a>
   <a href="#ndiy" onclick="ntoggleMenu()">DIY Kit — $47</a>
   <a href="#nbiz" onclick="ntoggleMenu()">&#9733; Business Services</a>
+  <a href="https://www.secureclientaccess.com/" target="_blank" class="nmob-login" onclick="ntoggleMenu()">&#128274; Client Login</a>
   <button class="nmob-translate" id="nueMobileTranslateBtn" onclick="nueTranslatePage();ntoggleMenu()">
     🌐 <span class="nue-translate-label">Ver en Español</span>
   </button>
