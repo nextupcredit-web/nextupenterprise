@@ -1,0 +1,332 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Get Started — NextUP Enterprise">
+<meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2200432150733133');fbq('track','PageView');fbq('track','InitiateCheckout');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2200432150733133&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--nb:#b3802e;--nl:#cb9a42;--nbr:#d4a84e;--bk:#050505;--bk2:#0D0D0D;--bk3:#141414;--wh:#FAFAF8;--gl:#AAAAAA;--gr:#888;--lb:#F7F5F0;--ow:#F4F1EC;}
+body{font-family:'Barlow',sans-serif;background:var(--bk);color:var(--wh);min-height:100vh;overflow-x:hidden;}
+a{text-decoration:none;}
+
+/* NAV */
+.co-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(5,5,5,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,0.2);}
+.co-nav-logo a{text-decoration:none;}
+.co-nav-logo .co-logo-main{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
+.co-nav-logo .co-logo-main span{color:var(--nb);}
+.co-nav-logo .co-logo-sub{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gr);display:block;}
+.co-secure{display:flex;align-items:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);}
+.co-secure-dot{width:7px;height:7px;background:#2ecc71;border-radius:50%;animation:coPulse 2s ease-in-out infinite;}
+@keyframes coPulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* HERO */
+.co-hero{padding:100px 5% 0;min-height:100vh;display:flex;align-items:flex-start;gap:3rem;position:relative;overflow:hidden;}
+.co-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 40%,rgba(179,128,46,0.08) 0%,transparent 65%),var(--bk);pointer-events:none;}
+.co-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(179,128,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(179,128,46,0.04) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);}
+
+/* LEFT SIDE */
+.co-left{flex:1;padding:2rem 0 4rem;position:relative;z-index:1;}
+.co-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--nl);margin-bottom:1rem;}
+.co-eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--nb);}
+.co-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;line-height:1.05;margin-bottom:1.25rem;color:#fff;}
+.co-left h1 em{font-style:italic;color:var(--nl);}
+.co-left p{font-size:.95rem;color:var(--gl);line-height:1.75;font-weight:300;max-width:480px;margin-bottom:2rem;}
+.co-left p strong{color:#fff;font-weight:600;}
+
+/* PLAN SELECTOR */
+.co-plans{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;}
+.co-plan{border:1px solid rgba(179,128,46,0.2);padding:1.25rem 1.5rem;cursor:pointer;transition:all .25s;position:relative;background:rgba(255,255,255,0.02);}
+.co-plan:hover{border-color:rgba(179,128,46,0.5);background:rgba(179,128,46,0.05);}
+.co-plan.selected{border:2px solid var(--nb);background:rgba(179,128,46,0.08);}
+.co-plan.selected::before{content:'✓';position:absolute;top:.75rem;right:1rem;color:var(--nb);font-weight:700;font-size:1rem;}
+.co-plan-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.35rem;}
+.co-plan-name{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;}
+.co-plan-badge{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--nb);color:#fff;padding:.2rem .6rem;}
+.co-plan-price{display:flex;align-items:baseline;gap:.15rem;}
+.co-plan-price .cur{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--nb);}
+.co-plan-price .amt{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1;}
+.co-plan-price .per{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:var(--gr);margin-left:.15rem;}
+.co-plan-desc{font-size:.82rem;color:var(--gr);margin-top:.25rem;font-weight:300;}
+
+/* WHAT'S INCLUDED */
+.co-includes{margin-bottom:2rem;}
+.co-includes-title{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--nb);margin-bottom:.85rem;padding-bottom:.4rem;border-bottom:1px solid rgba(179,128,46,0.15);}
+.co-includes ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.co-includes li{display:flex;align-items:flex-start;gap:.55rem;font-size:.87rem;color:var(--gl);}
+.co-includes li::before{content:'';display:block;width:12px;height:12px;min-width:12px;background:var(--nb);clip-path:polygon(12px 2px,5px 9px,2px 6px,0px 8px,5px 13px,14px 3px);margin-top:2px;flex-shrink:0;}
+.co-includes li.co-note{color:rgba(179,128,46,0.8);font-style:italic;}
+.co-includes li strong{color:#fff;font-weight:600;}
+.co-includes li.co-note::before{background:rgba(179,128,46,0.5);}
+
+/* TRUST BADGES */
+.co-trust{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.co-trust-item{display:flex;align-items:center;gap:.4rem;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);}
+.co-trust-item span{font-size:.9rem;}
+
+/* RIGHT SIDE - PAYMENT FORM */
+.co-right{width:420px;flex-shrink:0;position:sticky;top:90px;align-self:flex-start;padding-bottom:4rem;position:relative;z-index:1;}
+.co-form-card{background:var(--bk2);border:1px solid rgba(179,128,46,0.2);padding:2.25rem;}
+.co-form-card::before{content:'';display:block;height:3px;background:linear-gradient(90deg,transparent,var(--nb),var(--nl),var(--nb),transparent);margin:-2.25rem -2.25rem 2rem;}
+.co-form-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.25rem;}
+.co-form-sub{font-size:.8rem;color:var(--gr);font-weight:300;margin-bottom:1.5rem;}
+.co-selected-plan{background:rgba(179,128,46,0.08);border:1px solid rgba(179,128,46,0.25);padding:.85rem 1.1rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.co-selected-plan-name{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;}
+.co-selected-plan-price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--nb);}
+
+/* Form fields */
+.co-field{margin-bottom:1.1rem;}
+.co-label{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gr);display:block;margin-bottom:.4rem;}
+.co-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(179,128,46,0.2);color:#fff;font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:300;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+.co-input:focus{border-color:var(--nb);box-shadow:0 0 0 3px rgba(179,128,46,0.1);}
+.co-input::placeholder{color:rgba(255,255,255,0.2);}
+.co-input-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+
+/* Authorize.net iframe container */
+.co-authnet-wrap{margin-bottom:1.25rem;}
+.co-authnet-wrap iframe{width:100%;border:none;min-height:280px;}
+
+/* Submit */
+.co-submit{width:100%;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;padding:1.1rem;border:none;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
+.co-submit:hover{background:var(--nbr);transform:translateY(-1px);box-shadow:0 6px 20px rgba(179,128,46,0.25);}
+.co-divider{height:1px;background:rgba(179,128,46,0.12);margin:1.25rem 0;}
+.co-secure-note{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);}
+
+/* Monitoring notice */
+.co-monitor-note{background:rgba(179,128,46,0.06);border:1px solid rgba(179,128,46,0.2);border-left:3px solid var(--nb);padding:.85rem 1rem;margin-bottom:1.25rem;}
+.co-monitor-note p{font-size:.78rem;color:var(--gl);line-height:1.6;}
+.co-monitor-note p strong{color:var(--nl);}
+
+/* FOOTER */
+.co-footer{background:var(--bk);border-top:1px solid rgba(179,128,46,0.1);padding:2rem 5%;text-align:center;}
+.co-footer p{font-size:.76rem;color:rgba(136,136,136,0.5);font-weight:300;}
+.co-footer a{color:var(--gr);transition:color .2s;}
+.co-footer a:hover{color:var(--nl);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .co-hero{flex-direction:column;padding-top:90px;gap:2rem;}
+  .co-right{width:100%;position:relative;top:0;}
+  .co-left{padding:1.5rem 0 0;}
+}
+@media(max-width:480px){
+  .co-input-row{grid-template-columns:1fr;}
+  .co-plan{padding:1rem 1.1rem;}
+}
+
+/* STRIPE BUTTONS */
+.co-stripe-btn {
+  display:block;
+  background:var(--bk3);
+  border:1px solid rgba(179,128,46,0.2);
+  padding:1.1rem 1.25rem;
+  cursor:pointer;
+  transition:all .25s;
+  text-decoration:none;
+  color:#fff;
+}
+.co-stripe-btn:hover {
+  border-color:rgba(179,128,46,0.5);
+  background:rgba(179,128,46,0.08);
+  transform:translateY(-1px);
+}
+.co-stripe-btn.co-stripe-active {
+  border:2px solid var(--nb);
+  background:rgba(179,128,46,0.1);
+}
+
+
+/* Stripe button glow animation */
+.co-stripe-btn.co-stripe-active div:last-child {
+  animation: coStripeGlow 2.5s ease-in-out infinite;
+}
+@keyframes coStripeGlow {
+  0%,100% { box-shadow: 0 4px 20px rgba(179,128,46,0.3); }
+  50%      { box-shadow: 0 6px 30px rgba(179,128,46,0.6); }
+}
+.co-stripe-btn:hover div:last-child {
+  filter: brightness(1.1);
+}
+
+</style>
+
+<!-- PAGE -->
+<nav class="co-nav">
+  <div class="co-nav-logo">
+    <a href="index.html">
+      <div class="co-logo-main">NEXT<span>UP</span></div>
+      <span class="co-logo-sub">Enterprise</span>
+    </a>
+  </div>
+  <div class="co-secure">
+    <div class="co-secure-dot"></div>
+    Secure Checkout
+  </div>
+</nav>
+
+<div class="co-hero">
+  <div class="co-hero-grid"></div>
+
+  <!-- LEFT -->
+  <div class="co-left">
+    <div class="co-eyebrow">Start Your Credit Comeback</div>
+    <h1>Choose your plan<br><em>and let's get to work.</em></h1>
+    <p>Professional credit repair with a real human working your file every month. <strong>Select a plan below</strong> — you'll have access to your client portal within 24 hours.</p>
+
+    <!-- PLAN SELECTOR -->
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--nb);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem;">
+      <span style="display:block;width:22px;height:1px;background:var(--nb);"></span>
+      Select Your Plan
+      <span style="display:block;flex:1;height:1px;background:rgba(179,128,46,0.2);"></span>
+    </div>
+    <div class="co-plans">
+      <div class="co-plan selected" id="plan-6mo" onclick="selectPlan('6mo')">
+        <div class="co-plan-top">
+          <span class="co-plan-name">Credit Builder — 6 Months</span>
+          <span class="co-plan-badge">Best Value</span>
+        </div>
+        <div class="co-plan-price">
+          <span class="cur">$</span><span class="amt">749</span><span class="per">one-time</span>
+        </div>
+        <div class="co-plan-desc">6 full months of done-for-you credit repair. One flat fee — save vs monthly.</div>
+      </div>
+      <div class="co-plan" id="plan-mo" onclick="selectPlan('mo')">
+        <div class="co-plan-top">
+          <span class="co-plan-name">Month-to-Month</span>
+        </div>
+        <div class="co-plan-price">
+          <span class="cur">$</span><span class="amt">149</span><span class="per">/month · cancel anytime</span>
+        </div>
+        <div class="co-plan-desc">Start today, no long-term commitment. Cancel anytime with no penalty.</div>
+      </div>
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <div class="co-includes">
+      <div class="co-includes-title">What's included in both plans</div>
+      <ul>
+        <li>Disputes to all 3 bureaus — Equifax, Experian &amp; TransUnion</li>
+        <li>Monthly dispute cycles — we work your file every single month</li>
+        <li>Credit building guidance — not just removal, but growth</li>
+        <li>24/7 client portal access — track everything in real time</li>
+        <li>Real human support — Yordyn and the team, not a bot</li>
+        <li class="co-note">&#9733; SmartCredit monitoring required — $24.99/mo (set up after payment)</li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE CHALLENGE -->
+    <div class="co-includes" style="margin-top:1.75rem;">
+      <div class="co-includes-title">Included in price — Items we challenge &amp; dispute</div>
+      <ul>
+        <li><strong>Late Payments</strong> — goodwill adjustments &amp; FCRA challenges</li>
+        <li><strong>Collections</strong> — validation, deletion &amp; pay-to-delete strategies</li>
+        <li><strong>Charge-Offs</strong> — Metro 2 compliance, FCRA &amp; TILA disputes</li>
+        <li><strong>Repossessions</strong> — full audit of every layer of the account</li>
+        <li><strong>Bankruptcies</strong> — inaccurate reporting &amp; outdated entries</li>
+        <li><strong>Medical Debt</strong> — HIPAA-based dispute strategies</li>
+        <li><strong>Evictions</strong> — two-phase removal process</li>
+        <li><strong>Inquiries</strong> — unauthorized hard pull removals</li>
+        <li><strong>Identity Errors</strong> — wrong addresses, names &amp; mixed files</li>
+        <li><strong>Student Loans</strong> — inaccurate status, duplicate reporting</li>
+        <li><strong>Judgments &amp; Liens</strong> — outdated or unverifiable public records</li>
+      </ul>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(179,128,46,0.04);border:1px solid rgba(179,128,46,0.12);border-left:3px solid rgba(179,128,46,0.3);">
+      <p style="font-size:.75rem;color:rgba(136,136,136,0.7);line-height:1.65;font-weight:300;font-style:italic;">Results vary based on your individual credit file. We cannot guarantee removal of any specific item. We challenge inaccurate, unverifiable, or outdated information using FCRA, FDCPA, HIPAA &amp; TILA consumer protection laws. No company can legally guarantee credit repair results.</p>
+    </div>
+
+    <!-- TRUST -->
+    <div class="co-trust">
+      <div class="co-trust-item"><span>🔒</span> Secure Payment</div>
+      <div class="co-trust-item"><span>⭐</span> 97% Satisfaction</div>
+      <div class="co-trust-item"><span>👥</span> 150+ Clients</div>
+      <div class="co-trust-item"><span>✅</span> Cancel Anytime</div>
+    </div>
+  </div>
+
+  <!-- RIGHT - PAYMENT -->
+  <div class="co-right">
+    <div class="co-form-card">
+      <div class="co-form-title">Select a Plan &amp; Pay</div>
+      <div class="co-form-sub">You'll receive portal access within 24 hours of payment.</div>
+
+      <div class="co-selected-plan">
+        <span class="co-selected-plan-name" id="co-plan-label">Credit Builder — 6 Months</span>
+        <span class="co-selected-plan-price" id="co-plan-price">$749</span>
+      </div>
+
+      <div class="co-monitor-note" style="border-left-color:#b3802e;background:rgba(179,128,46,0.08);">
+        <p><strong>&#9733; Credit Monitoring Required:</strong> All clients must enroll in <strong>SmartCredit</strong> at <strong>$24.99/mo</strong> — this gives us real-time access to all 3 bureaus to work your file. You'll set this up on the thank you page after payment.</p>
+      </div>
+
+      <!-- Stripe Checkout Buttons -->
+      <div style="display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.25rem;">
+        <a href="https://buy.stripe.com/3cIbJ39fQ8uh4YKaOA5Rm0F" id="stripe-6mo-btn" class="co-stripe-btn co-stripe-active" target="_blank">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;">Credit Builder — 6 Months</div>
+              <div style="font-size:.75rem;color:rgba(255,255,255,0.7);margin-top:.2rem;font-weight:300;">Best value · One-time payment</div>
+            </div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;">$749</div>
+          </div>
+          <div style="margin-top:.85rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;padding:1rem;text-align:center;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);box-shadow:0 4px 20px rgba(179,128,46,0.4);transition:all .25s;">&#9889; Pay $749 — Get Started &#8594;</div>
+        </a>
+        <a href="https://buy.stripe.com/aFa3cx8bM8uh9f06yk5Rm0G" id="stripe-mo-btn" class="co-stripe-btn" target="_blank">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;">Month-to-Month</div>
+              <div style="font-size:.75rem;color:rgba(255,255,255,0.7);margin-top:.2rem;font-weight:300;">Cancel anytime · No commitment</div>
+            </div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;">$149<span style="font-size:.9rem;font-weight:400;">/mo</span></div>
+          </div>
+          <div style="margin-top:.85rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;padding:1rem;text-align:center;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);box-shadow:0 4px 20px rgba(179,128,46,0.4);transition:all .25s;">&#9889; Pay $149/mo — Get Started &#8594;</div>
+        </a>
+      </div>
+
+      <div class="co-divider"></div>
+      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL Encryption</div>
+    </div>
+
+    <div style="margin-top:1rem;text-align:center;">
+      <a href="index.html" style="font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);">&#8592; Back to main site</a>
+    </div>
+  </div>
+</div>
+
+<footer class="co-footer">
+  <p>&copy; 2026 NextUP Enterprise &nbsp;·&nbsp; <a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a> &nbsp;·&nbsp; <a href="tel:5702031530">570-203-1530</a></p>
+</footer>
+
+<script>
+(function(){
+  function selectPlan(plan) {
+    document.querySelectorAll('.co-plan').forEach(function(p){ p.classList.remove('selected'); });
+    document.getElementById('plan-' + plan).classList.add('selected');
+    var btn6mo = document.getElementById('stripe-6mo-btn');
+    var btnMo  = document.getElementById('stripe-mo-btn');
+    if(plan === '6mo') {
+      document.getElementById('co-plan-label').textContent = 'Credit Builder — 6 Months';
+      document.getElementById('co-plan-price').textContent = '$749';
+      if(btn6mo) btn6mo.classList.add('co-stripe-active');
+      if(btnMo)  btnMo.classList.remove('co-stripe-active');
+    } else {
+      document.getElementById('co-plan-label').textContent = 'Month-to-Month';
+      document.getElementById('co-plan-price').textContent = '$149/mo';
+      if(btnMo)  btnMo.classList.add('co-stripe-active');
+      if(btn6mo) btn6mo.classList.remove('co-stripe-active');
+    }
+  }
+  window.selectPlan = selectPlan;
+})();
+</script>
