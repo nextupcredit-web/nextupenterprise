@@ -157,6 +157,30 @@ a{text-decoration:none;}
   filter: brightness(1.1);
 }
 
+
+/* CLEAN PAY BUTTONS */
+.co-pay-btn {
+  display:block;
+  background:var(--bk3);
+  border:2px solid var(--nb);
+  padding:1.25rem 1.5rem;
+  text-decoration:none;
+  color:#fff;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+.co-pay-btn:hover { background:rgba(179,128,46,0.12); transform:translateY(-2px); box-shadow:0 8px 28px rgba(179,128,46,0.25); }
+.co-pay-btn-sec { border-color:rgba(179,128,46,0.35); background:var(--bk2); }
+.co-pay-btn-sec:hover { border-color:var(--nb); }
+.co-pay-btn-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
+.co-pay-btn-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; color:#fff; }
+.co-pay-btn-price { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; color:var(--nl); line-height:1; }
+.co-pay-btn-sub { font-size:.76rem; color:var(--gr); font-weight:300; margin-bottom:.9rem; }
+.co-pay-btn-action { background:var(--nb); color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:.88rem; letter-spacing:.18em; text-transform:uppercase; padding:.9rem; text-align:center; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); box-shadow:0 4px 18px rgba(179,128,46,0.35); }
+.co-pay-btn-action-sec { background:rgba(179,128,46,0.25); box-shadow:none; }
+.co-pay-btn:hover .co-pay-btn-action { background:var(--nbr); }
+
 </style>
 
 <!-- PAGE -->
@@ -258,44 +282,45 @@ a{text-decoration:none;}
   <!-- RIGHT - PAYMENT -->
   <div class="co-right">
     <div class="co-form-card">
-      <div class="co-form-title">Select a Plan &amp; Pay</div>
-      <div class="co-form-sub">You'll receive portal access within 24 hours of payment.</div>
+      <div class="co-form-title">Choose Your Plan</div>
+      <div class="co-form-sub">Secure checkout · Portal access within 24 hours</div>
 
-      <div class="co-selected-plan">
-        <span class="co-selected-plan-name" id="co-plan-label">Credit Builder — 6 Months</span>
-        <span class="co-selected-plan-price" id="co-plan-price">$749</span>
-      </div>
-
-      <div class="co-monitor-note" style="border-left-color:#b3802e;background:rgba(179,128,46,0.08);">
-        <p><strong>&#9733; Credit Monitoring Required:</strong> All clients must enroll in <strong>SmartCredit</strong> at <strong>$24.99/mo</strong> — this gives us real-time access to all 3 bureaus to work your file. You'll set this up on the thank you page after payment.</p>
-      </div>
-
-      <!-- Stripe Checkout Buttons -->
-      <div style="display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.25rem;">
-        <a href="https://buy.stripe.com/3cIbJ39fQ8uh4YKaOA5Rm0F" id="stripe-6mo-btn" class="co-stripe-btn co-stripe-active" target="_blank">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;">Credit Builder — 6 Months</div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,0.7);margin-top:.2rem;font-weight:300;">Best value · One-time payment</div>
-            </div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;">$749</div>
+      <!-- PLAN 1 -->
+      <div style="margin-bottom:1rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--nb);color:#fff;padding:.22rem .7rem;display:inline-block;margin-bottom:.6rem;">BEST VALUE</div>
+        <a href="https://buy.stripe.com/3cIbJ39fQ8uh4YKaOA5Rm0F" target="_blank" class="co-pay-btn">
+          <div class="co-pay-btn-top">
+            <span class="co-pay-btn-name">Credit Builder — 6 Months</span>
+            <span class="co-pay-btn-price">$749</span>
           </div>
-          <div style="margin-top:.85rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;padding:1rem;text-align:center;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);box-shadow:0 4px 20px rgba(179,128,46,0.4);transition:all .25s;">&#9889; Pay $749 — Get Started &#8594;</div>
-        </a>
-        <a href="https://buy.stripe.com/aFa3cx8bM8uh9f06yk5Rm0G" id="stripe-mo-btn" class="co-stripe-btn" target="_blank">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;">Month-to-Month</div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,0.7);margin-top:.2rem;font-weight:300;">Cancel anytime · No commitment</div>
-            </div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;">$149<span style="font-size:.9rem;font-weight:400;">/mo</span></div>
-          </div>
-          <div style="margin-top:.85rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;padding:1rem;text-align:center;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);box-shadow:0 4px 20px rgba(179,128,46,0.4);transition:all .25s;">&#9889; Pay $149/mo — Get Started &#8594;</div>
+          <div class="co-pay-btn-sub">One-time payment · Save vs monthly</div>
+          <div class="co-pay-btn-action">&#9889; Purchase Now &#8594;</div>
         </a>
       </div>
 
-      <div class="co-divider"></div>
-      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL Encryption</div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+        <div style="flex:1;height:1px;background:rgba(179,128,46,0.15);"></div>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gr);">or</span>
+        <div style="flex:1;height:1px;background:rgba(179,128,46,0.15);"></div>
+      </div>
+
+      <!-- PLAN 2 -->
+      <div style="margin-bottom:1.5rem;">
+        <a href="https://buy.stripe.com/aFa3cx8bM8uh9f06yk5Rm0G" target="_blank" class="co-pay-btn co-pay-btn-sec">
+          <div class="co-pay-btn-top">
+            <span class="co-pay-btn-name">Month-to-Month</span>
+            <span class="co-pay-btn-price">$149<span style="font-size:.9rem;font-weight:400;">/mo</span></span>
+          </div>
+          <div class="co-pay-btn-sub">Cancel anytime · No commitment</div>
+          <div class="co-pay-btn-action co-pay-btn-action-sec">Sign Up Now &#8594;</div>
+        </a>
+      </div>
+
+      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL</div>
+
+      <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(179,128,46,0.06);border:1px solid rgba(179,128,46,0.15);">
+        <p style="font-size:.75rem;color:var(--gr);font-weight:300;line-height:1.6;text-align:center;">&#9733; SmartCredit monitoring required at $24.99/mo — you'll set this up after payment</p>
+      </div>
     </div>
 
     <div style="margin-top:1rem;text-align:center;">
