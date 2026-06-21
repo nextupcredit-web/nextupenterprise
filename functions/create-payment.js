@@ -1,4 +1,4 @@
-const stripe = require('stripe')('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');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
