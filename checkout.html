@@ -574,37 +574,37 @@ body{top:0!important;}
 })();
 </script>
 
-<!-- Google Translate -->
-<div id="nue-translate-el" style="display:none;"></div>
-<script type="text/javascript">
-function googleTranslateElementInit(){
+<div id="co-gt-el" style="display:none;"></div>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=coInitTranslate"></script>
+<script>
+function coInitTranslate(){
   new google.translate.TranslateElement({
     pageLanguage:'en',
     includedLanguages:'es',
-    autoDisplay:false,
-    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
-  },'nue-translate-el');
+    autoDisplay:false
+  },'co-gt-el');
 }
 function nueTranslatePage(){
-  var isSpanish = document.cookie.indexOf('googtrans=/en/es') !== -1;
-  if(isSpanish){
-    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.'+location.hostname;
+  var isEs = document.cookie.indexOf('googtrans=/en/es') !== -1;
+  if(isEs){
+    ['','.'+(location.hostname)].forEach(function(d){
+      document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain='+d;
+    });
     location.reload();
     return;
   }
-  var tryTranslate = function(){
-    var select = document.querySelector('.goog-te-combo');
-    if(select){
-      select.value='es';
-      select.dispatchEvent(new Event('change'));
+  var attempt = 0;
+  var tryIt = function(){
+    var sel = document.querySelector('.goog-te-combo');
+    if(sel){
+      sel.value='es';
+      sel.dispatchEvent(new Event('change'));
       document.querySelectorAll('.co-trans-label').forEach(function(b){b.textContent='English';});
-    } else {
-      setTimeout(tryTranslate, 500);
+    } else if(attempt++ < 10){
+      setTimeout(tryIt, 400);
     }
   };
-  tryTranslate();
+  tryIt();
 }
-window.nueTranslatePage=nueTranslatePage;
+window.nueTranslatePage = nueTranslatePage;
 </script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
