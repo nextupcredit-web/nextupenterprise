@@ -5,14 +5,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel Code -->
-
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','2200432150733133');fbq('track','PageView');fbq('track','Purchase');
 </script>
-
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2200432150733133&ev=Purchase&noscript=1"/></noscript>
-
 <!-- End Meta Pixel Code -->
 
 <style>
@@ -100,20 +97,30 @@ a{text-decoration:none;}
 .calendly-inline-widget { border-top: 1px solid rgba(179,128,46,0.2); }
 @media(max-width:768px) { .calendly-inline-widget { height:900px !important; } }
 
+
+/* TRANSLATE */
+#google_translate_element{display:none;}
+.goog-te-banner-frame{display:none!important;}
+body{top:0!important;}
+.skiptranslate{display:none!important;}
+.co-translate-btn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid rgba(179,128,46,0.35);color:var(--nl);font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.38rem .85rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.co-translate-btn:hover{background:rgba(179,128,46,0.1);border-color:var(--nb);}
+
 </style>
 
 <!-- NAV -->
-
 <nav class="ty-nav">
   <div>
     <div class="ty-logo-main">NEXT<span>UP</span></div>
     <span class="ty-logo-sub">Enterprise</span>
   </div>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2ecc71;">&#10003; Payment Confirmed</div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="co-translate-btn" onclick="nueTranslatePage()">🌐 <span class="co-trans-label">Español</span></button>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2ecc71;">&#10003; Payment Confirmed</div>
+  </div>
 </nav>
 
 <!-- HERO -->
-
 <div class="ty-hero">
   <div class="ty-hero-grid"></div>
 
@@ -128,7 +135,6 @@ a{text-decoration:none;}
   <p style="position:relative;z-index:1;">Payment confirmed. <strong>You'll receive a confirmation email shortly</strong> with your next steps. Complete the two steps below to get started right away.</p>
 
   <!-- 3 STEPS -->
-
   <div class="ty-steps">
     <div class="ty-step">
       <div class="ty-step-num">01</div>
@@ -148,44 +154,66 @@ a{text-decoration:none;}
   </div>
 
   <!-- ACTION CARDS -->
-
   <div class="ty-actions">
 
-```
-<!-- Step 1 - Book Call - EMBEDDED CALENDLY -->
-<div class="ty-action-card ty-primary" style="flex-direction:column;align-items:stretch;padding:0;overflow:hidden;">
-  <div style="padding:1.5rem 2rem 1rem;">
-    <div class="ty-action-badge">Step 1 — Do This Now</div>
-    <div class="ty-action-title" style="margin-top:.5rem;">Book Your Onboarding Call</div>
-    <div class="ty-action-desc" style="margin-top:.35rem;">Pick a time below — we'll walk through your file and get your case started. <strong>Spots fill up fast.</strong></div>
-  </div>
-  <!-- Embedded Calendly -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/nextupcredit/credit-repair-onboarding?hide_gdpr_banner=1&background_color=0d0d0d&text_color=fafaf8&primary_color=b3802e" style="min-width:100%;height:700px;"></div>
-</div>
+    <!-- Step 1 - Book Call - EMBEDDED CALENDLY -->
+    <div class="ty-action-card ty-primary" style="flex-direction:column;align-items:stretch;padding:0;overflow:hidden;">
+      <div style="padding:1.5rem 2rem 1rem;">
+        <div class="ty-action-badge">Step 1 — Do This Now</div>
+        <div class="ty-action-title" style="margin-top:.5rem;">Book Your Onboarding Call</div>
+        <div class="ty-action-desc" style="margin-top:.35rem;">Pick a time below — we'll walk through your file and get your case started. <strong>Spots fill up fast.</strong></div>
+      </div>
+      <!-- Embedded Calendly -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/nextupcredit/credit-repair-onboarding?hide_gdpr_banner=1&background_color=0d0d0d&text_color=fafaf8&primary_color=b3802e" style="min-width:100%;height:700px;"></div>
+    </div>
 
-<!-- Step 2 - SmartCredit - CLEAN & SIMPLE -->
-<div class="ty-action-card">
-  <div class="ty-action-left">
-    <div class="ty-action-badge ty-step-badge">Step 2 — Required</div>
-    <div class="ty-action-title">Set Up SmartCredit</div>
-    <div class="ty-action-desc">Required for all clients. <strong>Save your login details — you'll need them on your onboarding call.</strong></div>
-  </div>
-  <div class="ty-action-btn">
-    <a href="https://www.smartcredit.com/join/?pid=60983" class="ty-btn-out" target="_blank">Get SmartCredit &#8594;</a>
-  </div>
-</div>
-```
+    <!-- Step 2 - SmartCredit - CLEAN & SIMPLE -->
+    <div class="ty-action-card">
+      <div class="ty-action-left">
+        <div class="ty-action-badge ty-step-badge">Step 2 — Required</div>
+        <div class="ty-action-title">Set Up SmartCredit</div>
+        <div class="ty-action-desc">Required for all clients. <strong>Save your login details — you'll need them on your onboarding call.</strong></div>
+      </div>
+      <div class="ty-action-btn">
+        <a href="https://www.smartcredit.com/join/?pid=60983" class="ty-btn-out" target="_blank">Get SmartCredit &#8594;</a>
+      </div>
+    </div>
 
   </div>
 
 </div>
 
 <!-- FOOTER -->
-
 <footer class="ty-footer">
   <p>Questions? Email us at <a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a> or call <a href="tel:5702031530">570-203-1530</a> &nbsp;·&nbsp; &copy; 2026 NextUP Enterprise</p>
 </footer>
 
-<!-- Calendly Widget Script -->
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es',autoDisplay:false},'google_translate_element');
+}
+function nueTranslatePage(){
+  var isSpanish = document.cookie.indexOf('googtrans=/en/es') !== -1;
+  if(isSpanish){
+    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain='+location.hostname;
+    location.reload();
+  } else {
+    var select = document.querySelector('.goog-te-combo');
+    if(select){select.value='es';select.dispatchEvent(new Event('change'));updateTransBtn();}
+    else{setTimeout(function(){var s=document.querySelector('.goog-te-combo');if(s){s.value='es';s.dispatchEvent(new Event('change'));updateTransBtn();}},800);}
+  }
+}
+function updateTransBtn(){
+  document.querySelectorAll('.co-trans-label').forEach(function(b){b.textContent='English';});
+}
+window.nueTranslatePage=nueTranslatePage;
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+
+<!-- Calendly Widget Script -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
