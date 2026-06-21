@@ -207,6 +207,25 @@ a{text-decoration:none;}
 @keyframes coPayGlow { 0%,100%{box-shadow:0 6px 24px rgba(179,128,46,0.35);} 50%{box-shadow:0 8px 32px rgba(179,128,46,0.55);} }
 .co-pay-now-btn:not(:disabled) { animation:coPayGlow 2.5s ease-in-out infinite; }
 
+
+/* TRANSLATE */
+#google_translate_element{display:none;}
+.goog-te-banner-frame{display:none!important;}
+body{top:0!important;}
+.skiptranslate{display:none!important;}
+.co-translate-btn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid rgba(179,128,46,0.35);color:var(--nl);font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.38rem .85rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.co-translate-btn:hover{background:rgba(179,128,46,0.1);border-color:var(--nb);}
+
+
+/* Plan card active state */
+.co-plan.selected {
+  border: 2px solid var(--nb) !important;
+  background: rgba(179,128,46,0.08) !important;
+  box-shadow: 0 0 0 3px rgba(179,128,46,0.12);
+}
+.co-plan.selected .co-plan-name { color: var(--nl) !important; }
+.co-plan { cursor: pointer; }
+
 </style>
 
 <!-- PAGE -->
@@ -217,6 +236,7 @@ a{text-decoration:none;}
       <span class="co-logo-sub">Enterprise</span>
     </a>
   </div>
+  <button class="co-translate-btn" onclick="nueTranslatePage()">🌐 <span class="co-trans-label">Español</span></button>
   <div class="co-secure">
     <div class="co-secure-dot"></div>
     Secure Checkout
@@ -309,7 +329,7 @@ a{text-decoration:none;}
   <div class="co-right">
     <div class="co-form-card">
       <div class="co-form-title">Choose Your Plan</div>
-      <div class="co-form-sub">Secure checkout · Never leave this page</div>
+      <div class="co-form-sub">Secure checkout · Portal access within 24 hours</div>
 
       <!-- PLAN TOGGLE -->
       <div class="co-plan-toggle">
