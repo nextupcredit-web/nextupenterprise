@@ -181,6 +181,31 @@ a{text-decoration:none;}
 .co-pay-btn-action-sec { background:rgba(179,128,46,0.25); box-shadow:none; }
 .co-pay-btn:hover .co-pay-btn-action { background:var(--nbr); }
 
+
+/* PLAN TOGGLE */
+.co-plan-toggle { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-bottom:1.25rem; }
+.co-toggle-btn { background:var(--bk3); border:1px solid rgba(179,128,46,0.2); padding:.9rem .75rem; cursor:pointer; transition:all .25s; display:flex; flex-direction:column; align-items:center; gap:.15rem; }
+.co-toggle-btn:hover { border-color:rgba(179,128,46,0.5); background:rgba(179,128,46,0.06); }
+.co-toggle-btn.co-toggle-active { border:2px solid var(--nb); background:rgba(179,128,46,0.1); }
+.co-toggle-name { font-family:'Barlow Condensed',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fff; }
+.co-toggle-price { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:700; color:var(--nl); line-height:1.1; }
+.co-toggle-price small { font-size:.9rem; font-weight:400; }
+.co-toggle-note { font-size:.68rem; color:var(--gr); font-weight:300; }
+/* ORDER SUMMARY */
+.co-order-summary { display:flex; justify-content:space-between; align-items:center; background:rgba(179,128,46,0.08); border:1px solid rgba(179,128,46,0.2); padding:.8rem 1rem; margin-bottom:1.25rem; }
+.co-order-summary span:first-child { font-family:'Barlow Condensed',sans-serif; font-size:.8rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#fff; }
+.co-order-summary span:last-child { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; color:var(--nl); }
+/* STRIPE CARD ELEMENT */
+#co-card-element { background:rgba(255,255,255,0.05); border:1px solid rgba(179,128,46,0.2); padding:.85rem 1rem; transition:border-color .2s; }
+#co-card-element.StripeElement--focus { border-color:var(--nb); box-shadow:0 0 0 3px rgba(179,128,46,0.1); }
+#co-card-element.StripeElement--invalid { border-color:#e74c3c; }
+/* PAY BUTTON */
+.co-pay-now-btn { width:100%; background:var(--nb); color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1rem; letter-spacing:.18em; text-transform:uppercase; padding:1.15rem; border:none; cursor:pointer; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%); transition:all .25s; box-shadow:0 6px 24px rgba(179,128,46,0.35); margin-top:1.25rem; }
+.co-pay-now-btn:hover { background:var(--nbr); transform:translateY(-2px); box-shadow:0 10px 32px rgba(179,128,46,0.45); }
+.co-pay-now-btn:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+@keyframes coPayGlow { 0%,100%{box-shadow:0 6px 24px rgba(179,128,46,0.35);} 50%{box-shadow:0 8px 32px rgba(179,128,46,0.55);} }
+.co-pay-now-btn:not(:disabled) { animation:coPayGlow 2.5s ease-in-out infinite; }
+
 </style>
 
 <!-- PAGE -->
@@ -283,43 +308,53 @@ a{text-decoration:none;}
   <div class="co-right">
     <div class="co-form-card">
       <div class="co-form-title">Choose Your Plan</div>
-      <div class="co-form-sub">Secure checkout · Portal access within 24 hours</div>
+      <div class="co-form-sub">Secure checkout · Never leave this page</div>
 
-      <!-- PLAN 1 -->
-      <div style="margin-bottom:1rem;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--nb);color:#fff;padding:.22rem .7rem;display:inline-block;margin-bottom:.6rem;">BEST VALUE</div>
-        <a href="https://buy.stripe.com/3cIbJ39fQ8uh4YKaOA5Rm0F" target="_blank" class="co-pay-btn">
-          <div class="co-pay-btn-top">
-            <span class="co-pay-btn-name">Credit Builder — 6 Months</span>
-            <span class="co-pay-btn-price">$749</span>
-          </div>
-          <div class="co-pay-btn-sub">One-time payment · Save vs monthly</div>
-          <div class="co-pay-btn-action">&#9889; Purchase Now &#8594;</div>
-        </a>
+      <!-- PLAN TOGGLE -->
+      <div class="co-plan-toggle">
+        <button class="co-toggle-btn co-toggle-active" id="toggle-749" onclick="coSwitchPlan('749')">
+          <span class="co-toggle-name">6 Months</span>
+          <span class="co-toggle-price">$749</span>
+          <span class="co-toggle-note">one-time · best value</span>
+        </button>
+        <button class="co-toggle-btn" id="toggle-149" onclick="coSwitchPlan('149')">
+          <span class="co-toggle-name">Monthly</span>
+          <span class="co-toggle-price">$149<small>/mo</small></span>
+          <span class="co-toggle-note">cancel anytime</span>
+        </button>
       </div>
 
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
-        <div style="flex:1;height:1px;background:rgba(179,128,46,0.15);"></div>
-        <span style="font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gr);">or</span>
-        <div style="flex:1;height:1px;background:rgba(179,128,46,0.15);"></div>
+      <!-- SELECTED SUMMARY -->
+      <div class="co-order-summary" id="co-order-summary">
+        <span id="co-summary-name">Credit Builder — 6 Months</span>
+        <span id="co-summary-price">$749 one-time</span>
       </div>
 
-      <!-- PLAN 2 -->
-      <div style="margin-bottom:1.5rem;">
-        <a href="https://buy.stripe.com/aFa3cx8bM8uh9f06yk5Rm0G" target="_blank" class="co-pay-btn co-pay-btn-sec">
-          <div class="co-pay-btn-top">
-            <span class="co-pay-btn-name">Month-to-Month</span>
-            <span class="co-pay-btn-price">$149<span style="font-size:.9rem;font-weight:400;">/mo</span></span>
-          </div>
-          <div class="co-pay-btn-sub">Cancel anytime · No commitment</div>
-          <div class="co-pay-btn-action co-pay-btn-action-sec">Sign Up Now &#8594;</div>
-        </a>
-      </div>
+      <!-- STRIPE ELEMENTS FORM -->
+      <form id="co-payment-form">
+        <div class="co-field">
+          <label class="co-label">Name on Card</label>
+          <input type="text" id="co-card-name" class="co-input" placeholder="John Smith" required>
+        </div>
+        <div class="co-field">
+          <label class="co-label">Email Address</label>
+          <input type="email" id="co-card-email" class="co-input" placeholder="john@example.com" required>
+        </div>
+        <div class="co-field">
+          <label class="co-label">Card Details</label>
+          <div id="co-card-element"></div>
+          <div id="co-card-errors" style="color:#e74c3c;font-size:.78rem;margin-top:.4rem;font-weight:300;"></div>
+        </div>
+        <button type="submit" class="co-pay-now-btn" id="co-submit-btn">
+          <span id="co-btn-text">&#9889; Pay $749 Securely &#8594;</span>
+          <span id="co-btn-loading" style="display:none;">Processing...</span>
+        </button>
+      </form>
 
-      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL</div>
-
+      <div class="co-divider"></div>
+      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL Encryption &nbsp;·&nbsp; Cards never stored</div>
       <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(179,128,46,0.06);border:1px solid rgba(179,128,46,0.15);">
-        <p style="font-size:.75rem;color:var(--gr);font-weight:300;line-height:1.6;text-align:center;">&#9733; SmartCredit monitoring required at $24.99/mo — you'll set this up after payment</p>
+        <p style="font-size:.75rem;color:var(--gr);font-weight:300;line-height:1.6;text-align:center;">&#9733; SmartCredit monitoring required at $24.99/mo — set up after payment</p>
       </div>
     </div>
 
@@ -329,29 +364,151 @@ a{text-decoration:none;}
   </div>
 </div>
 
-<footer class="co-footer">
-  <p>&copy; 2026 NextUP Enterprise &nbsp;·&nbsp; <a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a> &nbsp;·&nbsp; <a href="tel:5702031530">570-203-1530</a></p>
-</footer>
 
+<!-- Stripe.js -->
+<script src="https://js.stripe.com/v3/"></script>
 <script>
 (function(){
-  function selectPlan(plan) {
-    document.querySelectorAll('.co-plan').forEach(function(p){ p.classList.remove('selected'); });
-    document.getElementById('plan-' + plan).classList.add('selected');
-    var btn6mo = document.getElementById('stripe-6mo-btn');
-    var btnMo  = document.getElementById('stripe-mo-btn');
-    if(plan === '6mo') {
-      document.getElementById('co-plan-label').textContent = 'Credit Builder — 6 Months';
-      document.getElementById('co-plan-price').textContent = '$749';
-      if(btn6mo) btn6mo.classList.add('co-stripe-active');
-      if(btnMo)  btnMo.classList.remove('co-stripe-active');
-    } else {
-      document.getElementById('co-plan-label').textContent = 'Month-to-Month';
-      document.getElementById('co-plan-price').textContent = '$149/mo';
-      if(btnMo)  btnMo.classList.add('co-stripe-active');
-      if(btn6mo) btn6mo.classList.remove('co-stripe-active');
+  var stripe = Stripe('pk_live_51PpYCrRr06GLYziwcqpNHISMW9aNFXYgRslqp1Sef3MwMOUpmqZ65m5jRXfReAwUZHYxu45vGeZXRS3Tn7lZcSZb00rvq7Z4G2');
+  var elements = stripe.elements({
+    fonts: [{ cssSrc:'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap' }]
+  });
+
+  var cardElement = elements.create('card', {
+    style: {
+      base: {
+        color: '#FAFAF8',
+        fontFamily: 'Barlow, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '15px',
+        fontWeight: '300',
+        '::placeholder': { color: 'rgba(255,255,255,0.25)' },
+        iconColor: '#b3802e'
+      },
+      invalid: { color: '#e74c3c', iconColor: '#e74c3c' }
     }
-  }
-  window.selectPlan = selectPlan;
+  });
+  cardElement.mount('#co-card-element');
+
+  cardElement.on('change', function(e){
+    document.getElementById('co-card-errors').textContent = e.error ? e.error.message : '';
+  });
+
+  // Plan switching
+  var currentPrice = 'price_1TkFDHRr06GLYziwUeo5iO6p';
+  var currentAmount = '$749 one-time';
+  var currentLabel = '$749';
+  var planName = 'Credit Builder — 6 Months';
+
+  window.coSwitchPlan = function(plan) {
+    document.querySelectorAll('.co-toggle-btn').forEach(function(b){ b.classList.remove('co-toggle-active'); });
+    if(plan === '749') {
+      document.getElementById('toggle-749').classList.add('co-toggle-active');
+      currentPrice = 'price_1TkFDHRr06GLYziwUeo5iO6p';
+      currentAmount = '$749 one-time';
+      currentLabel = '$749';
+      planName = 'Credit Builder — 6 Months';
+    } else {
+      document.getElementById('toggle-149').classList.add('co-toggle-active');
+      currentPrice = 'price_1TkFMQRr06GLYziwRBT21OSX';
+      currentAmount = '$149/mo';
+      currentLabel = '$149/mo';
+      planName = 'Month-to-Month';
+    }
+    document.getElementById('co-summary-name').textContent = planName;
+    document.getElementById('co-summary-price').textContent = currentAmount;
+    document.getElementById('co-btn-text').textContent = '⚡ Pay ' + currentLabel + ' Securely →';
+  };
+
+  // Payment form submission
+  var form = document.getElementById('co-payment-form');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('co-submit-btn');
+    var btnText = document.getElementById('co-btn-text');
+    var btnLoad = document.getElementById('co-btn-loading');
+    var errDiv = document.getElementById('co-card-errors');
+    var name = document.getElementById('co-card-name').value.trim();
+    var email = document.getElementById('co-card-email').value.trim();
+
+    if(!name || !email) {
+      errDiv.textContent = 'Please enter your name and email.';
+      return;
+    }
+
+    btn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoad.style.display = 'inline';
+    errDiv.textContent = '';
+
+    try {
+      // Create payment method
+      var pmResult = await stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+        billing_details: { name: name, email: email }
+      });
+
+      if(pmResult.error) {
+        errDiv.textContent = pmResult.error.message;
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoad.style.display = 'none';
+        return;
+      }
+
+      // Send to Netlify function
+      var response = await fetch('https://nextupcreditrepairsite.netlify.app/.netlify/functions/create-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          priceId: currentPrice,
+          email: email,
+          name: name,
+          paymentMethodId: pmResult.paymentMethod.id
+        })
+      });
+
+      var result = await response.json();
+
+      if(result.error) {
+        errDiv.textContent = result.error;
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoad.style.display = 'none';
+        return;
+      }
+
+      if(result.requiresAction) {
+        // 3D Secure authentication
+        var actionResult = await stripe.handleCardAction(result.clientSecret);
+        if(actionResult.error) {
+          errDiv.textContent = actionResult.error.message;
+          btn.disabled = false;
+          btnText.style.display = 'inline';
+          btnLoad.style.display = 'none';
+          return;
+        }
+      }
+
+      if(result.success || result.requiresAction) {
+        // Track purchase in Meta Pixel
+        if(typeof fbq !== 'undefined') {
+          fbq('track', 'Purchase', {
+            value: currentPrice === 'price_1TkFDHRr06GLYziwUeo5iO6p' ? 749 : 149,
+            currency: 'USD'
+          });
+        }
+        // Redirect to thank you page
+        window.location.href = 'https://nextupenterprise.com/welcome-confirmed-nue2026.html';
+      }
+
+    } catch(err) {
+      errDiv.textContent = 'Something went wrong. Please try again or contact support.';
+      btn.disabled = false;
+      btnText.style.display = 'inline';
+      btnLoad.style.display = 'none';
+    }
+  });
 })();
 </script>
