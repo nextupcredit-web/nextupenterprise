@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')('YOUR_NEW_SK_LIVE_KEY');
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
