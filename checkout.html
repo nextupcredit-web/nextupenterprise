@@ -3,6 +3,7 @@
 <meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
+<script src="https://js.stripe.com/v3/"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel Code -->
@@ -342,7 +343,7 @@ a{text-decoration:none;}
         </div>
         <div class="co-field">
           <label class="co-label">Card Details</label>
-          <div id="co-card-element"></div>
+          <div id="co-card-element" style="min-height:44px;padding:.85rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(179,128,46,0.2);"><span style="color:rgba(255,255,255,0.2);font-size:.8rem;font-weight:300;">Loading secure card form...</span></div>
           <div id="co-card-errors" style="color:#e74c3c;font-size:.78rem;margin-top:.4rem;font-weight:300;"></div>
         </div>
         <button type="submit" class="co-pay-now-btn" id="co-submit-btn">
@@ -365,8 +366,7 @@ a{text-decoration:none;}
 </div>
 
 
-<!-- Stripe.js -->
-<script src="https://js.stripe.com/v3/"></script>
+<!-- Stripe.js loaded in head -->
 <script>
 (function(){
   var stripe = Stripe('pk_live_51PpYCrRr06GLYziwcqpNHISMW9aNFXYgRslqp1Sef3MwMOUpmqZ65m5jRXfReAwUZHYxu45vGeZXRS3Tn7lZcSZb00rvq7Z4G2');
