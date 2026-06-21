@@ -1,9 +1,14 @@
 [build]
+  command = "cd functions && npm install"
   functions = "functions"
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"
 
 [[headers]]
-  for = "/*"
+  for = "/.netlify/functions/*"
   [headers.values]
-    Access-Control-Allow-Origin = "https://nextupenterprise.com"
+    Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"
