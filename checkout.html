@@ -259,7 +259,7 @@ body{top:0!important;}
       <span style="display:block;flex:1;height:1px;background:rgba(179,128,46,0.2);"></span>
     </div>
     <div class="co-plans">
-      <div class="co-plan selected" id="plan-6mo" onclick="selectPlan('6mo')">
+      <div class="co-plan selected" id="plan-6mo" onclick="coSwitchPlan('749')">
         <div class="co-plan-top">
           <span class="co-plan-name">Credit Builder — 6 Months</span>
           <span class="co-plan-badge">Best Value</span>
@@ -269,7 +269,7 @@ body{top:0!important;}
         </div>
         <div class="co-plan-desc">6 full months of done-for-you credit repair. One flat fee — save vs monthly.</div>
       </div>
-      <div class="co-plan" id="plan-mo" onclick="selectPlan('mo')">
+      <div class="co-plan" id="plan-mo" onclick="coSwitchPlan('149')">
         <div class="co-plan-top">
           <span class="co-plan-name">Month-to-Month</span>
         </div>
@@ -400,6 +400,10 @@ body{top:0!important;}
   // Plan switching
   window.coSwitchPlan = function(plan) {
     document.querySelectorAll('.co-toggle-btn').forEach(function(b){ b.classList.remove('co-toggle-active'); });
+    // Also update left plan cards
+    document.querySelectorAll('.co-plan').forEach(function(p){ p.classList.remove('selected'); });
+    if(plan === '749') { var lc = document.getElementById('plan-6mo'); if(lc) lc.classList.add('selected'); }
+    else { var lc = document.getElementById('plan-mo'); if(lc) lc.classList.add('selected'); }
     if(plan === '749') {
       document.getElementById('toggle-749').classList.add('co-toggle-active');
       currentPrice = 'price_1TkFDHRr06GLYziwUeo5iO6p';
@@ -569,3 +573,38 @@ body{top:0!important;}
 
 })();
 </script>
+
+<!-- Google Translate -->
+<div id="nue-translate-el" style="display:none;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    includedLanguages:'es',
+    autoDisplay:false,
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+  },'nue-translate-el');
+}
+function nueTranslatePage(){
+  var isSpanish = document.cookie.indexOf('googtrans=/en/es') !== -1;
+  if(isSpanish){
+    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.'+location.hostname;
+    location.reload();
+    return;
+  }
+  var tryTranslate = function(){
+    var select = document.querySelector('.goog-te-combo');
+    if(select){
+      select.value='es';
+      select.dispatchEvent(new Event('change'));
+      document.querySelectorAll('.co-trans-label').forEach(function(b){b.textContent='English';});
+    } else {
+      setTimeout(tryTranslate, 500);
+    }
+  };
+  tryTranslate();
+}
+window.nueTranslatePage=nueTranslatePage;
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
