@@ -370,36 +370,14 @@ a{text-decoration:none;}
 <script>
 (function(){
   var stripe = Stripe('pk_live_51PpYCrRr06GLYziwcqpNHISMW9aNFXYgRslqp1Sef3MwMOUpmqZ65m5jRXfReAwUZHYxu45vGeZXRS3Tn7lZcSZb00rvq7Z4G2');
-  var elements = stripe.elements({
-    fonts: [{ cssSrc:'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap' }]
-  });
-
-  var cardElement = elements.create('card', {
-    style: {
-      base: {
-        color: '#FAFAF8',
-        fontFamily: 'Barlow, sans-serif',
-        fontSmoothing: 'antialiased',
-        fontSize: '15px',
-        fontWeight: '300',
-        '::placeholder': { color: 'rgba(255,255,255,0.25)' },
-        iconColor: '#b3802e'
-      },
-      invalid: { color: '#e74c3c', iconColor: '#e74c3c' }
-    }
-  });
-  cardElement.mount('#co-card-element');
-
-  cardElement.on('change', function(e){
-    document.getElementById('co-card-errors').textContent = e.error ? e.error.message : '';
-  });
-
-  // Plan switching
+  var elements = null;
   var currentPrice = 'price_1TkFDHRr06GLYziwUeo5iO6p';
+  var currentPlanName = 'Credit Builder — 6 Months';
   var currentAmount = '$749 one-time';
   var currentLabel = '$749';
-  var planName = 'Credit Builder — 6 Months';
+  var intentData = null;
 
+  // Plan switching
   window.coSwitchPlan = function(plan) {
     document.querySelectorAll('.co-toggle-btn').forEach(function(b){ b.classList.remove('co-toggle-active'); });
     if(plan === '749') {
@@ -407,108 +385,167 @@ a{text-decoration:none;}
       currentPrice = 'price_1TkFDHRr06GLYziwUeo5iO6p';
       currentAmount = '$749 one-time';
       currentLabel = '$749';
-      planName = 'Credit Builder — 6 Months';
+      currentPlanName = 'Credit Builder — 6 Months';
     } else {
       document.getElementById('toggle-149').classList.add('co-toggle-active');
       currentPrice = 'price_1TkFMQRr06GLYziwRBT21OSX';
       currentAmount = '$149/mo';
       currentLabel = '$149/mo';
-      planName = 'Month-to-Month';
+      currentPlanName = 'Month-to-Month';
     }
-    document.getElementById('co-summary-name').textContent = planName;
+    document.getElementById('co-summary-name').textContent = currentPlanName;
     document.getElementById('co-summary-price').textContent = currentAmount;
     document.getElementById('co-btn-text').textContent = '⚡ Pay ' + currentLabel + ' Securely →';
+    // Reinitialize payment element for new plan
+    initPaymentElement();
   };
 
-  // Payment form submission
-  var form = document.getElementById('co-payment-form');
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('co-submit-btn');
-    var btnText = document.getElementById('co-btn-text');
-    var btnLoad = document.getElementById('co-btn-loading');
-    var errDiv = document.getElementById('co-card-errors');
-    var name = document.getElementById('co-card-name').value.trim();
-    var email = document.getElementById('co-card-email').value.trim();
-
-    if(!name || !email) {
-      errDiv.textContent = 'Please enter your name and email.';
-      return;
-    }
-
-    btn.disabled = true;
-    btnText.style.display = 'none';
-    btnLoad.style.display = 'inline';
-    errDiv.textContent = '';
+  async function initPaymentElement() {
+    var cardEl = document.getElementById('co-card-element');
+    var errEl = document.getElementById('co-card-errors');
+    if(cardEl) cardEl.innerHTML = '<div style="color:rgba(255,255,255,0.3);font-size:.8rem;padding:.5rem 0;">Loading payment options...</div>';
 
     try {
-      // Create payment method
-      var pmResult = await stripe.createPaymentMethod({
-        type: 'card',
-        card: cardElement,
-        billing_details: { name: name, email: email }
-      });
-
-      if(pmResult.error) {
-        errDiv.textContent = pmResult.error.message;
-        btn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoad.style.display = 'none';
-        return;
-      }
-
-      // Send to Netlify function
-      var response = await fetch('https://nextupcreditrepairsite.netlify.app/.netlify/functions/create-payment', {
+      var res = await fetch('https://nextupcreditrepairsite.netlify.app/.netlify/functions/create-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          priceId: currentPrice,
-          email: email,
-          name: name,
-          paymentMethodId: pmResult.paymentMethod.id
-        })
+        body: JSON.stringify({ action: 'create-intent', priceId: currentPrice })
       });
+      intentData = await res.json();
 
-      var result = await response.json();
-
-      if(result.error) {
-        errDiv.textContent = result.error;
-        btn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoad.style.display = 'none';
+      if(intentData.error) {
+        if(errEl) errEl.textContent = intentData.error;
         return;
       }
 
-      if(result.requiresAction) {
-        // 3D Secure authentication
-        var actionResult = await stripe.handleCardAction(result.clientSecret);
-        if(actionResult.error) {
-          errDiv.textContent = actionResult.error.message;
-          btn.disabled = false;
-          btnText.style.display = 'inline';
-          btnLoad.style.display = 'none';
-          return;
+      elements = stripe.elements({
+        clientSecret: intentData.clientSecret,
+        appearance: {
+          theme: 'night',
+          variables: {
+            colorPrimary: '#b3802e',
+            colorBackground: '#141414',
+            colorText: '#FAFAF8',
+            colorDanger: '#e74c3c',
+            fontFamily: 'Barlow, sans-serif',
+            borderRadius: '0px',
+            colorIconTab: '#b3802e',
+            colorIconTabSelected: '#b3802e'
+          },
+          rules: {
+            '.Input': { border: '1px solid rgba(179,128,46,0.25)', padding: '10px 12px' },
+            '.Input:focus': { border: '1px solid #b3802e', boxShadow: '0 0 0 3px rgba(179,128,46,0.1)' },
+            '.Label': { fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '11px', fontWeight: '700', color: '#888' },
+            '.Tab': { border: '1px solid rgba(179,128,46,0.2)', backgroundColor: '#0D0D0D' },
+            '.Tab:hover': { border: '1px solid rgba(179,128,46,0.5)' },
+            '.Tab--selected': { border: '2px solid #b3802e', backgroundColor: 'rgba(179,128,46,0.1)' },
+            '.TabIcon--selected': { fill: '#b3802e' },
+            '.TabLabel--selected': { color: '#b3802e' }
+          }
         }
+      });
+
+      var paymentElement = elements.create('payment', {
+        layout: { type: 'tabs', defaultCollapsed: false },
+        wallets: { applePay: 'auto', googlePay: 'auto' }
+      });
+
+      if(cardEl) {
+        cardEl.innerHTML = '';
+        paymentElement.mount('#co-card-element');
       }
 
-      if(result.success || result.requiresAction) {
-        // Track purchase in Meta Pixel
+    } catch(err) {
+      if(errEl) errEl.textContent = 'Failed to load payment form. Please refresh.';
+    }
+  }
+
+  // Submit
+  var form = document.getElementById('co-payment-form');
+  if(form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('co-submit-btn');
+      var btnText = document.getElementById('co-btn-text');
+      var btnLoad = document.getElementById('co-btn-loading');
+      var errEl = document.getElementById('co-card-errors');
+      var name = document.getElementById('co-card-name').value.trim();
+      var email = document.getElementById('co-card-email').value.trim();
+
+      if(!name || !email) { errEl.textContent = 'Please enter your name and email.'; return; }
+      if(!elements || !intentData) { errEl.textContent = 'Payment form not ready. Please wait.'; return; }
+
+      btn.disabled = true;
+      btnText.style.display = 'none';
+      btnLoad.style.display = 'inline';
+      errEl.textContent = '';
+
+      try {
+        var result;
+
+        if(intentData.type === 'setup') {
+          // Subscription - confirm setup intent first
+          result = await stripe.confirmSetup({
+            elements: elements,
+            redirect: 'if_required',
+            confirmParams: {
+              return_url: 'https://nextupenterprise.com/welcome-confirmed-nue2026.html',
+              payment_method_data: { billing_details: { name: name, email: email } }
+            }
+          });
+
+          if(result.error) throw new Error(result.error.message);
+
+          // Now create subscription
+          var subRes = await fetch('https://nextupcreditrepairsite.netlify.app/.netlify/functions/create-payment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              action: 'confirm-subscription',
+              customerId: intentData.customerId,
+              priceId: currentPrice,
+              paymentMethodId: result.setupIntent.payment_method
+            })
+          });
+          var subData = await subRes.json();
+          if(subData.error) throw new Error(subData.error);
+
+        } else {
+          // One-time payment
+          result = await stripe.confirmPayment({
+            elements: elements,
+            redirect: 'if_required',
+            confirmParams: {
+              return_url: 'https://nextupenterprise.com/welcome-confirmed-nue2026.html',
+              payment_method_data: { billing_details: { name: name, email: email } }
+            }
+          });
+          if(result.error) throw new Error(result.error.message);
+        }
+
+        // Track purchase
         if(typeof fbq !== 'undefined') {
           fbq('track', 'Purchase', {
             value: currentPrice === 'price_1TkFDHRr06GLYziwUeo5iO6p' ? 749 : 149,
             currency: 'USD'
           });
         }
-        // Redirect to thank you page
-        window.location.href = 'https://nextupenterprise.com/welcome-confirmed-nue2026.html';
-      }
 
-    } catch(err) {
-      errDiv.textContent = 'Something went wrong. Please try again or contact support.';
-      btn.disabled = false;
-      btnText.style.display = 'inline';
-      btnLoad.style.display = 'none';
-    }
+        window.location.href = 'https://nextupenterprise.com/welcome-confirmed-nue2026.html';
+
+      } catch(err) {
+        errEl.textContent = err.message || 'Payment failed. Please try again.';
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoad.style.display = 'none';
+      }
+    });
+  }
+
+  // Initialize on load
+  window.addEventListener('load', function() {
+    setTimeout(initPaymentElement, 500);
   });
+
 })();
 </script>
