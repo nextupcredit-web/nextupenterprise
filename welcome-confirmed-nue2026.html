@@ -6,6 +6,27 @@
 
 <!-- Meta Pixel Code -->
 <script>
+// ── PAYMENT GUARD ── Must have a valid Stripe payment_intent in the URL to view this page
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var pi = params.get('payment_intent');
+  var redirectStatus = params.get('redirect_status');
+  var nueVerified = sessionStorage.getItem('nue_payment_verified');
+
+  // Allow if: valid Stripe redirect with succeeded status, OR already verified this session
+  if(nueVerified === 'true') {
+    // Already verified this session — allow
+  } else if(pi && redirectStatus === 'succeeded') {
+    // Valid Stripe redirect — mark verified for this session
+    sessionStorage.setItem('nue_payment_verified', 'true');
+  } else {
+    // No proof of payment — redirect immediately
+    window.location.replace('https://nextupenterprise.com/checkout.html');
+  }
+})();
+</script>
+
+<script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','2200432150733133');fbq('track','PageView');fbq('track','Purchase');
 </script>
