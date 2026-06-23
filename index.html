@@ -21,7 +21,7 @@
 .nnav-cta{background:var(--nb)!important;color:#fff!important;padding:.5rem 1.3rem!important;font-weight:700!important;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)!important;}
 .nnav-cta:hover{background:var(--nbr)!important;}
 /* HERO */
-.nhero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:110px 5% 80px;background:var(--bk);}
+.nhero{min-height:100vh;display:flex;align-items:flex-start;position:relative;overflow:hidden;padding:110px 5% 80px;background:var(--bk);}
 .nhero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 55% 65% at 75% 45%,rgba(179,128,46,.09) 0%,transparent 65%),radial-gradient(ellipse 35% 45% at 20% 75%,rgba(179,128,46,.05) 0%,transparent 55%),var(--bk);}
 .nhero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(179,128,46,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(179,128,46,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);}
 .norb{position:absolute;border-radius:50%;z-index:0;animation:nPl 4s ease-in-out infinite;}
@@ -243,9 +243,9 @@
 }
 @media(max-width:768px){
 .nnav{padding:0 4%;height:64px;}
-.nnav-links{display:none;}
+.nnav-links{display:none!important;}
 .nnav-logo img{height:40px;}
-.nhero{padding:90px 5% 60px;min-height:auto;}
+.nhero{padding:90px 5% 60px;min-height:auto;align-items:flex-start;}
 .nhero h1{font-size:clamp(2.4rem,9vw,3.2rem);line-height:1.05;}
 .nhero-sub{font-size:.95rem;margin-bottom:1.8rem;}
 .nhero-acts{flex-direction:column;align-items:flex-start;gap:.85rem;}
