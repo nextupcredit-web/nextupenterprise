@@ -6,21 +6,22 @@
 
 <!-- Meta Pixel Code -->
 <script>
-// ── PAYMENT GUARD ── Must have a valid Stripe payment_intent in the URL to view this page
+// ── PAYMENT GUARD ── Stripe sends payment_intent (one-time) or setup_intent (subscription)
 (function(){
   var params = new URLSearchParams(window.location.search);
   var pi = params.get('payment_intent');
+  var si = params.get('setup_intent');
   var redirectStatus = params.get('redirect_status');
   var nueVerified = sessionStorage.getItem('nue_payment_verified');
 
-  // Allow if: valid Stripe redirect with succeeded status, OR already verified this session
+  // Allow if already verified this session (e.g. page refresh after payment)
   if(nueVerified === 'true') {
-    // Already verified this session — allow
-  } else if(pi && redirectStatus === 'succeeded') {
-    // Valid Stripe redirect — mark verified for this session
+    // good
+  } else if((pi || si) && redirectStatus === 'succeeded') {
+    // Valid Stripe redirect — one-time payment OR subscription setup
     sessionStorage.setItem('nue_payment_verified', 'true');
   } else {
-    // No proof of payment — redirect immediately
+    // No proof of payment — send back to checkout
     window.location.replace('https://nextupenterprise.com/checkout.html');
   }
 })();
