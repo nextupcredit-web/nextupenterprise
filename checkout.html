@@ -373,7 +373,8 @@ body{top:0!important;}
       </form>
 
       <div class="co-divider"></div>
-      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL Encryption &nbsp;·&nbsp; Cards never stored</div>
+      <div class="co-secure-note">🔒 Secured by Stripe &nbsp;·&nbsp; 256-bit SSL</div>
+      <div style="text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.08em;color:var(--gr);margin-top:.4rem;">Apple Pay · Google Pay · Klarna · Afterpay · Affirm · Zip · Card</div>
       <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(179,128,46,0.06);border:1px solid rgba(179,128,46,0.15);">
         <p style="font-size:.75rem;color:var(--gr);font-weight:300;line-height:1.6;text-align:center;">&#9733; SmartCredit monitoring required at $24.99/mo — set up after payment</p>
       </div>
@@ -444,6 +445,7 @@ body{top:0!important;}
 
       elements = stripe.elements({
         clientSecret: intentData.clientSecret,
+        currency: 'usd',
         appearance: {
           theme: 'night',
           variables: {
@@ -471,7 +473,8 @@ body{top:0!important;}
 
       var paymentElement = elements.create('payment', {
         layout: { type: 'tabs', defaultCollapsed: false },
-        wallets: { applePay: 'auto', googlePay: 'auto' }
+        wallets: { applePay: 'auto', googlePay: 'auto' },
+        paymentMethodOrder: ['apple_pay', 'google_pay', 'card', 'klarna', 'afterpay_clearpay', 'affirm', 'zip']
       });
 
       if(cardEl) {
