@@ -17,26 +17,26 @@ exports.handler = async function(event) {
 
   try {
     const body = JSON.parse(event.body);
-    const { action, priceId, email, name, paymentMethodId, clientSecret } = body;
+    const { action, priceId, email, name, paymentMethodId } = body;
 
-    // ── ACTION 1: Create Payment Intent (called on page load) ──
+    // ── ACTION: Create Payment Intent ──
     if (action === 'create-intent') {
       const price = await stripe.prices.retrieve(priceId);
 
       // Find or create customer
-      const customers = await stripe.customers.list({ email: email || 'guest@nextupenterprise.com', limit: 1 });
       let customer;
-      if (customers.data.length > 0) {
-        customer = customers.data[0];
-      } else {
-        customer = await stripe.customers.create({ email: email || 'guest@nextupenterprise.com', name: name || 'Client' });
+      if (email) {
+        const customers = await stripe.customers.list({ email, limit: 1 });
+        customer = customers.data.length > 0
+          ? customers.data[0]
+          : await stripe.customers.create({ email, name: name || '' });
       }
 
       if (price.type === 'recurring') {
-        // For subscriptions, create a SetupIntent first
+        // Subscription - use SetupIntent
         const setupIntent = await stripe.setupIntents.create({
-          customer: customer.id,
-          payment_method_types: ['card'],
+          customer: customer ? customer.id : undefined,
+          automatic_payment_methods: { enabled: true },
           usage: 'off_session',
         });
         return {
@@ -44,38 +44,40 @@ exports.handler = async function(event) {
           headers: CORS_HEADERS,
           body: JSON.stringify({
             clientSecret: setupIntent.client_secret,
-            customerId: customer.id,
+            customerId: customer ? customer.id : null,
             type: 'setup'
           })
         };
       } else {
-        // One-time payment intent
+        // One-time payment - enable ALL payment methods automatically
         const pi = await stripe.paymentIntents.create({
           amount: price.unit_amount,
-          currency: price.currency,
-          customer: customer.id,
-          payment_method_types: ['card', 'link'],
-          metadata: { priceId: priceId }
+          currency: price.currency || 'usd',
+          customer: customer ? customer.id : undefined,
+          automatic_payment_methods: { enabled: true },
+          metadata: { priceId, name: name || '' }
         });
         return {
           statusCode: 200,
           headers: CORS_HEADERS,
           body: JSON.stringify({
             clientSecret: pi.client_secret,
-            customerId: customer.id,
+            customerId: customer ? customer.id : null,
             type: 'payment'
           })
         };
       }
     }
 
-    // ── ACTION 2: Confirm subscription after setup ──
+    // ── ACTION: Confirm Subscription ──
     if (action === 'confirm-subscription') {
       const { customerId, priceId: pid, paymentMethodId: pmId } = body;
 
-      await stripe.customers.update(customerId, {
-        invoice_settings: { default_payment_method: pmId }
-      });
+      if (customerId) {
+        await stripe.customers.update(customerId, {
+          invoice_settings: { default_payment_method: pmId }
+        });
+      }
 
       const subscription = await stripe.subscriptions.create({
         customer: customerId,
@@ -85,11 +87,18 @@ exports.handler = async function(event) {
       });
 
       const pi = subscription.latest_invoice.payment_intent;
-      if (pi && pi.status === 'succeeded') {
-        return { statusCode: 200, headers: CORS_HEADERS, body: JSON.stringify({ success: true }) };
-      } else {
-        return { statusCode: 200, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Subscription failed.' }) };
+      if (pi && (pi.status === 'succeeded' || pi.status === 'requires_action')) {
+        return {
+          statusCode: 200,
+          headers: CORS_HEADERS,
+          body: JSON.stringify({
+            success: pi.status === 'succeeded',
+            requiresAction: pi.status === 'requires_action',
+            clientSecret: pi.client_secret
+          })
+        };
       }
+      return { statusCode: 200, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Subscription failed.' }) };
     }
 
     return { statusCode: 400, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Invalid action' }) };
