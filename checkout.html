@@ -445,7 +445,6 @@ body{top:0!important;}
 
       elements = stripe.elements({
         clientSecret: intentData.clientSecret,
-        currency: 'usd',
         appearance: {
           theme: 'night',
           variables: {
@@ -483,7 +482,7 @@ body{top:0!important;}
       }
 
     } catch(err) {
-      if(errEl) errEl.textContent = 'Failed to load payment form. Please refresh.';
+      if(errEl) errEl.textContent = 'Failed to load payment form: ' + (err.message || err) + '. Please refresh.';
     }
   }
 
