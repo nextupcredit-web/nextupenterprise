@@ -557,6 +557,8 @@ body{top:0!important;}
           });
         }
 
+        // Set verified token so thank you page lets them through
+        sessionStorage.setItem('nue_payment_verified', 'true');
         window.location.href = 'https://nextupenterprise.com/welcome-confirmed-nue2026.html';
 
       } catch(err) {
