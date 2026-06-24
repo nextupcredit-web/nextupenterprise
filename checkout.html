@@ -259,15 +259,15 @@ body{top:0!important;}
       <span style="display:block;flex:1;height:1px;background:rgba(179,128,46,0.2);"></span>
     </div>
     <div class="co-plans">
-      <div class="co-plan selected" id="plan-12mo" onclick="coSwitchPlan('997')">
+      <div class="co-plan selected" id="plan-6mo" onclick="coSwitchPlan('597')">
         <div class="co-plan-top">
-          <span class="co-plan-name">Credit Builder — 12 Months</span>
+          <span class="co-plan-name">Credit Builder — 6 Months</span>
           <span class="co-plan-badge">Best Value</span>
         </div>
         <div class="co-plan-price">
-          <span class="cur">$</span><span class="amt">997</span><span class="per">one-time</span>
+          <span class="cur">$</span><span class="amt">597</span><span class="per">one-time</span>
         </div>
-        <div class="co-plan-desc">12 full months of done-for-you credit repair. One flat fee — save vs monthly.</div>
+        <div class="co-plan-desc">6 full months of done-for-you credit repair. One flat fee — save vs monthly.</div>
       </div>
       <div class="co-plan" id="plan-mo" onclick="coSwitchPlan('125')">
         <div class="co-plan-top">
@@ -334,9 +334,9 @@ body{top:0!important;}
 
       <!-- PLAN TOGGLE -->
       <div class="co-plan-toggle">
-        <button class="co-toggle-btn co-toggle-active" id="toggle-997" onclick="coSwitchPlan('997')">
-          <span class="co-toggle-name">12 Months</span>
-          <span class="co-toggle-price">$997</span>
+        <button class="co-toggle-btn co-toggle-active" id="toggle-597" onclick="coSwitchPlan('597')">
+          <span class="co-toggle-name">6 Months</span>
+          <span class="co-toggle-price">$597</span>
           <span class="co-toggle-note">one-time · best value</span>
         </button>
         <button class="co-toggle-btn" id="toggle-125" onclick="coSwitchPlan('125')">
@@ -348,8 +348,8 @@ body{top:0!important;}
 
       <!-- SELECTED SUMMARY -->
       <div class="co-order-summary" id="co-order-summary">
-        <span id="co-summary-name">Credit Builder — 12 Months</span>
-        <span id="co-summary-price">$997 one-time</span>
+        <span id="co-summary-name">Credit Builder — 6 Months</span>
+        <span id="co-summary-price">$597 one-time</span>
       </div>
 
       <!-- STRIPE ELEMENTS FORM -->
@@ -368,7 +368,7 @@ body{top:0!important;}
           <div id="co-card-errors" style="color:#e74c3c;font-size:.78rem;margin-top:.4rem;font-weight:300;"></div>
         </div>
         <button type="submit" class="co-pay-now-btn" id="co-submit-btn">
-          <span id="co-btn-text">&#9889; Pay $997 Securely &#8594;</span>
+          <span id="co-btn-text">&#9889; Pay $597 Securely &#8594;</span>
           <span id="co-btn-loading" style="display:none;">Processing...</span>
         </button>
         <div id="co-monthly-notice" style="display:none;margin-top:1rem;padding:.85rem 1rem;background:rgba(179,128,46,.06);border:1px solid rgba(179,128,46,.2);border-left:3px solid var(--nb, #b3802e);font-size:.78rem;color:#aaa;line-height:1.6;">
@@ -396,10 +396,10 @@ body{top:0!important;}
 (function(){
   var stripe = Stripe('pk_live_51PpYCrRr06GLYziwcqpNHISMW9aNFXYgRslqp1Sef3MwMOUpmqZ65m5jRXfReAwUZHYxu45vGeZXRS3Tn7lZcSZb00rvq7Z4G2');
   var elements = null;
-  var currentPrice = 'price_1TlJIHRr06GLYziwbYScYjsO';
-  var currentPlanName = 'Credit Builder — 12 Months';
-  var currentAmount = '$997 one-time';
-  var currentLabel = '$997';
+  var currentPrice = 'price_1TleLWRr06GLYziwB4QcmBuA';
+  var currentPlanName = 'Credit Builder — 6 Months';
+  var currentAmount = '$597 one-time';
+  var currentLabel = '$597';
   var intentData = null;
 
   // Plan switching
@@ -407,15 +407,15 @@ body{top:0!important;}
     document.querySelectorAll('.co-toggle-btn').forEach(function(b){ b.classList.remove('co-toggle-active'); });
     // Also update left plan cards
     document.querySelectorAll('.co-plan').forEach(function(p){ p.classList.remove('selected'); });
-    if(plan === '997') { var lc = document.getElementById('plan-12mo'); if(lc) lc.classList.add('selected'); }
+    if(plan === '597') { var lc = document.getElementById('plan-6mo'); if(lc) lc.classList.add('selected'); }
     else { var lc = document.getElementById('plan-mo'); if(lc) lc.classList.add('selected'); }
-    if(plan === '997') {
-      document.getElementById('toggle-997').classList.add('co-toggle-active');
-      currentPrice = 'price_1TlJIHRr06GLYziwbYScYjsO';
-      currentAmount = '$997 one-time';
-      currentLabel = '$997';
+    if(plan === '597') {
+      document.getElementById('toggle-597').classList.add('co-toggle-active');
+      currentPrice = 'price_1TleLWRr06GLYziwB4QcmBuA';
+      currentAmount = '$597 one-time';
+      currentLabel = '$597';
       var mn = document.getElementById('co-monthly-notice'); if(mn) mn.style.display = 'none';
-      currentPlanName = 'Credit Builder — 12 Months';
+      currentPlanName = 'Credit Builder — 6 Months';
     } else {
       document.getElementById('toggle-125').classList.add('co-toggle-active');
       currentPrice = 'price_1TlJ0CRr06GLYziwapCGvnjz';
@@ -558,7 +558,7 @@ body{top:0!important;}
         // Track purchase
         if(typeof fbq !== 'undefined') {
           fbq('track', 'Purchase', {
-            value: currentPrice === 'price_1TlJIHRr06GLYziwbYScYjsO' ? 997 : 125,
+            value: currentPrice === 'price_1TleLWRr06GLYziwB4QcmBuA' ? 597 : 125,
             currency: 'USD'
           });
         }
