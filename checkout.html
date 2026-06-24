@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Get Started — NextUP Enterprise">
 <meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
@@ -22,7 +26,7 @@ a{text-decoration:none;}
 
 /* NAV */
 .co-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(5,5,5,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,0.2);}
-.co-nav-logo a{text-decoration:none;}
+.co-nav-logo a{text-decoration:none;display:flex;align-items:center;}
 .co-nav-logo .co-logo-main{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
 .co-nav-logo .co-logo-main span{color:var(--nb);}
 .co-nav-logo .co-logo-sub{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gr);display:block;}
@@ -232,8 +236,7 @@ body{top:0!important;}
 <nav class="co-nav">
   <div class="co-nav-logo">
     <a href="index.html">
-      <div class="co-logo-main">NEXT<span>UP</span></div>
-      <span class="co-logo-sub">Enterprise</span>
+<img src="https://nextupcredit-web.github.io/nextupenterprise/logo.png" alt="NextUP Enterprise" style="height:44px;display:block;">
     </a>
   </div>
   <button class="co-translate-btn" onclick="nueTranslatePage()">🌐 <span class="co-trans-label">Español</span></button>
@@ -618,3 +621,6 @@ function nueTranslatePage(){
 }
 window.nueTranslatePage = nueTranslatePage;
 </script>
+
+</body>
+</html>

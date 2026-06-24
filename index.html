@@ -37,6 +37,18 @@ fbq('init','2200432150733133');fbq('track','PageView');
 /* NAV */
 .nnav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:76px;background:rgba(5,5,5,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,.2);transition:all .3s;}
 .nnav-logo img{height:50px;}
+/* HAMBURGER MENU */
+.nmob-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none;}
+.nmob-btn span{display:block;width:24px;height:2px;background:var(--wh);transition:all .3s;}
+.nmob-btn.nopen span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nmob-btn.nopen span:nth-child(2){opacity:0;}
+.nmob-btn.nopen span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.nmob-drawer{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(5,5,5,.98);z-index:999;flex-direction:column;padding:2rem 5%;overflow-y:auto;border-top:1px solid rgba(179,128,46,.2);}
+.nmob-drawer.nopen{display:flex;}
+.nmob-drawer a{color:var(--gl);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase;padding:1rem 0;border-bottom:1px solid rgba(179,128,46,.08);transition:color .2s;}
+.nmob-drawer a:hover{color:var(--nl);}
+.nmob-drawer .nmob-cta{margin-top:1.5rem;background:var(--nb);color:#fff!important;text-align:center;padding:1rem!important;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);border:none!important;font-weight:700!important;}
+@media(max-width:768px){.nmob-btn{display:flex;}}
 .nnav-links{display:flex;align-items:center;gap:1.5rem;list-style:none;}
 .nnav-links a{color:var(--gl);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s;}
 .nnav-links a:hover{color:var(--nl);}
@@ -329,6 +341,7 @@ fbq('init','2200432150733133');fbq('track','PageView');
 
 <nav class="nnav" id="nnav">
   <div class="nnav-logo"><img src="https://nextupcredit-web.github.io/nextupenterprise/logo.png" alt="NextUP Enterprise"></div>
+  <button class="nmob-btn" id="nmob-btn" onclick="ntoggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nnav-links">
     <li><a href="#nabout">About</a></li>
     <li><a href="#nhow">How It Works</a></li>
@@ -339,6 +352,15 @@ fbq('init','2200432150733133');fbq('track','PageView');
     <li><a href="https://nextupenterprise.com/checkout.html" class="nnav-cta">Get Started</a></li>
   </ul>
 </nav>
+<div class="nmob-drawer" id="nmob-drawer">
+  <a href="#nabout" onclick="ncloseMenu()">About</a>
+  <a href="#nhow" onclick="ncloseMenu()">How It Works</a>
+  <a href="#npricing" onclick="ncloseMenu()">Pricing</a>
+  <a href="#ndiy" onclick="ncloseMenu()">DIY Kit</a>
+  <a href="#nbiz" onclick="ncloseMenu()">For Entrepreneurs</a>
+  <a href="#nfaq" onclick="ncloseMenu()">FAQ</a>
+  <a href="https://nextupenterprise.com/checkout.html" class="nmob-cta">Get Started →</a>
+</div>
 
 <section class="nhero" id="ntop">
   <div class="nhero-bg"></div><div class="nhero-grid"></div>
@@ -679,9 +701,9 @@ fbq('init','2200432150733133');fbq('track','PageView');
       </div>
       <div class="nftr-cl"><h4>Navigate</h4><ul><li><a href="#nabout">About Yordyn</a></li><li><a href="#nhow">How It Works</a></li><li><a href="#npricing">Pricing</a></li><li><a href="#ndiy">DIY Kit &mdash; $47</a></li><li><a href="#nbiz">For Entrepreneurs</a></li><li><a href="#nfaq">FAQ</a></li></ul></div>
       <div class="nftr-cl nftr-ct"><h4>Contact</h4><a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a><a href="tel:5702031530">570-203-1530</a><a>222 Wilkes Barre Twp Blvd #253<br>Wilkes Barre, PA 18702</a></div>
-      <div class="nftr-cl"><h4>Links</h4><ul><li><a href="https://www.facebook.com/Nextupenterprise" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/nextupenterprise/" target="_blank">Instagram</a></li><li><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YouTube</a></li><li><a href="https://www.nextupcapitalgroup.com/" target="_blank">NextUP Capital Group</a></li><li><a href="https://www.secureclientaccess.com/" target="_blank">Client Login</a></li></ul></div>
+      <div class="nftr-cl"><h4>Links</h4><ul><li><a href="https://www.facebook.com/Nextupenterprise" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/yg_nextup/" target="_blank">Instagram</a></li><li><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YouTube</a></li><li><a href="https://www.nextupcapitalgroup.com/" target="_blank">NextUP Capital Group</a></li><li><a href="https://www.secureclientaccess.com/" target="_blank">Client Login</a></li></ul></div>
     </div>
-    <div class="nftr-bt"><p>&copy; 2026 NextUP Enterprise. All rights reserved.</p><div class="nftr-sc"><a href="https://www.facebook.com/Nextupenterprise" target="_blank">FB</a><a href="https://www.instagram.com/nextupenterprise/" target="_blank">IG</a><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YT</a></div></div>
+    <div class="nftr-bt"><p>&copy; 2026 NextUP Enterprise. All rights reserved.</p><div class="nftr-sc"><a href="https://www.facebook.com/Nextupenterprise" target="_blank">FB</a><a href="https://www.instagram.com/yg_nextup/" target="_blank">IG</a><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YT</a></div></div>
   </div>
 </footer>
 
@@ -689,6 +711,23 @@ fbq('init','2200432150733133');fbq('track','PageView');
 
 <script>
 (function(){
+  function ntoggleMenu(){
+    var btn=document.getElementById('nmob-btn');
+    var drawer=document.getElementById('nmob-drawer');
+    if(!btn||!drawer)return;
+    btn.classList.toggle('nopen');
+    drawer.classList.toggle('nopen');
+    document.body.style.overflow=drawer.classList.contains('nopen')?'hidden':'';
+  }
+  function ncloseMenu(){
+    var btn=document.getElementById('nmob-btn');
+    var drawer=document.getElementById('nmob-drawer');
+    if(btn)btn.classList.remove('nopen');
+    if(drawer)drawer.classList.remove('nopen');
+    document.body.style.overflow='';
+  }
+  window.ntoggleMenu=ntoggleMenu;
+  window.ncloseMenu=ncloseMenu;
   function nfaq(el){var it=el.parentElement;var op=it.classList.contains('nop');document.querySelectorAll('.nfaq-it').forEach(function(i){i.classList.remove('nop');});if(!op)it.classList.add('nop');}
   window.nfaq=nfaq;
   function npkg(n){var p=document.getElementById('npk'+n);if(!p)return;var op=p.classList.contains('nop');document.querySelectorAll('.npkg').forEach(function(x){x.classList.remove('nop');var ar=x.querySelector('.npkg-ar');if(ar)ar.textContent='+';});if(!op){p.classList.add('nop');var ar=p.querySelector('.npkg-ar');if(ar)ar.textContent='+';}}
