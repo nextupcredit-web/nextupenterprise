@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Get Started — NextUP Enterprise">
 <meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
@@ -26,7 +22,7 @@ a{text-decoration:none;}
 
 /* NAV */
 .co-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(5,5,5,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,0.2);}
-.co-nav-logo a{text-decoration:none;display:flex;align-items:center;}
+.co-nav-logo a{text-decoration:none;}
 .co-nav-logo .co-logo-main{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
 .co-nav-logo .co-logo-main span{color:var(--nb);}
 .co-nav-logo .co-logo-sub{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gr);display:block;}
@@ -236,7 +232,8 @@ body{top:0!important;}
 <nav class="co-nav">
   <div class="co-nav-logo">
     <a href="index.html">
-<img src="https://nextupcredit-web.github.io/nextupenterprise/logo.png" alt="NextUP Enterprise" style="height:44px;display:block;">
+      <div class="co-logo-main">NEXT<span>UP</span></div>
+      <span class="co-logo-sub">Enterprise</span>
     </a>
   </div>
   <button class="co-translate-btn" onclick="nueTranslatePage()">🌐 <span class="co-trans-label">Español</span></button>
@@ -277,10 +274,10 @@ body{top:0!important;}
           <span class="co-plan-name">Month-to-Month</span>
         </div>
         <div class="co-plan-price">
-          <span class="cur">$</span><span class="amt">125</span><span class="per">/month &middot; cancel anytime</span>
+          <span class="cur">$</span><span class="amt">125</span><span class="per">/month · cancel anytime</span>
         </div>
         <div class="co-plan-desc">Start today, no long-term commitment. Cancel anytime with no penalty.</div>
-        <div style="margin-top:.65rem;font-size:.73rem;color:rgba(179,128,46,.8);line-height:1.55;border-top:1px solid rgba(179,128,46,.15);padding-top:.6rem;">&#128274; Your card is <strong style="color:#fff;">never stored.</strong> Each month you choose to continue, you&rsquo;ll receive a separate invoice to pay for the next cycle.</div>
+        <div style="font-size:.72rem;color:rgba(179,128,46,0.8);margin-top:.4rem;font-style:italic;">&#9733; Cards never stored &nbsp;&middot;&nbsp; Separate invoice sent each month</div>
       </div>
     </div>
 
@@ -345,7 +342,7 @@ body{top:0!important;}
         <button class="co-toggle-btn" id="toggle-125" onclick="coSwitchPlan('125')">
           <span class="co-toggle-name">Monthly</span>
           <span class="co-toggle-price">$125<small>/mo</small></span>
-          <span class="co-toggle-note">cancel anytime</span>
+          <span class="co-toggle-note">cancel anytime · invoice monthly</span>
         </button>
       </div>
 
@@ -355,6 +352,9 @@ body{top:0!important;}
         <span id="co-summary-price">$597 one-time</span>
       </div>
 
+      <!-- PLAN NOTES -->
+      <div id="co-onetime-note" style="font-size:.74rem;color:rgba(179,128,46,0.75);margin-bottom:1rem;font-style:italic;">&#9733; One-time payment &middot; 6 full months of service included</div>
+      <div id="co-monthly-note" style="font-size:.74rem;color:rgba(179,128,46,0.75);margin-bottom:1rem;font-style:italic;display:none;">&#9733; Cards are never stored &middot; You will receive a separate invoice each month you choose to continue</div>
       <!-- STRIPE ELEMENTS FORM -->
       <form id="co-payment-form">
         <div class="co-field">
@@ -374,9 +374,6 @@ body{top:0!important;}
           <span id="co-btn-text">&#9889; Pay $597 Securely &#8594;</span>
           <span id="co-btn-loading" style="display:none;">Processing...</span>
         </button>
-        <div id="co-monthly-notice" style="display:none;margin-top:1rem;padding:.85rem 1rem;background:rgba(179,128,46,.06);border:1px solid rgba(179,128,46,.2);border-left:3px solid var(--nb, #b3802e);font-size:.78rem;color:#aaa;line-height:1.6;">
-          &#128274; <strong style="color:#fff;">Your card is never stored.</strong> This is a one-time payment for your first month. Each month you choose to continue, you&rsquo;ll receive a separate invoice. Cancel anytime &mdash; no pressure.
-        </div>
       </form>
 
       <div class="co-divider"></div>
@@ -417,14 +414,12 @@ body{top:0!important;}
       currentPrice = 'price_1TleLWRr06GLYziwB4QcmBuA';
       currentAmount = '$597 one-time';
       currentLabel = '$597';
-      var mn = document.getElementById('co-monthly-notice'); if(mn) mn.style.display = 'none';
       currentPlanName = 'Credit Builder — 6 Months';
     } else {
       document.getElementById('toggle-125').classList.add('co-toggle-active');
       currentPrice = 'price_1TlJ0CRr06GLYziwapCGvnjz';
       currentAmount = '$125/mo';
       currentLabel = '$125/mo';
-      var mn = document.getElementById('co-monthly-notice'); if(mn) mn.style.display = 'block';
       currentPlanName = 'Month-to-Month';
     }
     document.getElementById('co-summary-name').textContent = currentPlanName;
@@ -566,7 +561,6 @@ body{top:0!important;}
           });
         }
 
-        // Set verified token so thank you page lets them through
         sessionStorage.setItem('nue_payment_verified', 'true');
         window.location.href = 'https://nextupenterprise.com/welcome-confirmed-nue2026.html';
 
@@ -621,6 +615,3 @@ function nueTranslatePage(){
 }
 window.nueTranslatePage = nueTranslatePage;
 </script>
-
-</body>
-</html>
