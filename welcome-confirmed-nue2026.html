@@ -1,7 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<script>
+// Payment guard - redirect if not verified
+(function(){
+  var verified = sessionStorage.getItem('nue_payment_verified');
+  // Also check URL param from Stripe redirect (payment_intent param)
+  var urlParams = new URLSearchParams(window.location.search);
+  var hasStripeParam = urlParams.get('payment_intent') || urlParams.get('redirect_status') === 'succeeded';
+  if(hasStripeParam) {
+    // Stripe redirected here after payment - set verified
+    sessionStorage.setItem('nue_payment_verified', 'true');
+    // Clean URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+  } else if(!verified) {
+    // Not verified - redirect to checkout
+    window.location.href = 'checkout.html';
+  }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Welcome to NextUP Enterprise — You're In!">
 <link rel="icon" type="image/png" href="logo.png">
@@ -9,16 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel Code -->
-<script>
-// ── PAYMENT GUARD ── Only accessible after completing checkout
-(function(){
-  var verified = sessionStorage.getItem('nue_payment_verified');
-  if(verified !== 'true') {
-    window.location.replace('https://nextupenterprise.com/checkout.html');
-  }
-})();
-</script>
-
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','2200432150733133');fbq('track','PageView');fbq('track','Purchase');
@@ -125,7 +129,8 @@ body{top:0!important;}
 <!-- NAV -->
 <nav class="ty-nav">
   <div>
-<img src="https://nextupcredit-web.github.io/nextupenterprise/logo.png" alt="NextUP Enterprise" style="height:44px;display:block;">
+    <div class="ty-logo-main">NEXT<span>UP</span></div>
+    <span class="ty-logo-sub">Enterprise</span>
   </div>
   <div style="display:flex;align-items:center;gap:1rem;">
     <button class="co-translate-btn" onclick="nueTranslatePage()">🌐 <span class="co-trans-label">Español</span></button>
@@ -230,6 +235,3 @@ window.nueTranslatePage=nueTranslatePage;
 <!-- Calendly Widget Script -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-
-</body>
-</html>
