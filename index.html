@@ -1,276 +1,1185 @@
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2200432150733133');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2200432150733133&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Let's Get Started — NextUP Enterprise">
+<meta property="og:title" content="NextUP Enterprise | Credit Repair & Build Credit">
+<meta property="og:description" content="150+ clients helped. Real strategies. Real results. Start your credit comeback today.">
 <meta property="og:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
+<meta property="og:url" content="https://nextupenterprise.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nextupcredit-web.github.io/nextupenterprise/logo.png">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;900&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','2200432150733133');fbq('track','PageView');fbq('track','Lead');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2200432150733133&ev=Lead&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
-
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--nb:#b3802e;--nl:#cb9a42;--nbr:#d4a84e;--bk:#050505;--bk2:#0D0D0D;--bk3:#141414;--bk4:#1C1C1C;--wh:#FAFAF8;--gl:#AAAAAA;--gr:#888;--lb:#F7F5F0;}
-body{font-family:'Barlow',sans-serif;background:var(--bk);color:var(--wh);min-height:100vh;overflow-x:hidden;}
-a{text-decoration:none;}
-
-@keyframes obFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes obPulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.05)}}
-@keyframes obCheck{0%{stroke-dashoffset:100}100%{stroke-dashoffset:0}}
-@keyframes obGlow{0%,100%{box-shadow:0 0 20px rgba(179,128,46,0.15)}50%{box-shadow:0 0 40px rgba(179,128,46,0.35)}}
-
+:root{--nb:#b3802e;--nl:#cb9a42;--nbr:#d4a84e;--nd:#7a5820;--bk:#050505;--bk2:#0D0D0D;--bk3:#141414;--bk4:#1C1C1C;--ch:#444444;--gr:#888;--gl:#AAAAAA;--wh:#FAFAF8;--ow:#F4F1EC;--lb:#F7F5F0;}
+.nw*,.nw *::before,.nw *::after{box-sizing:border-box;margin:0;padding:0;}
+.nw{font-family:'Barlow',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;color:var(--wh);}
+.nw a{text-decoration:none;}
+.nw img{max-width:100%;display:block;}
+@keyframes nfU{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nPl{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
+@keyframes nFl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.nfu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.nfu.nvis{opacity:1;transform:translateY(0);}
+.nd1{transition-delay:.1s}.nd2{transition-delay:.25s}.nd3{transition-delay:.4s}.nd4{transition-delay:.55s}
 /* NAV */
-.ob-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(5,5,5,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,0.2);}
-.ob-logo a{text-decoration:none;}
-.ob-logo-main{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
-.ob-logo-main span{color:var(--nb);}
-.ob-logo-sub{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gr);display:block;}
-.ob-nav-right{display:flex;align-items:center;gap:1rem;}
-.ob-back{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gr);transition:color .2s;}
-.ob-back:hover{color:var(--nl);}
-
+.nnav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:76px;background:rgba(5,5,5,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,.2);transition:all .3s;}
+.nnav-logo img{height:50px;}
+.nnav-links{display:flex;align-items:center;gap:1.5rem;list-style:none;}
+.nnav-links a{color:var(--gl);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s;}
+.nnav-links a:hover{color:var(--nl);}
+.nnav-cta{background:var(--nb)!important;color:#fff!important;padding:.5rem 1.3rem!important;font-weight:700!important;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)!important;}
+.nnav-cta:hover{background:var(--nbr)!important;}
 /* HERO */
-.ob-hero{padding:100px 5% 3rem;text-align:center;position:relative;overflow:hidden;}
-.ob-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(179,128,46,0.09) 0%,transparent 65%);pointer-events:none;animation:obPulse 5s ease-in-out infinite;}
-.ob-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(179,128,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(179,128,46,0.04) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);}
-
-/* CHECK MARK */
-.ob-check-wrap{display:flex;justify-content:center;margin-bottom:1.75rem;animation:obFadeUp .6s ease forwards;}
-.ob-check-circle{width:80px;height:80px;border-radius:50%;background:rgba(179,128,46,0.12);border:2px solid var(--nb);display:flex;align-items:center;justify-content:center;animation:obGlow 3s ease-in-out infinite;}
-.ob-check-circle svg{width:38px;height:38px;}
-.ob-check-circle svg polyline{fill:none;stroke:var(--nl);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:obCheck .6s ease .3s forwards;}
-
-.ob-tag{display:inline-flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--nl);margin-bottom:1rem;animation:obFadeUp .5s ease .1s both;}
-.ob-tag::before,.ob-tag::after{content:'';display:block;width:22px;height:1px;background:var(--nb);}
-.ob-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;line-height:1.05;color:#fff;margin-bottom:1rem;position:relative;z-index:1;animation:obFadeUp .6s ease .2s both;}
-.ob-hero h1 em{font-style:italic;color:var(--nl);}
-.ob-hero-sub{font-size:.97rem;color:var(--gl);max-width:520px;margin:0 auto 2rem;line-height:1.75;font-weight:300;position:relative;z-index:1;animation:obFadeUp .6s ease .3s both;}
-.ob-hero-sub strong{color:#fff;font-weight:600;}
-
-/* STEPS OVERVIEW */
-.ob-steps-bar{display:flex;align-items:center;justify-content:center;gap:0;max-width:500px;margin:0 auto 3.5rem;position:relative;z-index:1;animation:obFadeUp .6s ease .35s both;}
-.ob-step-pill{display:flex;align-items:center;gap:.6rem;background:rgba(179,128,46,0.08);border:1px solid rgba(179,128,46,0.2);padding:.6rem 1.25rem;}
-.ob-step-pill.ob-active{background:rgba(179,128,46,0.15);border-color:var(--nb);}
-.ob-step-num{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--nb);line-height:1;}
-.ob-step-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gl);}
-.ob-step-pill.ob-active .ob-step-lbl{color:#fff;}
-.ob-step-arrow{font-size:.8rem;color:rgba(179,128,46,0.4);padding:0 .5rem;}
-
-/* MAIN CONTENT */
-.ob-content{max-width:860px;margin:0 auto;padding:0 5% 5rem;}
-
-/* SECTION CARD */
-.ob-card{background:var(--bk2);border:1px solid rgba(179,128,46,0.2);overflow:hidden;margin-bottom:1.5rem;animation:obFadeUp .6s ease both;}
-.ob-card:nth-child(1){animation-delay:.4s;}
-.ob-card:nth-child(2){animation-delay:.55s;}
-.ob-card-header{padding:1.5rem 2rem;border-bottom:1px solid rgba(179,128,46,0.15);display:flex;align-items:center;gap:1.25rem;}
-.ob-card-step{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:rgba(179,128,46,0.25);line-height:1;flex-shrink:0;}
-.ob-card-hd{display:flex;flex-direction:column;gap:.2rem;}
-.ob-card-badge{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--nb);color:#fff;padding:.2rem .6rem;display:inline-block;width:fit-content;}
-.ob-card-badge.ob-secondary{background:var(--bk4);border:1px solid rgba(179,128,46,0.3);color:var(--nl);}
-.ob-card-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:#fff;line-height:1.2;}
-.ob-card-desc{font-size:.85rem;color:var(--gr);font-weight:300;line-height:1.6;margin-top:.15rem;}
-.ob-card-body{padding:2rem;}
-
-/* CALENDLY */
-.ob-calendly-wrap{border:1px solid rgba(179,128,46,0.15);overflow:hidden;}
-.calendly-inline-widget{min-width:100%;height:700px;}
-@media(max-width:768px){.calendly-inline-widget{height:900px !important;}}
-
-/* CREDIT MONITORING */
-.ob-credit-main{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-.ob-credit-text h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.4rem;}
-.ob-credit-text p{font-size:.86rem;color:var(--gr);line-height:1.65;font-weight:300;max-width:400px;}
-.ob-credit-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.8rem;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;white-space:nowrap;flex-shrink:0;}
-.ob-credit-btn:hover{background:var(--nbr);transform:translateY(-1px);}
-.ob-credit-note{font-size:.74rem;color:var(--gr);font-weight:300;font-style:italic;margin-top:.5rem;}
-
-.ob-divider{height:1px;background:rgba(179,128,46,0.12);margin:1.25rem 0;}
-
-/* Alternative monitoring */
-.ob-alt-title{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--nb);margin-bottom:.85rem;display:flex;align-items:center;gap:.6rem;}
-.ob-alt-title::after{content:'';flex:1;height:1px;background:rgba(179,128,46,0.15);}
-.ob-alt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;}
-.ob-alt-item{background:var(--bk3);border:1px solid rgba(179,128,46,0.12);padding:.85rem 1rem;display:flex;align-items:center;gap:.6rem;transition:all .2s;}
-.ob-alt-item:hover{border-color:rgba(179,128,46,0.35);background:rgba(179,128,46,0.05);}
-.ob-alt-dot{width:7px;height:7px;background:var(--nb);border-radius:50%;flex-shrink:0;}
-.ob-alt-name{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:#fff;}
-
-/* LOGIN NOTE */
-.ob-login-note{background:rgba(179,128,46,0.07);border:1px solid rgba(179,128,46,0.2);border-left:4px solid var(--nb);padding:1rem 1.25rem;margin-top:1.25rem;}
-.ob-login-note p{font-size:.83rem;color:var(--gl);line-height:1.65;}
-.ob-login-note p strong{color:var(--nl);}
-
+.nhero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:110px 5% 80px;background:var(--bk);}
+.nhero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 55% 65% at 75% 45%,rgba(179,128,46,.09) 0%,transparent 65%),radial-gradient(ellipse 35% 45% at 20% 75%,rgba(179,128,46,.05) 0%,transparent 55%),var(--bk);}
+.nhero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(179,128,46,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(179,128,46,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);}
+.norb{position:absolute;border-radius:50%;z-index:0;animation:nPl 4s ease-in-out infinite;}
+.norb1{width:300px;height:300px;background:radial-gradient(circle,rgba(179,128,46,.08) 0%,transparent 70%);top:15%;right:12%;}
+.norb2{width:200px;height:200px;background:radial-gradient(circle,rgba(179,128,46,.06) 0%,transparent 70%);bottom:20%;right:30%;animation-delay:2s;}
+.norb3{width:150px;height:150px;background:radial-gradient(circle,rgba(179,128,46,.05) 0%,transparent 70%);top:60%;left:5%;animation-delay:1s;}
+.nhero-c{position:relative;z-index:2;max-width:700px;}
+.nscrl{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.nscrl-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--nb),transparent);animation:nFl 2s ease-in-out infinite;}
+.nscrl-txt{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nd);}
+/* EYEBROW */
+.ney{display:inline-flex;align-items:center;gap:.65rem;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--nl);margin-bottom:.9rem;}
+.ney::before{content:'';display:block;width:26px;height:1px;background:var(--nb);}
+.neyc{justify-content:center;}
+.neyc::before{display:none;}
+.neyc::after{content:'';display:block;width:26px;height:1px;background:var(--nb);}
+/* HERO TEXT */
+.nhero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6.5vw,5.5rem);font-weight:700;line-height:1;margin-bottom:1.4rem;color:#fff;}
+.nhero h1 em{font-style:italic;color:var(--nl);}
+.nhero-sub{font-size:1.05rem;color:var(--gl);max-width:520px;line-height:1.78;margin-bottom:2.4rem;font-weight:300;}
+.nhero-sub strong{color:#fff;font-weight:600;}
+.nhero-acts{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+/* BUTTONS */
+.btn-br{display:inline-flex;align-items:center;gap:.5rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;padding:1rem 2.2rem;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;border:none;cursor:pointer;}
+.btn-br:hover{background:var(--nbr);transform:translateY(-2px);box-shadow:0 8px 24px rgba(179,128,46,.25);}
+.btn-out{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(179,128,46,.4);color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 2rem;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;cursor:pointer;background:transparent;}
+.btn-out:hover{background:rgba(179,128,46,.1);border-color:var(--nb);}
+.btn-gh{color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid rgba(179,128,46,.3);padding-bottom:2px;transition:all .2s;}
+.btn-gh:hover{color:var(--nbr);border-color:var(--nbr);}
+/* STATS */
+.nstats{background:var(--ow);border-top:1px solid rgba(179,128,46,.15);border-bottom:1px solid rgba(179,128,46,.15);padding:2.5rem 5%;}
+.nstats-g{display:grid;grid-template-columns:repeat(3,1fr);max-width:860px;margin:0 auto;}
+.nstat{text-align:center;padding:.75rem 2rem;position:relative;}
+.nstat:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:rgba(179,128,46,.25);}
+.nstat-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--nb);line-height:1;margin-bottom:.3rem;}
+.nstat-l{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ch);}
+/* SECTIONS */
+.nsec{padding:6.5rem 5%;}
+.nsec-wh{background:#fff;color:var(--bk);}
+.nsec-lh{background:var(--lb);color:var(--bk);}
+.nsec-dk{background:var(--bk);color:#fff;}
+.nsec-ch{background:var(--bk2);color:#fff;}
+.nin{max-width:1200px;margin:0 auto;}
+.nst{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.1rem);font-weight:700;line-height:1.1;margin-bottom:1.2rem;}
+.nst em{font-style:italic;color:var(--nb);}
+.nsec-wh .nst,.nsec-lh .nst{color:var(--bk);}
+/* FOUNDER */
+.nfnd-g{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.nfnd-iw{position:relative;}
+.nfnd-iw::before{content:'';position:absolute;top:-18px;left:-18px;right:18px;bottom:18px;border:1px solid rgba(179,128,46,.25);z-index:0;}
+.nfnd-iw::after{content:'';position:absolute;bottom:-18px;right:-18px;top:18px;left:18px;border:1px solid rgba(179,128,46,.1);z-index:0;}
+.nfnd-img{width:100%;position:relative;z-index:1;filter:contrast(1.05);}
+.nfnd-bdg{position:absolute;bottom:-18px;right:-18px;width:108px;height:108px;background:var(--nb);z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.nfnd-bdg span:first-child{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1;}
+.nfnd-bdg span:last-child{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-align:center;padding:0 8px;}
+.nfnd-t p{font-size:1rem;line-height:1.8;margin-bottom:1.1rem;font-weight:300;color:#333;}
+.nfnd-t p strong{color:var(--bk);font-weight:600;}
+.nfnd-q{border-left:3px solid var(--nb);padding:1rem 1.5rem;margin:1.6rem 0;background:rgba(179,128,46,.05);}
+.nfnd-q p{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-style:italic;color:var(--nb);margin:0!important;}
+.nfnd-sig{margin-top:1.6rem;}
+.nfnd-nm{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:600;font-style:italic;color:var(--nb);display:block;}
+.nfnd-rl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gr);}
+/* HOW */
+.nhow-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:3rem;background:rgba(179,128,46,.15);}
+.nhow-s{background:#fff;padding:2.25rem 1.75rem;position:relative;overflow:hidden;transition:all .35s;border-bottom:3px solid transparent;}
+.nhow-s:hover{transform:translateY(-4px);border-bottom-color:var(--nb);box-shadow:0 12px 32px rgba(0,0,0,.1);}
+.nhow-n{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:rgba(179,128,46,.15);line-height:1;margin-bottom:.9rem;transition:color .3s;}
+.nhow-s:hover .nhow-n{color:rgba(179,128,46,.3);}
+.nhow-t{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bk);margin-bottom:.55rem;}
+.nhow-b{font-size:.86rem;color:var(--gr);line-height:1.65;}
+.nhow-tg{display:inline-block;margin-top:.9rem;font-family:'Barlow Condensed',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--nb);border:1px solid rgba(179,128,46,.3);padding:.22rem .6rem;}
+/* PRICING */
+.npr-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.npr-c{background:#fff;border:1px solid rgba(179,128,46,.15);padding:2.5rem 2rem;position:relative;transition:all .35s;}
+.npr-c:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(179,128,46,.12);border-color:rgba(179,128,46,.4);}
+.npr-c.nft{border:2px solid var(--nb);transform:scale(1.02);}
+.npr-c.nft:hover{transform:scale(1.02) translateY(-5px);}
+.npr-c.nft::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.22em;padding:.28rem 1rem;white-space:nowrap;}
+.nbdg{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--nb);border:1px solid rgba(179,128,46,.3);padding:.22rem .68rem;margin-bottom:1rem;}
+.npr-nm{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--bk);margin-bottom:.3rem;}
+.npr-ds{font-size:.83rem;color:var(--gr);margin-bottom:1.4rem;line-height:1.5;}
+.npr-am{display:flex;align-items:flex-start;gap:.15rem;margin-bottom:.35rem;}
+.npr-cu{font-family:'Barlow Condensed',sans-serif;font-size:1.35rem;font-weight:500;color:var(--nb);margin-top:.38rem;}
+.npr-nu{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:var(--bk);line-height:1;}
+.npr-pe{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:var(--gr);align-self:flex-end;margin-bottom:.6rem;}
+.npr-nt{font-size:.75rem;color:var(--nb);margin-bottom:1.4rem;font-style:italic;}
+.npr-dv{height:1px;background:rgba(179,128,46,.15);margin:1.4rem 0;}
+.npr-fl{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.9rem;}
+.npr-fl li{display:flex;align-items:flex-start;gap:.55rem;font-size:.86rem;color:#444;}
+.npr-fl li::before{content:'';display:block;width:13px;height:13px;min-width:13px;background:var(--nb);clip-path:polygon(14px 3px,6px 11px,2px 7px,0px 9px,6px 15px,16px 4px);margin-top:2px;flex-shrink:0;}
+.npb{display:block;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;padding:.88rem;transition:all .2s;cursor:pointer;border:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);}
+.npb-br{background:var(--nb);color:#fff;}
+.npb-br:hover{background:var(--nbr);}
+.npb-ot{border:1px solid rgba(179,128,46,.35);color:var(--nb);background:transparent;}
+.npb-ot:hover{background:rgba(179,128,46,.08);border-color:var(--nb);}
+/* DIY BANNER */
+.ndiy-bn{background:var(--bk4);border:1px solid rgba(179,128,46,.3);border-left:4px solid var(--nb);padding:2.5rem 3rem;position:relative;overflow:hidden;margin-top:3.5rem;}
+.ndiy-bn::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--nb),transparent);}
+.ndiy-bn-g{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;}
+.ndiy-tg{display:inline-block;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;padding:.26rem .82rem;margin-bottom:.85rem;}
+.ndiy-bn h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:.6rem;line-height:1.2;}
+.ndiy-bn h3 em{color:var(--nl);font-style:italic;}
+.ndiy-bn p{color:var(--gl);font-size:.87rem;line-height:1.7;font-weight:300;margin-bottom:1rem;}
+.ndiy-sp{display:flex;gap:1.1rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+.ndiy-sp span{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--nl);}
+.ndiy-sp span::before{content:'✓ ';}
+.ndiy-pw{text-align:center;}
+.ndiy-pp{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:700;color:var(--nl);line-height:1;}
+.ndiy-pp sup{font-size:1.6rem;vertical-align:top;margin-top:.5rem;}
+.ndiy-pl{font-family:'Barlow Condensed',sans-serif;font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gr);margin-bottom:1rem;display:block;}
+.nins{font-family:'Barlow Condensed',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--nb);margin-top:.6rem;display:block;}
+/* DIY FULL */
+.ndiy-g{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
+.ndiy-bk{background:var(--bk3);border:1px solid rgba(179,128,46,.2);padding:2.75rem 2.25rem;position:relative;}
+.ndiy-bk::before{content:'DIY KIT';position:absolute;top:-14px;left:2rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:900;letter-spacing:.25em;padding:.26rem .88rem;}
+.ndiy-bt{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:.3rem;color:#fff;}
+.ndiy-bs{font-size:.78rem;color:var(--nl);font-weight:500;margin-bottom:1.3rem;}
+.ndiy-st{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(179,128,46,.15);margin-bottom:1.5rem;}
+.nds{background:var(--bk4);padding:.85rem .6rem;text-align:center;}
+.nds-n{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--nl);line-height:1;}
+.nds-l{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gr);margin-top:.2rem;}
+.ndiy-li{list-style:none;display:flex;flex-direction:column;gap:.42rem;}
+.ndiy-li li{display:flex;align-items:flex-start;gap:.5rem;font-size:.82rem;color:var(--gl);}
+.ndiy-li li::before{content:'';display:block;width:5px;height:5px;background:var(--nb);flex-shrink:0;margin-top:6px;}
+.ndiy-ct{display:flex;flex-direction:column;justify-content:center;}
+.ndiy-bp{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:700;color:var(--nb);line-height:1;margin-bottom:.2rem;}
+.ndiy-bp sup{font-size:2.2rem;vertical-align:top;margin-top:.8rem;}
+.ndiy-pk{list-style:none;display:flex;flex-direction:column;gap:.58rem;margin:1.4rem 0 1.75rem;}
+.ndiy-pk li{display:flex;align-items:flex-start;gap:.55rem;font-size:.87rem;color:#444;}
+.ndiy-pk li::before{content:'';display:block;width:13px;height:13px;min-width:13px;background:var(--nb);clip-path:polygon(14px 3px,6px 11px,2px 7px,0px 9px,6px 15px,16px 4px);margin-top:2px;flex-shrink:0;}
+/* BUSINESS */
+.nbiz-in{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:5rem;}
+.nbiz-t p{font-size:.97rem;line-height:1.8;margin-bottom:1.1rem;color:#444;font-weight:300;}
+.nbiz-t p strong{color:var(--bk);font-weight:600;}
+.nbiz-hl{background:rgba(179,128,46,.07);border:1px solid rgba(179,128,46,.2);border-left:4px solid var(--nb);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.nbiz-hl p{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-style:italic;color:var(--nb)!important;margin:0!important;}
+/* PACKAGES ACCORDION */
+.npkg-g{display:flex;flex-direction:column;gap:0;}
+.npkg{background:#fff;border:1px solid rgba(179,128,46,.15);overflow:hidden;transition:box-shadow .3s;margin-bottom:2px;}
+.npkg:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);}
+.npkg-hd{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;cursor:pointer;border-bottom:2px solid transparent;transition:border-color .3s;user-select:none;gap:1rem;}
+.npkg.nop .npkg-hd{border-bottom-color:var(--nb);background:rgba(179,128,46,.03);}
+.npkg-lf{display:flex;flex-direction:column;gap:.25rem;}
+.npkg-nm{font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bk);}
+.npkg-tl{font-size:.82rem;color:var(--gr);}
+.npkg-ar{width:26px;height:26px;border:1px solid rgba(179,128,46,.3);display:flex;align-items:center;justify-content:center;color:var(--nb);font-size:1rem;transition:transform .3s,background .3s;flex-shrink:0;}
+.npkg.nop .npkg-ar{transform:rotate(45deg);background:rgba(179,128,46,.1);}
+.npkg-bd{max-height:0;overflow:hidden;transition:max-height .55s ease;}
+.npkg.nop .npkg-bd{max-height:4000px;}
+.npkg-cn{padding:2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+.npkg-sc{margin-bottom:1.4rem;}
+.npkg-sc-t{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--nb);margin-bottom:.7rem;padding-bottom:.35rem;border-bottom:1px solid rgba(179,128,46,.15);}
+.npkg-fl{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.npkg-fl li{display:flex;align-items:flex-start;gap:.5rem;font-size:.84rem;color:#444;line-height:1.5;}
+.npkg-fl li::before{content:'';display:block;width:11px;height:11px;min-width:11px;background:var(--nb);clip-path:polygon(12px 2px,5px 9px,2px 6px,0px 8px,5px 13px,14px 3px);margin-top:3px;flex-shrink:0;}
+.npkg-fl li strong{font-weight:600;color:var(--bk);}
+.npkg-bon{margin:0 2rem 0;padding:1.2rem 1.4rem;background:rgba(179,128,46,.06);border:1px solid rgba(179,128,46,.2);border-left:4px solid var(--nb);}
+.npkg-bon-t{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--nb);margin-bottom:.35rem;}
+.npkg-bon p{font-size:.84rem;color:#555;line-height:1.6;}
+.npkg-ft{padding:1.6rem 2rem;background:rgba(179,128,46,.03);border-top:1px solid rgba(179,128,46,.1);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.npkg-pw{display:flex;align-items:baseline;gap:.15rem;}
+.npkg-pc{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:500;color:var(--nb);}
+.npkg-pn{font-family:'Cormorant Garamond',serif;font-size:2.9rem;font-weight:700;color:var(--bk);line-height:1;}
+.npkg-pnt{font-size:.75rem;color:var(--gr);font-style:italic;margin-top:.15rem;}
+.npkg-cts{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;}
+/* TESTIMONIAL */
+.ntst{text-align:center;padding:5.5rem 5%;}
+.ntst-st{display:flex;justify-content:center;gap:.35rem;margin-bottom:1.2rem;}
+.nstr{color:var(--nb);font-size:1.1rem;}
+.ntst-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-style:italic;color:var(--bk);max-width:660px;margin:0 auto 1.3rem;line-height:1.4;}
+.ntst-a{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--nb);}
+/* FAQ */
+.nfaq-in{max-width:820px;margin:0 auto;}
+.nfaq-hd{text-align:center;margin-bottom:3rem;}
+.nfaq-it{border-bottom:1px solid rgba(0,0,0,.08);}
+.nfaq-q{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.91rem;font-weight:600;letter-spacing:.04em;color:var(--bk);transition:color .2s;gap:1rem;user-select:none;}
+.nfaq-q:hover{color:var(--nb);}
+.nfaq-ic{width:21px;height:21px;min-width:21px;border:1px solid rgba(179,128,46,.3);display:flex;align-items:center;justify-content:center;color:var(--nb);font-size:.95rem;transition:transform .3s,background .3s;flex-shrink:0;}
+.nfaq-it.nop .nfaq-ic{transform:rotate(45deg);background:rgba(179,128,46,.1);}
+.nfaq-an{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.nfaq-it.nop .nfaq-an{max-height:280px;}
+.nfaq-an p{font-size:.9rem;color:#555;line-height:1.75;padding-bottom:1.25rem;font-weight:300;}
+.nfaq-an p strong{color:var(--bk);font-weight:600;}
+/* CTA */
+.ncta{padding:7rem 5%;text-align:center;position:relative;overflow:hidden;background:var(--bk);}
+.ncta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(179,128,46,.1) 0%,transparent 70%);pointer-events:none;animation:nPl 5s ease-in-out infinite;}
+.ncta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,5vw,4rem);font-weight:700;color:#fff;max-width:640px;margin:0 auto 1.25rem;line-height:1.1;position:relative;}
+.ncta h2 em{color:var(--nl);font-style:italic;}
+.ncta p{color:var(--gl);font-size:1rem;max-width:420px;margin:0 auto 2.1rem;font-weight:300;position:relative;}
+.ncta-acts{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;position:relative;}
 /* FOOTER */
-.ob-footer{background:var(--bk);border-top:1px solid rgba(179,128,46,0.1);padding:2rem 5%;text-align:center;}
-.ob-footer p{font-size:.76rem;color:rgba(136,136,136,0.5);font-weight:300;}
-.ob-footer a{color:var(--gr);transition:color .2s;}
-.ob-footer a:hover{color:var(--nl);}
-
+.nftr{background:var(--bk);border-top:1px solid rgba(179,128,46,.15);padding:4rem 5% 2rem;color:#fff;}
+.nftr-in{max-width:1200px;margin:0 auto;}
+.nftr-tp{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.nftr-br img{height:44px;margin-bottom:1rem;display:block;}
+.nftr-br p{font-size:.8rem;color:var(--gr);line-height:1.7;max-width:255px;font-weight:300;}
+.nftr-cl h4{font-family:'Barlow Condensed',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--nl);margin-bottom:.95rem;}
+.nftr-cl ul{list-style:none;display:flex;flex-direction:column;gap:.52rem;}
+.nftr-cl ul li a{font-size:.8rem;color:var(--gr);transition:color .2s;font-weight:300;}
+.nftr-cl ul li a:hover{color:var(--nl);}
+.nftr-ct a{display:block;font-size:.8rem;color:var(--gr);font-weight:300;line-height:1.9;transition:color .2s;}
+.nftr-ct a:hover{color:var(--nl);}
+.nftr-bt{border-top:1px solid rgba(179,128,46,.08);padding-top:1.6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.nftr-bt p{font-size:.74rem;color:rgba(136,136,136,.5);font-weight:300;}
+.nftr-sc{display:flex;gap:.6rem;}
+.nftr-sc a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid rgba(179,128,46,.2);color:var(--gr);font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:700;transition:all .2s;}
+.nftr-sc a:hover{border-color:var(--nb);color:var(--nl);}
+/* RESPONSIVE */
+@media(max-width:1024px){
+.nhow-g{grid-template-columns:repeat(2,1fr);}
+.npr-g{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}
+.npr-c.nft{transform:none;}
+.ndiy-g{grid-template-columns:1fr;gap:3rem;}
+.nbiz-in{grid-template-columns:1fr;gap:3rem;}
+.nfnd-g{grid-template-columns:1fr;gap:4rem;}
+.nftr-tp{grid-template-columns:1fr 1fr;}
+.ndiy-bn-g{grid-template-columns:1fr;gap:2rem;}
+.npkg-cn{grid-template-columns:1fr;}
+}
 @media(max-width:768px){
-  .ob-card-header{flex-direction:column;align-items:flex-start;gap:.75rem;}
-  .ob-card-body{padding:1.5rem;}
-  .ob-steps-bar{flex-direction:column;gap:.5rem;}
-  .ob-step-arrow{transform:rotate(90deg);}
-  .ob-credit-main{flex-direction:column;align-items:flex-start;}
-  .ob-credit-btn{width:100%;justify-content:center;}
+.nstats-g{grid-template-columns:repeat(3,1fr);}
+.nstat{padding:.5rem .5rem;}
+.nstat-n{font-size:1.8rem;}
+.nstat-l{font-size:.55rem;}
+.nstat:not(:last-child)::after{display:none;}
+.nhow-g{grid-template-columns:1fr;}
+.nnav-links{display:none;}
+.nftr-tp{grid-template-columns:1fr;}
+.npkg-ft{flex-direction:column;align-items:flex-start;}
+.nhero{padding:90px 5% 50px;min-height:auto;}
+.nhero h1{font-size:2.4rem;}
+.nhero-sub{font-size:.95rem;}
+.nhero-acts{flex-direction:column;align-items:stretch;}
+.nhero-acts .btn-br,.nhero-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+.nnav{padding:0 4%;}
+.nnav-logo img{height:40px;}
+.ndiy-g{grid-template-columns:1fr;gap:3rem;}
+.nfnd-g{grid-template-columns:1fr;gap:3rem;}
+.nbiz-in{grid-template-columns:1fr;gap:2rem;}
+.npr-g{grid-template-columns:1fr;max-width:100%;}
+.npr-c.nft{transform:none;}
+.ndiy-bn-g{grid-template-columns:1fr;gap:1.5rem;}
+.npkg-cn{grid-template-columns:1fr;}
+.ncta-acts{flex-direction:column;align-items:stretch;}
+.ncta-acts .btn-br,.ncta-acts .btn-out,.ncta-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+.nftr-bt{flex-direction:column;align-items:center;text-align:center;}
+}
+@media(max-width:480px){
+.nhero h1{font-size:2rem;}
+.nst{font-size:1.6rem;}
+.nsec{padding:4rem 5%;}
+.nstats{padding:1.5rem 5%;}
+}
+@media(max-width:768px){#nnavMobileCta{display:block !important;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1rem;color:#fff;}}
+
+/* PRICING CARD SHADOWS */
+.npr-c {
+  box-shadow: 0 4px 24px rgba(179,128,46,0.10), 0 1px 4px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.npr-c:hover {
+  box-shadow: 0 12px 40px rgba(179,128,46,0.22), 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+}
+.npr-c.nft {
+  box-shadow: 0 8px 40px rgba(179,128,46,0.25), 0 2px 8px rgba(0,0,0,0.1);
+}
+.npr-c.nft:hover {
+  box-shadow: 0 16px 56px rgba(179,128,46,0.32), 0 4px 16px rgba(0,0,0,0.14);
+  transform: scale(1.02) translateY(-5px);
 }
 
-/* TRANSLATE */
-#ob-gt-el{display:none;}
-.goog-te-banner-frame{display:none!important;}
-body{top:0!important;}
-.skiptranslate{display:none!important;}
-.ob-translate-btn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid rgba(179,128,46,0.35);color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.38rem .85rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
-.ob-translate-btn:hover{background:rgba(179,128,46,0.1);border-color:var(--nb);}
+
+.nmob-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:1001;}
+.nmob-btn span{display:block;width:22px;height:2px;background:var(--nb);border-radius:1px;transition:all .3s;}
+.nmob-btn.nopen span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nmob-btn.nopen span:nth-child(2){opacity:0;}
+.nmob-btn.nopen span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.nmob-menu{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(5,5,5,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(179,128,46,.2);z-index:999;flex-direction:column;padding:1rem 0;}
+.nmob-menu.nopen{display:flex;}
+.nmob-menu a{color:var(--gl);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 5%;border-bottom:1px solid rgba(179,128,46,.07);transition:all .2s;}
+.nmob-menu a:hover{color:var(--nl);background:rgba(179,128,46,.05);}
+.nmob-menu .nmob-cta{background:var(--nb);color:#fff!important;margin:1rem 5% .5rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);text-align:center;font-weight:700;border:none;}
+.nmob-menu .nmob-cta-biz{background:var(--ch);color:#fff!important;margin:.5rem 5% 1rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);text-align:center;font-weight:700;border:none;}
+.nnav-logo img{height:44px;filter:brightness(0) invert(1);}
+.btn-biz-hero{display:inline-flex;align-items:center;gap:.5rem;background:rgba(179,128,46,.12);border:1px solid rgba(179,128,46,.4);color:var(--nl);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.6rem;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .25s;}
+.btn-biz-hero:hover{background:rgba(179,128,46,.22);border-color:var(--nb);transform:translateY(-2px);}
+@media(max-width:768px){
+  .nmob-btn{display:flex;}
+  .nnav-links{display:none!important;}
+  .nscrl{display:none;}
+  .nhero{padding:90px 5% 50px;min-height:auto;}
+  .nhero h1{font-size:2.4rem;}
+  .nhero-sub{font-size:.95rem;}
+  .nhero-acts{flex-direction:column;align-items:stretch;}
+  .nhero-acts .btn-br,.nhero-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+  .btn-biz-hero{font-size:.72rem;padding:.8rem 1rem;width:100%;justify-content:center;clip-path:none;border-radius:2px;}
+  .ndiy-g{grid-template-columns:1fr;gap:3rem;}
+  .nfnd-g{grid-template-columns:1fr;gap:3rem;}
+  .nbiz-in{grid-template-columns:1fr;gap:2rem;}
+  .npr-g{grid-template-columns:1fr;max-width:100%;}
+  .npr-c.nft{transform:none;}
+  .ndiy-bn-g{grid-template-columns:1fr;gap:1.5rem;}
+  .npkg-cn{grid-template-columns:1fr;}
+  .ncta-acts{flex-direction:column;align-items:stretch;}
+  .ncta-acts .btn-br,.ncta-acts .btn-out,.ncta-acts .btn-gh{text-align:center;justify-content:center;width:100%;}
+  .nftr-tp{grid-template-columns:1fr;}
+  .npkg-ft{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:480px){
+  .nhero h1{font-size:2rem;}
+  .nst{font-size:1.6rem;}
+  .nsec{padding:4rem 5%;}
+  .nstats{padding:1.5rem 5%;}
+}
+
+
+
+
+/* Step card shadows only */
+.nhow-s {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(179,128,46,0.08) !important;
+  transition: all 0.35s ease !important;
+}
+.nhow-s:hover {
+  box-shadow: 0 14px 36px rgba(0,0,0,0.15), 0 4px 16px rgba(179,128,46,0.15) !important;
+}
+
+
+/* ── LOADING SCREEN ── */
+#nue-loader {
+  position: fixed;
+  inset: 0;
+  background: #0D0D0D;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#nue-loader.nue-loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+.nue-loader-logo {
+  width: 160px;
+  animation: nueLoaderPulse 1.5s ease-in-out infinite;
+  
+}
+@keyframes nueLoaderPulse {
+  0%,100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.05); }
+}
+.nue-loader-bar-wrap {
+  width: 200px;
+  height: 2px;
+  background: rgba(179,128,46,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.nue-loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--nb), var(--nl), var(--nb));
+  background-size: 200% 100%;
+  border-radius: 2px;
+  animation: nueBarFill 1.8s ease forwards, nueBarShimmer 1s linear infinite;
+}
+@keyframes nueBarFill {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes nueBarShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.nue-loader-txt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(179,128,46,0.6);
+}
+
+
+/* ── CONTACT FORM ── */
+.nue-contact-form { display:flex; flex-direction:column; gap:1.25rem; }
+.nue-form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.nue-form-group { display:flex; flex-direction:column; gap:.5rem; }
+.nue-form-label { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--ch); }
+.nue-form-input { background:#fff; border:1px solid rgba(179,128,46,0.2); color:var(--bk); font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; padding:.85rem 1rem; outline:none; transition:border-color .2s, box-shadow .2s; border-radius:0; -webkit-appearance:none; }
+.nue-form-input:focus { border-color:var(--nb); box-shadow:0 0 0 3px rgba(179,128,46,0.1); }
+.nue-form-input::placeholder { color:#bbb; }
+.nue-form-textarea { min-height:130px; resize:vertical; }
+.nue-form-submit { border:none; cursor:pointer; }
+.nue-form-submit:disabled { opacity:.6; cursor:not-allowed; }
+@media(max-width:600px) { .nue-form-row { grid-template-columns:1fr; } }
+
+
+/* ── GOOGLE TRANSLATE ── */
+#google_translate_element { display:none; }
+.goog-te-banner-frame { display:none !important; }
+.goog-te-menu-value:hover { text-decoration:none; }
+body { top:0 !important; }
+.skiptranslate { display:none !important; }
+/* Translate button */
+.nue-translate-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:transparent;
+  border:1px solid rgba(179,128,46,0.4);
+  color:var(--nl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.4rem .9rem;
+  cursor:pointer;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.nue-translate-btn:hover {
+  background:rgba(179,128,46,0.1);
+  border-color:var(--nb);
+  color:var(--nbr);
+}
+.nue-translate-btn .nue-globe {
+  font-size:.9rem;
+}
+/* Mobile translate button in dropdown */
+.nmob-translate {
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:var(--nl) !important;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;
+  font-size:.9rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.9rem 5%;
+  border-bottom:1px solid rgba(179,128,46,.07);
+  cursor:pointer;
+  background:none;
+  width:100%;
+  text-align:left;
+}
+.nmob-translate:hover { background:rgba(179,128,46,.05) !important; }
+/* Hero translate button */
+.nue-hero-translate {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:rgba(179,128,46,0.08);
+  border:1px solid rgba(179,128,46,0.25);
+  color:var(--gl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.5rem 1rem;
+  cursor:pointer;
+  transition:all .2s;
+  margin-top:.75rem;
+}
+.nue-hero-translate:hover {
+  background:rgba(179,128,46,0.15);
+  border-color:var(--nb);
+  color:var(--nl);
+}
+
+
+/* CLIENT LOGIN BUTTON */
+.nue-login-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  background:rgba(179,128,46,0.12);
+  border:1px solid rgba(179,128,46,0.45);
+  color:var(--nl);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.42rem .95rem;
+  transition:all .2s;
+  white-space:nowrap;
+  text-decoration:none;
+}
+.nue-login-btn:hover {
+  background:rgba(179,128,46,0.22);
+  border-color:var(--nb);
+  color:var(--nbr);
+}
+/* Mobile login link */
+.nmob-login {
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:#fff !important;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.9rem 5%;
+  border-bottom:1px solid rgba(179,128,46,.15);
+  background:rgba(179,128,46,0.08);
+  text-decoration:none;
+}
+.nmob-login:hover { background:rgba(179,128,46,.15) !important; }
+/* Hide login btn on mobile - only show in dropdown */
+@media(max-width:768px) { .nue-login-btn { display:none; } }
 
 </style>
 
-<!-- NAV -->
-<nav class="ob-nav">
-  <div class="ob-logo">
-    <a href="index.html">
-      <div class="ob-logo-main">NEXT<span>UP</span></div>
-      <span class="ob-logo-sub">Enterprise</span>
+<div class="nw">
+<div id="nue-loader">
+  <div style="text-align:center;line-height:1.1;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;">NEXT<span style="color:#b3802e;">UP</span></div>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.9rem;letter-spacing:.35em;text-transform:uppercase;color:#888;margin-top:.2rem;">ENTERPRISE</div>
+  </div>
+  <div class="nue-loader-bar-wrap">
+    <div class="nue-loader-bar"></div>
+  </div>
+  <span class="nue-loader-txt">Loading NextUP Enterprise</span>
+</div>
+
+<nav class="nnav" id="nnav">
+  <div class="nnav-logo">
+    <a href="#ntop" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;">
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;">NEXT<span style="color:var(--nb);">UP</span></span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gr);">ENTERPRISE</span>
     </a>
   </div>
-  <div class="ob-nav-right">
-    <button class="ob-translate-btn" onclick="obTranslate()">🌐 <span class="ob-trans-label">Español</span></button>
-    <a href="index.html" class="ob-back">&#8592; Back to Home</a>
-  </div>
+  <ul class="nnav-links">
+    <li><a href="#nabout">About</a></li>
+    <li><a href="#nhow">How It Works</a></li>
+    <li><a href="#npricing">Pricing</a></li>
+    <li><a href="#ndiy">DIY Kit</a></li>
+    <li><a href="#nbiz">For Entrepreneurs</a></li>
+    <li><a href="#ncontact">Contact</a></li>
+    <li><a href="#nfaq">FAQ</a></li>
+    <li><a href="checkout.html" class="nnav-cta">Get Started</a></li>
+  </ul>
+  <a href="https://www.secureclientaccess.com/" target="_blank" class="nue-login-btn">
+    <span>&#128274;</span> Client Login
+  </a>
+  <button class="nue-translate-btn" id="nueTranslateBtn" onclick="nueTranslatePage()">
+    <span class="nue-globe">🌐</span>
+    <span class="nue-translate-label">Español</span>
+  </button>
+  <button class="nmob-btn" id="nhamburger" onclick="ntoggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nmob-menu" id="nmobMenu">
+  <a href="#nabout" onclick="ntoggleMenu()">About</a>
+  <a href="#nhow" onclick="ntoggleMenu()">How It Works</a>
+  <a href="#npricing" onclick="ntoggleMenu()">Pricing</a>
+  <a href="#ndiy" onclick="ntoggleMenu()">DIY Kit — $47</a>
+  <a href="#nbiz" onclick="ntoggleMenu()">&#9733; Business Services</a>
+  <a href="https://www.secureclientaccess.com/" target="_blank" class="nmob-login" onclick="ntoggleMenu()">&#128274; Client Login</a>
+  <button class="nmob-translate" id="nueMobileTranslateBtn" onclick="nueTranslatePage();ntoggleMenu()">
+    🌐 <span class="nue-translate-label">Ver en Español</span>
+  </button>
+  <a href="#ncontact" onclick="ntoggleMenu()">Contact</a>
+  <a href="#nfaq" onclick="ntoggleMenu()">FAQ</a>
+  <a href="checkout.html" class="nmob-cta" onclick="ntoggleMenu()">Get Started — Credit Repair</a>
+  <a href="https://www.nextupcapitalgroup.com/" class="nmob-cta-biz" onclick="ntoggleMenu()" target="_blank">Explore Business Services</a>
+</div>
 
-<!-- HERO -->
-<div class="ob-hero">
-  <div class="ob-hero-grid"></div>
-  <div class="ob-check-wrap">
-    <div class="ob-check-circle" style="font-size:2rem;">&#128075;</div>
+<section class="nhero" id="ntop">
+  <div class="nhero-bg"></div><div class="nhero-grid"></div>
+  <div class="norb norb1"></div><div class="norb norb2"></div><div class="norb norb3"></div>
+  <div class="nhero-c">
+    <div class="ney nfu nd1">Credit Repair &middot; Build Credit &middot; Create Opportunities</div>
+    <h1 class="nfu nd2">Your score doesn't<br><em>define your future.</em></h1>
+    <p class="nhero-sub nfu nd3">Whether it was a job loss, a medical bill, a divorce &mdash; or just life &mdash; <strong>you didn't get here alone, and you won't get out alone either.</strong> 150+ clients helped. Real strategies. Real results.</p>
+    <div class="nhero-acts nfu nd4">
+      <a href="checkout.html" class="btn-br">Start Your Comeback &#8594;</a>
+      <a href="https://calendly.com/nextupcredit/15min" class="btn-gh">Free 15-Min Consultation &#8594;</a>
+    </div>
+    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(179,128,46,.2);" class="nfu nd4">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gr);margin-bottom:.75rem;">Also from NextUP</p>
+      <a href="#nbiz" class="btn-biz-hero">&#9733;&nbsp; Starting a Business? Get 6 Months Credit Repair FREE &#8594;</a>
+    </div>
+  <button class="nue-hero-translate" id="nueHeroTranslateBtn" onclick="nueTranslatePage()">
+      🌐 <span class="nue-translate-label">Ver esta página en Español</span>
+    </button>
   </div>
-  <div class="ob-tag">Welcome to NextUP Enterprise</div>
-  <h1>Let's build your<br><em>credit comeback.</em></h1>
-  <p class="ob-hero-sub">We're glad you're here. <strong>Complete the two steps below</strong> and we'll be fully ready to start working on your file together.</p>
+  <div class="nscrl"><div class="nscrl-line"></div><span class="nscrl-txt">Scroll</span></div>
+</section>
 
-  <!-- STEPS BAR -->
-  <div class="ob-steps-bar">
-    <div class="ob-step-pill ob-active">
-      <span class="ob-step-num">01</span>
-      <span class="ob-step-lbl">Book Your Call</span>
-    </div>
-    <span class="ob-step-arrow">&#8594;</span>
-    <div class="ob-step-pill">
-      <span class="ob-step-num">02</span>
-      <span class="ob-step-lbl">Credit Monitoring</span>
-    </div>
+<div class="nstats">
+  <div class="nstats-g">
+    <div class="nstat nfu"><div class="nstat-n">150+</div><div class="nstat-l">Happy Clients Served</div></div>
+    <div class="nstat nfu nd2"><div class="nstat-n">97%</div><div class="nstat-l">Client Satisfaction Rate</div></div>
+    <div class="nstat nfu nd3"><div class="nstat-n">$1M+</div><div class="nstat-l">In Client Debt Removed</div></div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="ob-content">
-
-  <!-- STEP 1: CALENDLY -->
-  <div class="ob-card">
-    <div class="ob-card-header">
-      <div class="ob-card-step">01</div>
-      <div class="ob-card-hd">
-        <div class="ob-card-badge">Do This First — Spots Fill Fast</div>
-        <div class="ob-card-title">Book Your Onboarding Call</div>
-        <div class="ob-card-desc">Pick a time below. This is where we go over your file, explain exactly what we'll do, and get your case started the right way.</div>
+<section class="nsec nsec-wh" id="nabout">
+  <div class="nin">
+    <div class="nfnd-g">
+      <div class="nfnd-iw nfu">
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/16088733/6972b9c8b73e8_IMG_21892.JPG" alt="Yordyn" class="nfnd-img">
+        <div class="nfnd-bdg"><span>150+</span><span>Clients Helped</span></div>
       </div>
-    </div>
-    <div class="ob-card-body" style="padding:0;">
-      <div class="ob-calendly-wrap">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/nextupcredit/credit-repair-onboarding?hide_gdpr_banner=1&background_color=0d0d0d&text_color=fafaf8&primary_color=b3802e"></div>
+      <div class="nfnd-t nfu nd2">
+        <div class="ney">My Story</div>
+        <h2 class="nst">I've been exactly<br><em>where you are.</em></h2>
+        <p>I didn't start this company because I read about credit repair in a book. <strong>I started it because I lived it.</strong> I know what it feels like to be denied, to be embarrassed at a car dealership, to apply for an apartment and watch the landlord's face change when they pull your report.</p>
+        <p>In my 30s, I drove trucks to keep the lights on while I figured out exactly how credit works. I made mistakes. I learned from them. And once I understood the system, everything changed.</p>
+        <div class="nfnd-q"><p>"This isn't about sending letters. It's about building a real plan, staying consistent, and helping you move with more confidence."</p></div>
+        <p>Today, NextUp Enterprise has helped 150+ clients remove inaccurate items, rebuild their profiles, and get approved for the things that matter. <strong>Your comeback starts with one conversation.</strong></p>
+        <div class="nfnd-sig"><span class="nfnd-nm">Yordyn</span><span class="nfnd-rl">Founder, NextUP Enterprise</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- STEP 2: CREDIT MONITORING -->
-  <div class="ob-card">
-    <div class="ob-card-header">
-      <div class="ob-card-step">02</div>
-      <div class="ob-card-hd">
-        <div class="ob-card-badge ob-secondary">Required Before We Begin</div>
-        <div class="ob-card-title">Set Up Credit Monitoring</div>
-        <div class="ob-card-desc">We need access to all 3 bureaus to work your file. Set up monitoring below — or if you already have one of the accepted services, you're good.</div>
+<section class="nsec nsec-lh" id="nhow">
+  <div class="nin">
+    <div class="ney nfu">The Process</div>
+    <h2 class="nst nfu nd2">Simple process. <em>No confusion.</em></h2>
+    <div class="nhow-g">
+      <div class="nhow-s nfu"><div class="nhow-n">01</div><div class="nhow-t">Sign Up</div><p class="nhow-b">Get started in minutes. Securely access your credit reports and set up your client profile.</p><span class="nhow-tg">Takes less than 10 min</span></div>
+      <div class="nhow-s nfu nd2"><div class="nhow-n">02</div><div class="nhow-t">Access Your Portal</div><p class="nhow-b">Immediate 24/7 client portal access. Upload documents, track disputes, stay informed every step.</p><span class="nhow-tg">Available 24/7</span></div>
+      <div class="nhow-s nfu nd3"><div class="nhow-n">03</div><div class="nhow-t">We Get to Work</div><p class="nhow-b">We analyze your profile, identify inaccurate items, and begin challenging them with all 3 bureaus.</p><span class="nhow-tg">Most see movement in 45 days</span></div>
+      <div class="nhow-s nfu nd4"><div class="nhow-n">04</div><div class="nhow-t">Build While We Fix</div><p class="nhow-b">We guide you on credit builders, utilization strategies, and positioning for real approvals.</p><span class="nhow-tg">Strategy included</span></div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;color:var(--gr);font-size:.85rem;font-style:italic;">Average timeline: 4&ndash;6 months. We stay consistent, keep you informed, and work your case every single month.</p>
+  </div>
+</section>
+
+<section class="nsec nsec-wh" id="npricing">
+  <div class="nin">
+    <div style="text-align:center;margin-bottom:.5rem;">
+      <div class="ney neyc nfu">Simple Pricing</div>
+      <h2 class="nst nfu nd2" style="text-align:center;">Choose your path<br><em>to better credit.</em></h2>
+      <p style="color:var(--gr);max-width:400px;margin:0 auto .5rem;font-weight:300;font-size:.89rem;" class="nfu nd3">No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="npr-g">
+      <div class="npr-c nfu">
+        <div class="nbdg">Monthly Plan</div>
+        <h3 class="npr-nm">Month-to-Month</h3>
+        <p class="npr-ds">Start today, continue month-by-month until you hit your goals.</p>
+        <div class="npr-am"><span class="npr-cu">$</span><span class="npr-nu">125</span><span class="npr-pe">/&nbsp;month</span></div>
+        <p class="npr-nt">Cancel anytime &mdash; no pressure</p>
+        <div class="npr-dv"></div>
+        <ul class="npr-fl"><li>Disputes to all 3 bureaus</li><li>Monthly dispute cycles</li><li>Credit building guidance</li><li>24/7 client portal access</li><li style="color:#b3802e;font-style:italic;">&#9733; Credit monitoring required — SmartCredit $24.99/mo</li><li>Real human support</li></ul>
+        <a href="checkout.html" class="npb npb-ot">Sign Up Now &#8594;</a>
+      </div>
+      <div class="npr-c nft nfu nd2">
+        <div class="nbdg">Best Value</div>
+        <h3 class="npr-nm">Credit Builder</h3>
+        <p class="npr-ds">6 full months of everything &mdash; one flat fee. Commit and save.</p>
+        <div class="npr-am"><span class="npr-cu">$</span><span class="npr-nu">597</span><span class="npr-pe">one-time</span></div>
+        <p class="npr-nt">Includes 6 full months of service</p>
+        <div class="npr-dv"></div>
+        <ul class="npr-fl"><li>6 months disputes &amp; coaching</li><li>Disputes to all 3 bureaus</li><li>Credit building guidance</li><li>24/7 client portal access</li><li style="color:#b3802e;font-style:italic;">&#9733; Credit monitoring required — SmartCredit $24.99/mo</li><li>Real human support</li></ul>
+        <a href="checkout.html" class="npb npb-br">Get Started &#8594;</a>
+      </div>
+      <div class="npr-c nfu nd3">
+        <div class="nbdg">Free</div>
+        <h3 class="npr-nm">Consultation</h3>
+        <p class="npr-ds">Not sure where to start? Let&rsquo;s talk &mdash; zero obligation.</p>
+        <div class="npr-am"><span class="npr-cu">$</span><span class="npr-nu">0</span><span class="npr-pe">15-min call</span></div>
+        <p class="npr-nt">Zero obligation, just real advice</p>
+        <div class="npr-dv"></div>
+        <ul class="npr-fl"><li>Personalized credit review</li><li>Clear action plan</li><li>No sales pressure</li><li>All your questions answered</li></ul>
+        <a href="https://calendly.com/nextupcredit/15min" class="npb npb-ot">Book a Free Call &#8594;</a>
       </div>
     </div>
-    <div class="ob-card-body">
-      <!-- SMARTCREDIT PRIMARY -->
-      <div class="ob-credit-main">
-        <div class="ob-credit-text">
-          <h3>SmartCredit <span style="font-size:.75rem;color:var(--nb);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;">Recommended</span></h3>
-          <p>Our preferred monitoring service — monitors all 3 bureaus in real time and gives us everything we need to start disputing immediately.</p>
-          <p class="ob-credit-note">&#9733; After signing up, save your login — we'll collect it on your onboarding call</p>
-        </div>
+    <div class="ndiy-bn nfu">
+      <div class="ndiy-bn-g">
         <div>
-          <a href="https://www.smartcredit.com/join/?pid=60983" class="ob-credit-btn" target="_blank">Sign Up for SmartCredit &#8594;</a>
+          <div class="ndiy-tg">Instant Download</div>
+          <h3>Want to do it yourself? <em>We&rsquo;ve got you covered.</em></h3>
+          <p>The same strategies professionals use &mdash; in your hands today. 21 sections and 80 ready-to-use dispute letters based on FCRA, FDCPA, HIPAA, and TILA.</p>
+          <div class="ndiy-sp"><span>21 Sections</span><span>80 Letters</span><span>Instant PDF</span><span>FCRA + FDCPA + HIPAA</span></div>
+          <a href="https://payhip.com/b/QRCnr" class="btn-br" style="font-size:.83rem;padding:.82rem 1.7rem;">Get the DIY Kit &#8594;</a>
         </div>
-      </div>
-
-      <div class="ob-divider"></div>
-
-      <!-- ALTERNATIVES -->
-      <div class="ob-alt-title">Already have one of these? You're good</div>
-      <div class="ob-alt-grid">
-        <div class="ob-alt-item"><div class="ob-alt-dot"></div><span class="ob-alt-name">SmartCredit</span></div>
-        <div class="ob-alt-item"><div class="ob-alt-dot"></div><span class="ob-alt-name">IdentityIQ</span></div>
-        <div class="ob-alt-item"><div class="ob-alt-dot"></div><span class="ob-alt-name">MyFreeScoreNow</span></div>
-      </div>
-
-      <!-- LOGIN NOTE -->
-      <div class="ob-login-note">
-        <p><strong>&#9733; Bring your login to your onboarding call.</strong> Whichever service you use, have your username and password ready. We'll walk through everything together on the call.</p>
+        <div class="ndiy-pw">
+          <div class="ndiy-pp"><sup>$</sup>47</div>
+          <span class="ndiy-pl">One-time &middot; Instant Access</span>
+          <a href="https://payhip.com/b/QRCnr" class="btn-br" style="font-size:.8rem;padding:.8rem 1.5rem;white-space:nowrap;">Buy Now &#8594;</a>
+          <span class="nins" style="margin-top:.5rem;">&#9889; Download immediately after purchase</span>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
+<section class="nsec nsec-ch" id="ndiy">
+  <div class="nin">
+    <div class="ney nfu">DIY Credit Repair Kit</div>
+    <h2 class="nst nfu nd2">The same strategies <em>professionals use.</em></h2>
+    <div class="ndiy-g">
+      <div class="ndiy-bk nfu">
+        <div class="ndiy-bt">Credit Repair &amp; Build Guide</div>
+        <div class="ndiy-bs">Your Complete Step-by-Step System &mdash; 83 Pages</div>
+        <div class="ndiy-st"><div class="nds"><div class="nds-n">21</div><div class="nds-l">Sections</div></div><div class="nds"><div class="nds-n">80</div><div class="nds-l">Letters</div></div><div class="nds"><div class="nds-n">$47</div><div class="nds-l">One-Time</div></div></div>
+        <ul class="ndiy-li">
+          <li>Credit Monitoring &mdash; Pull your reports the right way first</li>
+          <li>Personal Information Correction (3 letters)</li>
+          <li>Pay-To-Delete Strategy &mdash; Get deletion, not just paid status (4 letters)</li>
+          <li>Method of Verification &mdash; Force bureaus to show their work (3 letters)</li>
+          <li>Debt Validation System &mdash; Make them prove it before you pay (3 letters)</li>
+          <li>Third-Party Reporting Agencies &mdash; Hidden reports most miss (6 letters)</li>
+          <li>Follow Suit Deletion &mdash; Use bureau inconsistencies (1 letter)</li>
+          <li>Double Reporting / Double Jeopardy (1 letter)</li>
+          <li>Medical Collections &mdash; HIPAA Strategy (4 letters)</li>
+          <li>Eviction Removal System &mdash; Two-phase strategy (4 letters)</li>
+          <li>LexisNexis Dispute System &mdash; The hidden database (4 letters)</li>
+          <li>Late Payment Goodwill + Executive Contact Directory (3 letters)</li>
+          <li>Debt Settlement System (3 letters)</li>
+          <li>Repossession Dispute System &mdash; Audit every layer (14 letters)</li>
+          <li>Charge-Off Dispute System &mdash; Metro 2 + FCRA + TILA (9 letters)</li>
+          <li>Complete Collection Dispute Kit &mdash; Full system (18 letters)</li>
+        </ul>
+      </div>
+      <div class="ndiy-ct nfu nd2">
+        <div class="ney">Only $47</div>
+        <div class="ndiy-bp"><sup>$</sup>47</div>
+        <p style="color:var(--gl);font-size:.83rem;margin-bottom:.25rem;font-weight:300;">One-time payment &middot; Instant PDF download</p>
+        <p style="color:#999;font-size:.9rem;line-height:1.75;font-weight:300;">Built for the person who wants to be <strong style="color:#fff;">hands-on</strong>. Maybe the done-for-you service isn't in the budget right now &mdash; either way, you deserve access to the same knowledge and strategies professionals use.</p>
+        <ul class="ndiy-pk" style="margin-top:1.25rem;">
+          <li style="color:var(--gl);">80 ready-to-use letters &mdash; just fill in your info and mail</li>
+          <li style="color:var(--gl);">Covers FCRA, FDCPA, HIPAA &amp; TILA consumer protection laws</li>
+          <li style="color:var(--gl);">Step-by-step &mdash; each section builds on the last</li>
+          <li style="color:var(--gl);">Covers collections, charge-offs, repos, evictions &amp; medical debt</li>
+          <li style="color:var(--gl);">Executive contact directory for major banks &amp; credit bureaus</li>
+          <li style="color:var(--gl);">Third-party agency list most people never know to check</li>
+        </ul>
+        <a href="https://payhip.com/b/QRCnr" class="btn-br" style="font-size:.91rem;padding:1rem 2.3rem;text-align:center;">Buy Now &mdash; Get Instant Access &#8594;</a>
+        <span class="nins" style="margin-top:.6rem;">&#9889; Delivered immediately after purchase &middot; PDF format</span>
+        <p style="margin-top:1rem;font-size:.79rem;color:var(--gr);font-weight:300;font-style:italic;">Want us to handle it? <a href="checkout.html" style="color:var(--nl);">Done-for-you service &#8594;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ntst nsec-lh">
+  <div class="ntst-st"><span class="nstr">&#9733;</span><span class="nstr">&#9733;</span><span class="nstr">&#9733;</span><span class="nstr">&#9733;</span><span class="nstr">&#9733;</span></div>
+  <p class="ntst-q">"NextUp helped me understand my credit, start the repair process, and finally feel like I had a plan."</p>
+  <div class="ntst-a">&mdash; Lamar H. &nbsp;&middot;&nbsp; Verified Client</div>
 </div>
 
-<!-- FOOTER -->
-<footer class="ob-footer">
-  <p>Questions? <a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a> &nbsp;&middot;&nbsp; <a href="tel:5702031530">570-203-1530</a> &nbsp;&middot;&nbsp; &copy; 2026 NextUP Enterprise</p>
+<section class="nsec nsec-wh" id="nbiz">
+  <div class="nin">
+    <div class="nbiz-in">
+      <div class="nbiz-t nfu">
+        <div class="ney">NextUP Capital Group</div>
+        <h2 class="nst">Building a business?<br><em>We fix your credit for free.</em></h2>
+        <p>Most entrepreneurs spend months piecing together their LLC, branding, website, and banking. <strong>We do all of it for you in one package</strong> — and include 6 months of personal credit repair at no extra charge.</p>
+        <p>Properly structured business. Professional brand. Real online presence. And your personal credit being worked at the same time.</p>
+        <div class="nbiz-hl"><p>"Every Starter Build includes 6 months of personal credit repair — completely FREE."</p></div>
+        <p>Once your business is set up the right way, we position you for <strong>$10K–$100K in business funding at 0% APR for 12 months</strong> based on your profile and eligibility.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem;">
+          <a href="https://www.nextupcapitalgroup.com/" class="btn-br" target="_blank">Explore NextUP Capital &#8594;</a>
+          <a href="https://calendly.com/nextupcredit/business-strategy-call-free-consultation" class="btn-out" target="_blank" style="color:var(--nb);border-color:rgba(179,128,46,.4);">Free Strategy Call &#8594;</a>
+        </div>
+      </div>
+      <div class="nfu nd2">
+        <div style="background:var(--lb);padding:2rem;border:1px solid rgba(179,128,46,.15);margin-bottom:1.5rem;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--nb);margin-bottom:.7rem;">Every Starter Build includes</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>LLC Registration, EIN &amp; Registered Agent (1 Year)</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Operating Agreement, Meeting Minutes &amp; Company Binder</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Custom Logo &amp; Brand Identity</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Premium 2–4 Page Website &amp; Domain Setup</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Online Booking Integration</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Google Business Profile Setup &amp; Optimization</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Business Phone &amp; Virtual Address Setup</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Professional Business Email</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span>Access to $10K–$100K Funding at 0% APR for 12 Months</li>
+            <li style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#444;"><span style="width:5px;height:5px;background:var(--nb);display:block;flex-shrink:0;"></span><strong>6 months personal credit repair FREE</strong></li>
+          </ul>
+        </div>
+        <div style="background:var(--nb);padding:1.4rem 2rem;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#fff;margin-bottom:.4rem;">One complete done-for-you package</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:.2rem;">State filing fees not included</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:1rem;">
+      <div class="ney nfu">Our Packages</div>
+      <h3 class="nst nfu nd2" style="font-size:1.8rem;">Click each to see <em>everything included.</em></h3>
+    </div>
+    <div class="npkg-g">
+
+      <!-- STARTER BUILD -->
+      <div class="npkg" id="npk1">
+        <div class="npkg-hd" onclick="npkg(1)">
+          <div class="npkg-lf"><span class="npkg-nm">Starter Build</span><span class="npkg-tl">The foundation every funded business needs — done for you</span></div>
+          <div class="npkg-ar">+</div>
+        </div>
+        <div class="npkg-bd">
+          <div class="npkg-cn">
+            <div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Legal Formation &amp; Structure</div><ul class="npkg-fl">
+                <li><strong>LLC Registration</strong> — legally establishes your entity (state fees not included)</li>
+                <li><strong>EIN Setup</strong> — required for banking, taxes &amp; funding</li>
+                <li><strong>Registered Agent</strong> for 1 year — keeps your LLC compliant</li>
+                <li><strong>Operating Agreement</strong> — required by most banks to open a business account</li>
+                <li><strong>Meeting Minutes</strong> — required for state compliance</li>
+                <li><strong>Company Binder</strong> — all key documents organized for banks &amp; lenders</li>
+              </ul></div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Brand &amp; Web Presence</div><ul class="npkg-fl">
+                <li><strong>Custom Logo &amp; Brand Identity</strong> — professional brand that builds immediate trust</li>
+                <li><strong>Premium 2–4 Page Website</strong> — your professional online storefront</li>
+                <li><strong>Domain Setup</strong> — we configure &amp; connect (registration cost passed to you)</li>
+                <li><strong>Professional Business Email</strong> — branded for credibility with clients &amp; lenders</li>
+                <li><strong>Online Booking Integration</strong> — let clients schedule directly on your site</li>
+              </ul></div>
+            </div>
+            <div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Presence, Funding &amp; Positioning</div><ul class="npkg-fl">
+                <li><strong>Google Business Profile</strong> — get found on Google Search &amp; Maps</li>
+                <li><strong>Business Phone Setup</strong> — required for funding qualification</li>
+                <li><strong>Virtual Address Setup</strong> — required for funding qualification</li>
+                <li><strong>Funding Positioning</strong> — structured for <strong>$10K–$100K at 0% APR for 12 months</strong></li>
+              </ul></div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Who This Is For</div><ul class="npkg-fl">
+                <li>First-time founders launching correctly from day one</li>
+                <li>Entrepreneurs who want to look and operate professionally</li>
+                <li>Anyone preparing for business funding</li>
+                <li>Credit repair clients building their business at the same time</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="npkg-bon"><div class="npkg-bon-t">&#9733; Bonus — 6 Months Personal Credit Repair FREE</div><p>While we build your business, we work on your personal credit at the same time — disputes, credit building guidance, client portal access, and real human support throughout the process.</p></div>
+          <div class="npkg-ft">
+            <div><p class="npkg-pnt">One-time investment &middot; State filing fees not included</p></div>
+            <div class="npkg-cts"><a href="https://www.nextupcapitalgroup.com/services" class="btn-br" target="_blank" style="font-size:.84rem;padding:.88rem 1.75rem;">Get Started &#8594;</a><a href="https://calendly.com/nextupcredit/business-strategy-call-free-consultation" class="btn-gh" target="_blank">Free Strategy Call &#8594;</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUILD YOUR OWN -->
+      <div class="npkg" id="npk3">
+        <div class="npkg-hd" onclick="npkg(3)">
+          <div class="npkg-lf"><span class="npkg-nm">Build Your Own</span><span class="npkg-tl">Already have some pieces? Only pay for what you need</span></div>
+          <div class="npkg-ar">+</div>
+        </div>
+        <div class="npkg-bd">
+          <div class="npkg-cn">
+            <div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Legal Formation Bundle</div><ul class="npkg-fl">
+                <li>LLC Registration (state fees not included)</li>
+                <li>EIN Setup — for banking, taxes &amp; funding</li>
+                <li>Registered Agent — 1 year compliance</li>
+                <li>Operating Agreement — required by most banks</li>
+                <li>Meeting Minutes &amp; Company Binder</li>
+              </ul></div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Brand &amp; Web Bundle</div><ul class="npkg-fl">
+                <li>Custom Logo &amp; Brand Identity</li>
+                <li>Premium 2–4 Page Website (domain cost not included)</li>
+                <li>Professional Business Email</li>
+                <li>Online Booking Integration</li>
+              </ul></div>
+            </div>
+            <div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Online Presence Bundle</div><ul class="npkg-fl">
+                <li>Google Business Profile — get found on Google &amp; Maps</li>
+                <li>Business Phone Setup — required for funding</li>
+                <li>Virtual Address Setup — required for funding</li>
+                <li>Business Email Setup</li>
+              </ul></div>
+              <div class="npkg-sc"><div class="npkg-sc-t">Payment &amp; Invoicing Setup</div><ul class="npkg-fl">
+                <li>Payment Processor Setup (processor fees paid by you)</li>
+                <li>Invoice System Setup — professional invoicing for clients &amp; lenders</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="npkg-bon"><div class="npkg-bon-t">&#9733; Pro Tip</div><p>Building individually adds up fast. The Starter Build covers Legal Formation + Brand &amp; Web + Online Presence and includes 6 months credit repair free — often the better value.</p></div>
+          <div class="npkg-ft">
+            <div><p class="npkg-pnt">Mix &amp; match what fits your situation</p></div>
+            <div class="npkg-cts"><a href="https://www.nextupcapitalgroup.com/services" class="btn-br" target="_blank" style="font-size:.84rem;padding:.88rem 1.75rem;">View Options &#8594;</a><a href="https://calendly.com/nextupcredit/business-strategy-call-free-consultation" class="btn-gh" target="_blank">Free Strategy Call &#8594;</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="nsec nsec-lh" id="nfaq">
+  <div class="nfaq-in">
+    <div class="nfaq-hd">
+      <div class="ney neyc nfu">FAQ</div>
+      <h2 class="nst nfu nd2" style="text-align:center;">No fluff. <em>Straight answers.</em></h2>
+    </div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">How fast will I see results? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p>Many clients start seeing changes within <strong>45 days</strong>. Most complete the program in 4&ndash;6 months. Every file is different &mdash; we&rsquo;ll be honest about what to expect.</p></div></div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">Do you guarantee results? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p>No &mdash; and <strong>any company that does is lying.</strong> What we guarantee is a real, consistent process done the right way using actual consumer protection laws.</p></div></div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">Can you remove everything? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p>Not everything is removable. But <strong>anything inaccurate, outdated, or unverifiable</strong> can be challenged &mdash; and that&rsquo;s exactly what we go after.</p></div></div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">What&rsquo;s the difference between the service and the DIY Kit? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p>The <strong>done-for-you service</strong> means we handle everything every month. The <strong>DIY Kit ($47)</strong> gives you the exact same letters and strategies to do it yourself. Both work &mdash; the service just saves you the time.</p></div></div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">Do you help me build credit too? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p>Yes &mdash; and this is a big part of what makes us different. <strong>We guide you on building your profile</strong> so when items come off, your score actually grows.</p></div></div>
+    <div class="nfaq-it"><div class="nfaq-q" onclick="nfaq(this)">How do I cancel? <span class="nfaq-ic">+</span></div><div class="nfaq-an"><p><strong>Cancel anytime.</strong> Just email support@nextupenterprise.com or call 570-203-1530. No pressure.</p></div></div>
+  </div>
+</section>
+
+<section class="nsec nsec-wh" id="ncontact">
+  <div class="nin">
+    <div style="max-width:680px;margin:0 auto;">
+      <div class="ney neyc nfu">Get In Touch</div>
+      <h2 class="nst nfu nd2" style="text-align:center;">Have a question?<br><em>We'll get back to you.</em></h2>
+      <p style="text-align:center;color:var(--gr);font-size:.92rem;font-weight:300;max-width:480px;margin:0 auto 3rem;" class="nfu nd3">Fill out the form below and we'll respond within 24 hours. You can also email us directly at <a href="mailto:support@nextupenterprise.com" style="color:var(--nb);">support@nextupenterprise.com</a> or call <a href="tel:5702031530" style="color:var(--nb);">570-203-1530</a>.</p>
+
+      <form class="nue-contact-form nfu" onsubmit="nueSubmitForm(event)">
+        <div class="nue-form-row">
+          <div class="nue-form-group">
+            <label class="nue-form-label">First Name</label>
+            <input type="text" name="firstName" class="nue-form-input" placeholder="John" required>
+          </div>
+          <div class="nue-form-group">
+            <label class="nue-form-label">Last Name</label>
+            <input type="text" name="lastName" class="nue-form-input" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="nue-form-group">
+          <label class="nue-form-label">Email Address</label>
+          <input type="email" name="email" class="nue-form-input" placeholder="john@example.com" required>
+        </div>
+        <div class="nue-form-group">
+          <label class="nue-form-label">Phone Number</label>
+          <input type="tel" name="phone" class="nue-form-input" placeholder="(570) 000-0000">
+        </div>
+        <div class="nue-form-group">
+          <label class="nue-form-label">What can we help you with?</label>
+          <select name="subject" class="nue-form-input" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="Credit Repair Service">Credit Repair Service</option>
+            <option value="DIY Kit Question">DIY Kit — $47</option>
+            <option value="Business Formation">Business Formation</option>
+            <option value="Pricing Question">Pricing Question</option>
+            <option value="General Question">General Question</option>
+          </select>
+        </div>
+        <div class="nue-form-group">
+          <label class="nue-form-label">Message</label>
+          <textarea name="message" class="nue-form-input nue-form-textarea" placeholder="Tell us a little about your situation..." required></textarea>
+        </div>
+        <div id="nueFormMsg" style="display:none;padding:.85rem 1.2rem;margin-bottom:1rem;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.05em;"></div>
+        <button type="submit" class="btn-br nue-form-submit" style="width:100%;justify-content:center;font-size:.95rem;padding:1.1rem;">
+          Send Message &#8594;
+        </button>
+        <p style="text-align:center;font-size:.78rem;color:var(--gr);margin-top:.75rem;font-weight:300;">We respond within 24 hours · No spam, ever</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="ncta">
+  <h2>Your comeback starts <em>right now.</em></h2>
+  <p>Join 150+ clients who&rsquo;ve reclaimed their financial future. One simple step.</p>
+  <div class="ncta-acts">
+    <a href="checkout.html" class="btn-br" style="font-size:.96rem;padding:1.05rem 2.5rem;">Get Started Today &#8594;</a>
+    <a href="https://payhip.com/b/QRCnr" class="btn-out" style="color:#fff;border-color:rgba(179,128,46,.4);">Get the $47 DIY Kit &#8594;</a>
+    <a href="https://calendly.com/nextupcredit/15min" class="btn-gh" style="color:var(--nl);">Book a Free Call &#8594;</a>
+  </div>
+</section>
+
+<footer class="nftr">
+  <div class="nftr-in">
+    <div class="nftr-tp">
+      <div class="nftr-br">
+        <div style="line-height:1.1;margin-bottom:1rem;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;">NEXT<span style="color:var(--nb);">UP</span></div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gr);">ENTERPRISE</div>
+    </div>
+        <p>Professional credit repair and rebuilding services. Dispute inaccurate items, build your score, and get approved for the things that matter.</p>
+      </div>
+      <div class="nftr-cl"><h4>Navigate</h4><ul><li><a href="#nabout">About Yordyn</a></li><li><a href="#nhow">How It Works</a></li><li><a href="#npricing">Pricing</a></li><li><a href="#ndiy">DIY Kit &mdash; $47</a></li><li><a href="#nbiz">For Entrepreneurs</a></li><li><a href="#nfaq">FAQ</a></li></ul></div>
+      <div class="nftr-cl nftr-ct"><h4>Contact</h4><a href="mailto:support@nextupenterprise.com">support@nextupenterprise.com</a><a href="tel:5702031530">570-203-1530</a><a>222 Wilkes Barre Twp Blvd #253<br>Wilkes Barre, PA 18702</a></div>
+      <div class="nftr-cl"><h4>Links</h4><ul><li><a href="https://www.facebook.com/Nextupenterprise" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/nextupenterprise/" target="_blank">Instagram</a></li><li><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YouTube</a></li><li><a href="https://www.nextupcapitalgroup.com/" target="_blank">NextUP Capital Group</a></li><li><a href="https://www.secureclientaccess.com/" target="_blank">Client Login</a></li></ul></div>
+    </div>
+    <div class="nftr-bt"><p>&copy; 2026 NextUP Enterprise. All rights reserved.</p><div class="nftr-sc"><a href="https://www.facebook.com/Nextupenterprise" target="_blank">FB</a><a href="https://www.instagram.com/nextupenterprise/" target="_blank">IG</a><a href="https://www.youtube.com/@Nextupenterprise" target="_blank">YT</a></div></div>
+  </div>
 </footer>
 
-<!-- Calendly Widget Script -->
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</div>
+
 
 <!-- Google Translate -->
-<div id="ob-gt-el" style="display:none;"></div>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=obInitTranslate"></script>
-<script>
-function obInitTranslate(){
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
   new google.translate.TranslateElement({
-    pageLanguage:'en',
-    includedLanguages:'es',
-    autoDisplay:false
-  },'ob-gt-el');
+    pageLanguage: 'en',
+    includedLanguages: 'es',
+    autoDisplay: false
+  }, 'google_translate_element');
 }
-function obTranslate(){
-  var isEs = document.cookie.indexOf('googtrans=/en/es') !== -1;
-  if(isEs){
-    ['','.'+(location.hostname)].forEach(function(d){
-      document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain='+d;
-    });
+function nueTranslatePage() {
+  var btn = document.getElementById('nueTranslateBtn');
+  var mobileBtn = document.getElementById('nueMobileTranslateBtn');
+  var heroBtn = document.getElementById('nueHeroTranslateBtn');
+  var isSpanish = document.documentElement.lang === 'es' ||
+    (document.cookie.indexOf('googtrans=/en/es') !== -1);
+  if (isSpanish) {
+    // Switch back to English
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
     location.reload();
-    return;
-  }
-  var attempt = 0;
-  var tryIt = function(){
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){
-      sel.value='es';
-      sel.dispatchEvent(new Event('change'));
-      document.querySelectorAll('.ob-trans-label').forEach(function(b){b.textContent='English';});
-    } else if(attempt++ < 10){
-      setTimeout(tryIt, 400);
+  } else {
+    // Translate to Spanish via Google Translate widget
+    var select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = 'es';
+      select.dispatchEvent(new Event('change'));
+      updateTranslateBtns(true);
+    } else {
+      // Fallback: load and trigger
+      setTimeout(function() {
+        var sel = document.querySelector('.goog-te-combo');
+        if (sel) {
+          sel.value = 'es';
+          sel.dispatchEvent(new Event('change'));
+          updateTranslateBtns(true);
+        }
+      }, 800);
     }
-  };
-  tryIt();
+  }
 }
-window.obTranslate = obTranslate;
+function updateTranslateBtns(isSpanish) {
+  var btns = document.querySelectorAll('.nue-translate-label');
+  btns.forEach(function(b) {
+    b.textContent = isSpanish ? 'English' : 'Español';
+  });
+}
+window.nueTranslatePage = nueTranslatePage;
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+(function(){
+  // LOADING SCREEN
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      var loader = document.getElementById('nue-loader');
+      if(loader) loader.classList.add('nue-loaded');
+    }, 1800);
+  });
+
+  function ntoggleMenu(){
+    var menu=document.getElementById('nmobMenu');
+    var btn=document.getElementById('nhamburger');
+    if(!menu||!btn)return;
+    menu.classList.toggle('nopen');
+    btn.classList.toggle('nopen');
+  }
+  window.ntoggleMenu=ntoggleMenu;
+  document.addEventListener('click',function(e){
+    var menu=document.getElementById('nmobMenu');
+    var btn=document.getElementById('nhamburger');
+    if(menu&&btn&&!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('nopen');
+      btn.classList.remove('nopen');
+    }
+  });
+  function nfaq(el){var it=el.parentElement;var op=it.classList.contains('nop');document.querySelectorAll('.nfaq-it').forEach(function(i){i.classList.remove('nop');});if(!op)it.classList.add('nop');}
+  window.nfaq=nfaq;
+  function npkg(n){var p=document.getElementById('npk'+n);if(!p)return;var op=p.classList.contains('nop');document.querySelectorAll('.npkg').forEach(function(x){x.classList.remove('nop');});if(!op)p.classList.add('nop');}
+  window.npkg=npkg;
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('nvis');});},{threshold:.08});
+  document.querySelectorAll('.nfu').forEach(function(el){obs.observe(el);});
+  // CONTACT FORM
+  function nueSubmitForm(e) {
+    e.preventDefault();
+    var form = e.target;
+    var btn = form.querySelector('.nue-form-submit');
+    var msg = document.getElementById('nueFormMsg');
+    var data = new FormData(form);
+    var body = 'Name: ' + data.get('firstName') + ' ' + data.get('lastName') + '\n' +
+               'Email: ' + data.get('email') + '\n' +
+               'Phone: ' + (data.get('phone') || 'Not provided') + '\n' +
+               'Topic: ' + data.get('subject') + '\n\n' +
+               'Message:\n' + data.get('message');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch('https://formspree.io/f/mrevpoyo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: data.get('firstName') + ' ' + data.get('lastName'),
+        email: data.get('email'),
+        subject: 'NextUP Enterprise: ' + data.get('subject'),
+        message: body
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(res){
+      msg.style.display = 'block';
+      if(res.ok) {
+        msg.style.background = 'rgba(179,128,46,0.1)';
+        msg.style.border = '1px solid rgba(179,128,46,0.3)';
+        msg.style.color = '#b3802e';
+        msg.textContent = '✓ Message sent! We will get back to you within 24 hours.';
+        form.reset();
+      } else {
+        msg.style.background = 'rgba(255,0,0,0.05)';
+        msg.style.border = '1px solid rgba(255,0,0,0.2)';
+        msg.style.color = '#c00';
+        msg.textContent = 'Something went wrong. Please email us directly at support@nextupenterprise.com';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    })
+    .catch(function(){
+      msg.style.display = 'block';
+      msg.style.background = 'rgba(255,0,0,0.05)';
+      msg.style.border = '1px solid rgba(255,0,0,0.2)';
+      msg.style.color = '#c00';
+      msg.textContent = 'Something went wrong. Please email us directly at support@nextupenterprise.com';
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    });
+  }
+  window.nueSubmitForm = nueSubmitForm;
+
+  window.addEventListener('scroll',function(){var n=document.getElementById('nnav');if(!n)return;if(window.scrollY>60){n.style.height='62px';n.style.borderBottomColor='rgba(179,128,46,.3)';}else{n.style.height='76px';n.style.borderBottomColor='rgba(179,128,46,.2)';}});
+})();
 </script>
