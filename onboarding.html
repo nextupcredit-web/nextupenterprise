@@ -106,6 +106,17 @@ body{top:0!important;}
   .ld-plan-feats li{font-size:.7rem;}
   .ld-plan-name{font-size:.75rem;}
 }
+
+/* Clickable plan cards */
+.ld-plan-link{display:block;text-decoration:none;cursor:pointer;position:relative;}
+.ld-plan-link:hover{border-color:var(--nb) !important;background:rgba(179,128,46,0.1) !important;transform:translateY(-3px);box-shadow:0 8px 28px rgba(179,128,46,0.2);}
+.ld-plan-link.ld-selected{border-color:var(--nbr) !important;background:rgba(179,128,46,0.12) !important;box-shadow:0 0 0 3px rgba(179,128,46,0.2);}
+.ld-plan-check{display:none;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--nb);color:#fff;padding:.2rem .6rem;margin-bottom:.6rem;width:fit-content;}
+.ld-plan-link.ld-selected .ld-plan-check{display:block;}
+.ld-plan-cta{margin-top:.85rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;padding:.65rem;text-align:center;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .25s;}
+.ld-plan-link:hover .ld-plan-cta{background:var(--nbr);}
+.ld-plan-link.ld-selected .ld-plan-cta{background:var(--nbr);}
+
 </style>
 
 <!-- NAV -->
@@ -151,7 +162,8 @@ body{top:0!important;}
 
 <!-- TWO PRICING CARDS -->
 <div class="ld-plans">
-  <div class="ld-plan ld-featured">
+  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="ld-plan ld-featured ld-plan-link" onclick="ldSelectPlan(this)">
+    <div class="ld-plan-check">&#10003; Selected</div>
     <div class="ld-plan-name">Credit Builder &mdash; 6 Months</div>
     <div class="ld-plan-price">
       <span class="cur">$</span><span class="amt">597</span><span class="per">one-time</span>
@@ -164,8 +176,10 @@ body{top:0!important;}
       <li>24/7 client portal access</li>
       <li>Real human support</li>
     </ul>
-  </div>
-  <div class="ld-plan">
+    <div class="ld-plan-cta">Get Started &#8594;</div>
+  </a>
+  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="ld-plan ld-plan-link" onclick="ldSelectPlan(this)">
+    <div class="ld-plan-check">&#10003; Selected</div>
     <div class="ld-plan-name">Month-to-Month</div>
     <div class="ld-plan-price">
       <span class="cur">$</span><span class="amt">125</span><span class="per">/mo</span>
@@ -178,7 +192,8 @@ body{top:0!important;}
       <li>24/7 client portal access</li>
       <li>Real human support</li>
     </ul>
-  </div>
+    <div class="ld-plan-cta">Get Started &#8594;</div>
+  </a>
 </div>
 
 <!-- TRUST BAR -->
@@ -212,4 +227,17 @@ function ldTranslate(){
   var a=0;var t=function(){var s=document.querySelector('.goog-te-combo');if(s){s.value='es';s.dispatchEvent(new Event('change'));document.querySelectorAll('.ld-trans-label').forEach(function(b){b.textContent='English';});}else if(a++<10)setTimeout(t,400);};t();
 }
 window.ldTranslate=ldTranslate;
+</script>
+
+<script>
+function ldSelectPlan(el){
+  document.querySelectorAll('.ld-plan-link').forEach(function(p){p.classList.remove('ld-selected');});
+  el.classList.add('ld-selected');
+}
+window.ldSelectPlan = ldSelectPlan;
+// Pre-select featured plan on load
+window.addEventListener('load', function(){
+  var featured = document.querySelector('.ld-plan.ld-featured');
+  if(featured) featured.classList.add('ld-selected');
+});
 </script>
