@@ -56,17 +56,23 @@ a{text-decoration:none;}
 .ld-pricing-label{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--nb);margin-bottom:.65rem;display:flex;align-items:center;gap:.6rem;animation:ldFadeUp .5s ease .25s both;}
 .ld-pricing-label::before,.ld-pricing-label::after{content:'';flex:1;height:1px;background:rgba(179,128,46,0.2);}
 .ld-plans{display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:ldFadeUp .5s ease .3s both;width:100%;}
-.ld-plan{background:var(--bk2);border:1px solid rgba(179,128,46,0.18);padding:1.25rem 1.5rem;position:relative;transition:all .3s;}
-.ld-plan:hover{border-color:rgba(179,128,46,0.45);background:rgba(179,128,46,0.05);}
-.ld-plan.ld-featured{border:2px solid var(--nb);}
-.ld-plan.ld-featured::before{content:'BEST VALUE';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.2em;padding:.22rem .8rem;white-space:nowrap;}
-.ld-plan-name{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:.35rem;}
-.ld-plan-price{display:flex;align-items:baseline;gap:.1rem;margin-bottom:.5rem;}
+.ld-plan-card{display:block;background:var(--bk2);border:1px solid rgba(179,128,46,0.2);padding:1.25rem 1.25rem;position:relative;transition:all .3s;text-decoration:none;box-shadow:0 6px 28px rgba(0,0,0,0.5),0 2px 12px rgba(179,128,46,0.18);cursor:pointer;}
+.ld-plan-card:hover{border-color:var(--nb);background:rgba(179,128,46,0.06);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.55),0 6px 24px rgba(179,128,46,0.28);}
+.ld-plan-card.ld-plan-selected{border:2px solid var(--nbr);background:rgba(179,128,46,0.1);box-shadow:0 0 0 3px rgba(179,128,46,0.2),0 8px 32px rgba(0,0,0,0.5);}
+.ld-plan-featured{border:2px solid var(--nb)!important;box-shadow:0 6px 28px rgba(0,0,0,0.5),0 0 24px rgba(179,128,46,0.18)!important;}
+.ld-plan-badge-top{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.2em;padding:.22rem .8rem;white-space:nowrap;}
+.ld-plan-selected-badge{display:none;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--nbr);color:#fff;padding:.2rem .6rem;margin-bottom:.6rem;width:fit-content;}
+.ld-plan-card.ld-plan-selected .ld-plan-selected-badge{display:block;}
+.ld-plan-btn{margin-top:.65rem;background:var(--nb);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem 1rem;text-align:center;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .25s;}
+.ld-plan-card:hover .ld-plan-btn{background:var(--nbr);}
+.ld-plan-card.ld-plan-selected .ld-plan-btn{background:var(--nbr);}
+.ld-plan-name{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:.2rem;}
+.ld-plan-price{display:flex;align-items:baseline;gap:.1rem;margin-bottom:.35rem;}
 .ld-plan-price .cur{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--nb);}
-.ld-plan-price .amt{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1;}
+.ld-plan-price .amt{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1;}
 .ld-plan-price .per{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:var(--gr);margin-left:.1rem;}
-.ld-plan-feats{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
-.ld-plan-feats li{display:flex;align-items:flex-start;gap:.45rem;font-size:.78rem;color:var(--gl);font-weight:300;line-height:1.45;}
+.ld-plan-feats{list-style:none;display:flex;flex-direction:column;gap:.25rem;margin-bottom:.15rem;}
+.ld-plan-feats li{display:flex;align-items:flex-start;gap:.4rem;font-size:.75rem;color:var(--gl);font-weight:300;line-height:1.45;}
 .ld-plan-feats li::before{content:'';display:block;width:10px;height:10px;min-width:10px;background:var(--nb);clip-path:polygon(12px 2px,5px 9px,2px 6px,0px 8px,5px 13px,14px 3px);margin-top:2px;flex-shrink:0;}
 
 /* TRUST BAR */
@@ -106,6 +112,15 @@ body{top:0!important;}
 .ld-plan-link:hover .ld-plan-cta{background:var(--nbr);}
 .ld-plan-link.ld-selected .ld-plan-cta{background:var(--nbr);}
 
+
+@media(max-width:520px){
+  .ld-plans{grid-template-columns:1fr 1fr;}
+  .ld-plan-card{padding:.85rem .85rem;}
+  .ld-plan-price .amt{font-size:1.6rem;}
+  .ld-plan-feats li{font-size:.68rem;}
+  .ld-plan-name{font-size:.7rem;}
+  .ld-plan-btn{font-size:.7rem;padding:.65rem .5rem;}
+}
 </style>
 
 <!-- NAV -->
@@ -151,37 +166,51 @@ body{top:0!important;}
 
 <!-- TWO PRICING CARDS -->
 <div class="ld-plans">
-  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="ld-plan ld-featured ld-plan-link" onclick="ldSelectPlan(this)">
-    <div class="ld-plan-check">&#10003; Selected</div>
-    <div class="ld-plan-name">Credit Builder &mdash; 6 Months</div>
-    <div class="ld-plan-price">
-      <span class="cur">$</span><span class="amt">597</span><span class="per">one-time</span>
+  <!-- MONTHLY FIRST -->
+  <a href="https://nextupenterprise.getcredithelpnow.com/checkout-RebuildMyCredit" class="ld-plan-card" id="plan-monthly" onclick="ldSelectPlan(this)">
+    <div class="ld-plan-selected-badge">&#10003; Selected</div>
+    <div class="ld-plan-header">
+      <div>
+        <div class="ld-plan-name">Month-to-Month</div>
+        <div class="ld-plan-price"><span class="cur">$</span><span class="amt">125</span><span class="per">/mo &middot; cancel anytime</span></div>
+      </div>
     </div>
     <ul class="ld-plan-feats">
-      <li>6 full months of done-for-you repair</li>
       <li>Disputes to all 3 bureaus every month</li>
-      <li>Late payments, collections, repos &amp; more</li>
-      <li>Credit building guidance included</li>
+      <li>Late payments, collections &amp; charge-offs</li>
+      <li>Repossessions, bankruptcies &amp; medical debt</li>
+      <li>Unauthorized hard inquiries removed</li>
+      <li>Credit building strategy &amp; guidance</li>
       <li>24/7 client portal access</li>
-      <li>Real human support</li>
+      <li>Real human support — not a bot</li>
+      <li>No long-term commitment &middot; cancel anytime</li>
     </ul>
-    <div class="ld-plan-cta">Get Started &#8594;</div>
+    <div class="ld-plan-btn">Get Started &mdash; $125/mo &#8594;</div>
   </a>
-  <a href="https://nextupenterprise.getcredithelpnow.com/billingselection" class="ld-plan ld-plan-link" onclick="ldSelectPlan(this)">
-    <div class="ld-plan-check">&#10003; Selected</div>
-    <div class="ld-plan-name">Month-to-Month</div>
-    <div class="ld-plan-price">
-      <span class="cur">$</span><span class="amt">125</span><span class="per">/mo</span>
+
+  <!-- 6 MONTH BEST VALUE -->
+  <a href="https://nextupenterprise.getcredithelpnow.com/checkout-OneTime" class="ld-plan-card ld-plan-featured" id="plan-onetime" onclick="ldSelectPlan(this)">
+    <div class="ld-plan-badge-top">BEST VALUE</div>
+    <div class="ld-plan-selected-badge">&#10003; Selected</div>
+    <div class="ld-plan-header">
+      <div>
+        <div class="ld-plan-name">Credit Builder &mdash; 6 Months</div>
+        <div class="ld-plan-price"><span class="cur">$</span><span class="amt">597</span><span class="per">one-time &middot; save vs monthly</span></div>
+      </div>
     </div>
     <ul class="ld-plan-feats">
-      <li>Cancel anytime &mdash; no commitment</li>
+      <li>6 full months of done-for-you credit repair</li>
       <li>Disputes to all 3 bureaus every month</li>
-      <li>Late payments, collections, repos &amp; more</li>
-      <li>Credit building guidance included</li>
+      <li>Late payments, collections &amp; charge-offs</li>
+      <li>Repossessions, bankruptcies &amp; medical debt</li>
+      <li>Unauthorized hard inquiries removed</li>
+      <li>Advanced disputing &amp; negotiation support</li>
+      <li>Credit building strategy &amp; guidance</li>
       <li>24/7 client portal access</li>
-      <li>Real human support</li>
+      <li>Real human support — not a bot</li>
+      <li>Save money vs paying month-to-month</li>
     </ul>
-    <div class="ld-plan-cta">Get Started &#8594;</div>
+    <div class="ld-plan-btn">Get Started &mdash; $597 One-Time &#8594;</div>
   </a>
 </div>
 
@@ -220,13 +249,12 @@ window.ldTranslate=ldTranslate;
 
 <script>
 function ldSelectPlan(el){
-  document.querySelectorAll('.ld-plan-link').forEach(function(p){p.classList.remove('ld-selected');});
-  el.classList.add('ld-selected');
+  document.querySelectorAll('.ld-plan-card').forEach(function(p){p.classList.remove('ld-plan-selected');});
+  el.classList.add('ld-plan-selected');
 }
 window.ldSelectPlan = ldSelectPlan;
-// Pre-select featured plan on load
 window.addEventListener('load', function(){
-  var featured = document.querySelector('.ld-plan.ld-featured');
-  if(featured) featured.classList.add('ld-selected');
+  var featured = document.getElementById('plan-onetime');
+  if(featured) featured.classList.add('ld-plan-selected');
 });
 </script>
