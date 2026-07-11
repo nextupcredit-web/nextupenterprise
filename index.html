@@ -553,6 +553,15 @@ body { top:0 !important; }
 /* Hide login btn on mobile - only show in dropdown */
 @media(max-width:768px) { .nue-login-btn { display:none; } }
 
+
+/* GOOGLE MAP */
+.nue-map-wrap{background:var(--bk2);padding:3.5rem 5%;border-top:1px solid rgba(179,128,46,0.12);}
+.nue-map-inner{max-width:1200px;margin:0 auto;}
+.nue-map-header{text-align:center;margin-bottom:1.5rem;}
+.nue-map-frame{width:100%;height:380px;border:1px solid rgba(179,128,46,0.2);overflow:hidden;}
+@media(max-width:768px){.nue-map-frame{height:280px;}}
+@media(max-width:480px){.nue-map-frame{height:240px;}}
+
 </style>
 
 <div class="nw">
@@ -864,6 +873,27 @@ body { top:0 !important; }
     <a href="https://api.leadconnectorhq.com/widget/booking/HZMH7gdWbjvYllM043iH" class="btn-gh" style="color:var(--nl);">Book a Free Call &#8594;</a>
   </div>
 </section>
+
+<!-- GOOGLE MAPS -->
+<div class="nue-map-wrap">
+  <div class="nue-map-inner">
+    <div class="nue-map-header">
+      <div class="ney neyc">Find Us</div>
+      <p style="text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.1em;color:var(--gr);margin-top:.35rem;">222 Wilkes Barre Twp Blvd #253 &nbsp;&middot;&nbsp; Wilkes Barre, PA 18702</p>
+    </div>
+    <div class="nue-map-frame">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.1912143568043!2d-75.86500272306634!3d41.239392571319186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4c70475d6e505ff3%3A0x3181285ad34dbcaa!2sNextUp%20Enterprise!5e0!3m2!1sen!2sus!4v1783783541249!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0;display:block;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+  </div>
+</div>
 
 <footer class="nftr">
   <div class="nftr-in">
